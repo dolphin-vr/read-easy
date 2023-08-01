@@ -1,0 +1,44 @@
+@mixin sidePadding ($padd) {
+   padding-left: $padd;
+   padding-right: $padd;
+}
+@mixin verticalPadding ($padt, $padb) {
+   padding-top: $padt;
+   padding-bottom: $padb;
+}
+
+@mixin btnIcon ($name, $size, $margin){
+   content: '';
+   display: inline-block;
+   width: $size;
+   height: $size;
+   margin-left: $margin;
+   background-image: url("../img/sprite.svg#" + $name);
+   background-repeat: no-repeat;
+   background-size: $size;
+}
+
+@mixin centered(){
+   margin-left: auto;
+   margin-right: auto;
+}
+
+// @mixin centeredFlex($type: flex) {
+//    display: $type;
+//    align-items: center;
+//    justify-content: center;
+//  }
+ 
+//  @mixin bordered($color: black, $type: solid) {
+//    border-top: 1px $type $color;
+//    border-bottom: 1px $type $color;
+//  }
+ 
+//  @mixin generateIcons($iconList) {
+//    @each $iconName in $iconList {
+//      .icon-#{$iconName} {
+//        background-image: url("../images/#{$iconName}.svg");
+//      }
+//    }
+//  }
+ 
