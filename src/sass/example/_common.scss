@@ -1,0 +1,36 @@
+.invisible {
+   position: absolute;
+   width: 1px;
+   height: 1px;
+   margin: -1px;
+   border: 0;
+   padding: 0;  
+   white-space: nowrap;
+   clip-path: inset(100%);
+   clip: rect(0 0 0 0);
+   overflow: hidden;
+ }
+ 
+.no-scroll {
+   overflow: hidden;
+ }
+
+ .btn{
+  padding: 12px 28px;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.21;
+  color: #FFFFFF;
+  border-radius: 100px;
+}
+
+ .pri-btn{
+  background-color: #FD9222;
+  border: none;
+ }
+
+ .sec-btn{
+  background-color: transparent;
+  border: 1px solid #FFFFFF;
+ }
