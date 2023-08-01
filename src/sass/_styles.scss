@@ -1,0 +1,27 @@
+body{
+   background-color: darkslategray;
+}
+
+.header {
+   padding: 20px 0;
+ }
+ 
+ .nav-list {
+   display: flex;
+   align-items: center;
+   gap: 40px;
+   padding: 0 30px;
+ }
+ 
+ .nav-link {
+   font-weight: 500;
+   letter-spacing: 0.02em;
+   line-height: 1.5;
+   color: orange;
+ }
+ 
+ .nav-link:hover,
+ .nav-link:focus {
+   color: #747bff;
+ }
+ 
