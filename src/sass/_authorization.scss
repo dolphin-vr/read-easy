@@ -1,0 +1,144 @@
+// :root {
+//   --bg-color: #f1f2f6;
+//   --text-color: : #57606f;
+// }
+// for a dark theme
+// :root[theme='dark'] {
+//   --bg-color: #57606f;
+//   --text-color: : #f1f2f6;
+// }
+
+.authorization-background {
+  font-family: 'DM Sans', sans-serif;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    130deg,
+    rgba(204, 236, 231, 1) -100%,
+    rgba(79, 46, 232, 1) 60%,
+    rgba(79, 46, 232, 1) 100%
+  );
+}
+.authorization-frame {
+  text-align: center;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 335px;
+  max-height: 384px;
+  padding: 40px 20px;
+  border-radius: 18px;
+  border: 2px solid $black;
+  background: $bg-body;
+}
+.authorization-close-btn {
+  width: 20px;
+  height: 20px;
+  top: 14px;
+  right: 14px;
+  position: absolute;
+  background-color: transparent;
+  border: none;
+}
+
+.authorization-icon-btn {
+  width: 20px;
+  height: 20px;
+  stroke: $black;
+}
+
+.authorization-input {
+  color: $black;
+
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.16px;
+
+  width: 293px;
+  height: 50px;
+  padding: 16px 173px 16px 24px;
+  align-items: center;
+  border-radius: 40px;
+  border: 2px solid $black;
+  background-color: transparent;
+
+  margin-bottom: 24px;
+}
+
+.authorization-input::placeholder {
+  color: $black;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.16px;
+}
+
+.authorization-btn {
+  width: 293px;
+  height: 50px;
+  color: $bg-body;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.16px;
+
+  padding: 16px 112px;
+  border-radius: 40px;
+  background: $black;
+
+  margin: 0 0 14px 0;
+}
+
+.authorization-link-wrap {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.authorization-singup {
+  color: #4f2ee8;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.28;
+  letter-spacing: -0.14px;
+  text-decoration-line: underline;
+}
+.authorization-singin {
+  color: rgb(143, 143, 143);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.28;
+  letter-spacing: -0.14px;
+}
+
+@media screen and (min-width: 1200px) {
+  .authorization-frame {
+    max-width: 579px;
+    max-height: 516px;
+    padding: 80px 40px 40px 40px;
+  }
+
+  .authorization-close-btn {
+    top: 24px;
+    right: 24px;
+  }
+
+  .authorization-input {
+    width: 499px;
+    height: 64px;
+    padding: 20px 173px 20px 40px;
+    margin-bottom: 28px;
+  }
+
+  .authorization-btn {
+    width: 499px;
+    height: 64px;
+    padding: 20px 173px;
+    margin: 12px 0 20px 0;
+  }
+}
