@@ -1,0 +1,188 @@
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 20px;
+    border: 1.5px solid #111111;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    // overflow: hidden;
+}
+
+/* Стилі для всіх пунктів меню */
+.navigation li {
+    list-style: none;
+    display: inline-block;
+    
+}
+
+/* Стилі для посилань у пунктів меню */
+.navigation li a {
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 36px;
+    background-color: #EAC645;
+    color: #fff;
+}
+
+/* Стилі для активного пункту меню */
+.navigation li.active a {
+    background-color: #fff;
+    /* змініть колір на бажаний для активного пункту */
+    color: #EAC645;
+    /* змініть колір тексту на бажаний для активного пункту */
+}
+
+
+.foto-logo {
+    height: 28px;
+    width: 109px;
+    
+}
+
+.img-menu{
+    max-width: 28px;
+    max-height: 28px;
+}
+.theme-switch{
+    // padding-left: 144px;
+    padding-right: 14px;
+}
+.navigation {
+    display: flex;
+    list-style: none;
+    gap: 1rem;
+}
+
+.navigation li a {
+    text-decoration: none;
+    color: #000;
+}
+
+
+.burger-menu {
+    
+    display: none;
+  
+}
+.img-menu{
+    width: 28px;
+    height: 28px;
+}
+.menu-btn {
+    border: none;
+    background-color: transparent;
+    
+    padding-left: 0;
+    padding-right: 0;
+}
+.btn-header-icons {
+    
+    border: none;
+}
+
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("../img/Switcher-off.jpg");
+    /* Зображення для пасивного стану */
+    background-size: cover;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    // height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-image: url("../img/Switcher-on.jpg");
+    /* Зображення для активного стану */
+    background-size: cover;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+.sign-up {
+    display: none;
+}
+
+@media screen and (max-width: 767px) {
+    .navigation {
+            display: none;
+          
+
+        }
+    .theme-switch {
+        padding-left: 144px;
+    }
+ 
+    
+}
+
+/* Стилі для екранів 768 пікселів і більше */
+@media screen and (min-width: 768px) {
+    .sign-up {
+        display: block;
+    }
+    .logo {
+        padding-right: 40px;
+    }
+    .navigation {
+            padding-right: 87px;
+    
+        }
+    .menu-btn {
+               display: none;
+           }
+}
+
+/* Додайте фото як фон кнопки */
+.sign-up-button {
+    background-image: url('../img/btn\ \(1\).jpg');
+    /* Додайте інші стилі за бажанням, наприклад, розмір, кольори тощо */
+    width: 184px;
+    height: 48px;
+    border: none;
+}
+/* Показати модальне вікно, коли воно активне */
+.mobile-menu.show-modal {
+    max-height: 100vh;
+}
+
+input:checked+.slider {
+    background-image: url("../img/Switcher-on.jpg");
+    /* Зображення для активного стану */
+}
+
+input:checked+.slider:before {
+    transform: translateX(26px);
+}
+
+@media screen and (max-width: 767px) {
+    .navigation {
+        display: none;
+    }
+}
+
