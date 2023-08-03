@@ -26,4 +26,4 @@ const getBookById = async id => {
   return await axios.get(`${baseUrl}${idUrl}/${id}`);
 };
 
-module.exports = { getCategoryList, getTopBooks, getCategory, getBookById };
+export { getCategoryList, getTopBooks, getCategory, getBookById };
