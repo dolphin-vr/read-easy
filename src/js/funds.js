@@ -2,6 +2,12 @@
 
 import { createMarkupFunds } from './createMarkup111'  // funds rendering
 
+// Зображення благодійних фондів- завантажуємо як є і додаємо в CSS:
+//    filter: brightness(0) invert(1)
+
+// To Do:
+// button scroll
+
 // array of funds
 const fundsData = [
     {
