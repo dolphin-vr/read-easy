@@ -3,6 +3,9 @@
   visibility: hidden;
   pointer-events: none;
 }
+.no-scroll {
+  overflow: hidden;
+}
 
 .backdrop {
   position: fixed;
@@ -19,12 +22,13 @@
 .modal {
   margin: 0 auto;
   max-width: 335px;
-  height: auto;
+  height: 100%;
   position: relative;
   border-radius: 18px;
   border: 2px solid $black;
   background: $bg-body;
   padding: 40px 24px;
+  overflow: scroll;
 }
 
 .modal-close-btn {
@@ -80,15 +84,17 @@
 
 .modal-linc-box {
   margin-top: 14px;
+  margin-bottom: 40px;
   display: flex;
+  align-items: center;
   gap: 20px;
 }
 .modal-linc {
 }
-.modal-linc-svg {
+.modal-linc-icon {
+  filter: grayscale(100);
 }
 .modal-ls-btn {
-  margin-top: 40px;
   border-radius: 40px;
   border: 2px solid #4f2ee8;
   padding: 14px 28px;
@@ -121,6 +127,7 @@
 @media screen and (min-width: 768px) {
   .modal {
     max-width: 579px;
+    height: auto;
     padding: 40px 40px;
     position: absolute;
     top: 50%;
@@ -167,19 +174,20 @@
   .modal-linc-box {
     margin-top: 20px;
   }
-  .modal-linc {
-  }
-  .modal-linc-svg {
-  }
+
   .modal-ls-btn {
+    margin-top: 40px;
     display: flex;
-    width: 499px;
+    width: 495px;
     padding: 20px 146px;
     justify-content: center;
     align-items: center;
     font-size: 18px;
     line-height: 1.33;
     letter-spacing: -0.18px;
+  }
+  .modal-ls-btn.remove {
+    padding: 14px 22px;
   }
   .modal-text {
     width: 324px;
