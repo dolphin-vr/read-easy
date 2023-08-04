@@ -16,3 +16,4 @@ function closeModal() {
   refs.modalEl.classList.toggle('is-hidden');
   document.body.classList.toggle('no-scroll');
 }
+export { openModal, closeModal}
