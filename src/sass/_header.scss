@@ -1,43 +1,29 @@
 
 .header {
     display: flex;
-    justify-content: space-between;
+    
     align-items: center;
     padding: 18px 20px;
     border: 1.5px solid #111111;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
-    // overflow: hidden;
+    overflow-x: hidden;
 }
-
-/* Стилі для всіх пунктів меню */
-.navigation li {
-    list-style: none;
-    display: inline-block;
-    
-}
-
-/* Стилі для посилань у пунктів меню */
-.navigation li a {
-    text-decoration: none;
-    padding: 8px 16px;
-    border-radius: 36px;
+@media screen and (min-width: 768px) {
+.li-navigation>.current{
+    color: #111111;
+    /*  бажаний колір тексту для активного посилання */
     background-color: #EAC645;
-    color: #fff;
+    /* бажаний фоновий колір для активного посилання */
+    padding: 8px 16px 8px 16px;
+    border-radius: 36px;
 }
 
-/* Стилі для активного пункту меню */
-.navigation li.active a {
-    background-color: #fff;
-    /* змініть колір на бажаний для активного пункту */
-    color: #EAC645;
-    /* змініть колір тексту на бажаний для активного пункту */
 }
-
-
 .foto-logo {
     height: 28px;
     width: 109px;
+    border-radius: 36px;
     
 }
 
@@ -45,14 +31,28 @@
     max-width: 28px;
     max-height: 28px;
 }
+.li-navigation{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.svg-navigation{
+    margin-left: 4px;
+        
+}
 .theme-switch{
     // padding-left: 144px;
-    padding-right: 14px;
+    margin-right: 14px;
 }
 .navigation {
     display: flex;
     list-style: none;
-    gap: 1rem;
+    
+}
+.shoplist{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .navigation li a {
@@ -135,7 +135,7 @@
 
         }
     .theme-switch {
-        padding-left: 144px;
+        margin-left: 144px;
     }
  
     
@@ -147,15 +147,30 @@
         display: block;
     }
     .logo {
-        padding-right: 40px;
+        margin-right: 40px;
     }
     .navigation {
-            padding-right: 87px;
+            margin-right: 97px;
     
         }
     .menu-btn {
                display: none;
            }
+    .theme-switch{
+        margin-right: 24px;
+    }
+    .navigation li:not(:last-child) a {
+            margin-right: 16px;
+            /* бажаний відступ між посиланнями, окрім останнього */
+        }
+}
+@media screen and (min-width: 1440px) {
+    .logo {
+        margin-right: 76px;
+    }
+    .navigation {
+        margin-right: 733px;
+    }
 }
 
 /* Додайте фото як фон кнопки */
@@ -186,3 +201,48 @@ input:checked+.slider:before {
     }
 }
 
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateY(69px);
+    background: radial-gradient(189.32% 190.93% at 59.76% -23.42%, #4F2EE8 18.03%, #FFF 100%);
+    /* Змініть альфа-канал для забарвлення, щоб змінювати прозорість */
+    display: flex;
+    max-width: 375px;
+    max-height: 812px;
+    z-index: 9999;
+}
+
+.backdrop.is-hidden {
+    display: none;
+    /* Приховуємо вікно за допомогою display: none; */
+}
+
+.li-navigation-modal>.current {
+    color: #111111;
+    /*  бажаний колір тексту для активного посилання */
+    background-color: #EAC645;
+    /* бажаний фоновий колір для активного посилання */
+    padding: 8px 16px 8px 16px;
+    border-radius: 36px;
+}
+.navigation-modal {
+    margin-top: 183px;
+}
+
+.li-navigation-modal:not(:last-child){
+    margin-bottom: 18px;
+}
+
+.modal-btn{
+    margin-left: 20px;
+    margin-top: 40px;
+}
+
+.img-burger-menu{
+    position: absolute;
+    bottom: 0;
+}
