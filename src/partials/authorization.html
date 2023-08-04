@@ -1,6 +1,9 @@
-<div class="authorization-background">
+<div class="authorization-container js-authorization-modal is-hidden">
   <div class="authorization-frame">
-    <button type="button" class="authorization-close-btn">
+    <button
+      type="button"
+      class="authorization-close-btn js-authorization-close"
+    >
       <svg class="authorization-icon-btn">
         <use href="../img/sprite.svg#close"></use>
       </svg>
@@ -13,25 +16,38 @@
         placeholder="NAME"
         required
       />
-      <input
-        class="authorization-input"
-        id="authorization-mail"
-        type="email"
-        placeholder="EMAIL"
-        required
-      />
-      <input
-        class="authorization-input"
-        id="singup-mail"
-        type="password"
-        placeholder="PASSWORD"
-        required
-      />
+      <div class="authorization-input-wrap">
+        <input
+          class="authorization-input"
+          id="authorization-mail"
+          type="email"
+          placeholder="EMAIL"
+          required
+        />
+        <svg class="authorization-input-icon">
+          <use href="../img/sprite.svg#close"></use>
+        </svg>
+      </div>
+      <div class="authorization-input-wrap">
+        <input
+          class="authorization-input"
+          id="authorization-password"
+          type="password"
+          placeholder="PASSWORD"
+          required
+          minlength="6"
+          maxlength="20"
+        />
+        <svg class="authorization-input-icon">
+          <use href="../img/sprite.svg#close"></use>
+        </svg>
+      </div>
       <button type="submit" class="authorization-btn">SIGN UP</button>
     </form>
     <div class="authorization-link-wrap">
-      <a class="authorization-singup" href="">SIGN UP</a>
-      <p class="authorization-singin" href="">SIGN IN</p>
+      <p class="authorization-link" href="">SIGN UP</p>
+      <p class="authorization-link" href="">SIGN IN</p>
     </div>
   </div>
+  <div class="authorization-backdrop js-authorization-backdrop"></div>
 </div>
