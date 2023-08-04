@@ -51,36 +51,37 @@ getCategoryList()
 getBookById(event.currentTarget.id)
 .then(resp => {
   console.log(resp);
-const modalMarkup = 
-`
-<img src="${resp.data.book_image}" alt="" class="modal-book-img" />
-<div class="modal-book-info-wrap">
-  <h2 class="modal-book-name">${resp.data.title}</h2>
-  <p class="modal-book-autor">${resp.data.author}</p>
-  <p class="modal-book-info">
-  ${resp.data.description}
-  </p>
-  <div class="modal-linc-box">
-    <a href="" class="modal-linc" target="_blank">
-      <svg class="modal-linc-svg">
-        <use href=""></use>
-      </svg>
-    </a>
-    <a href="" class="modal-linc" target="_blank">
-      <svg class="modal-linc-svg">
-        <use href=""></use>
-      </svg>
-    </a>
-    <a href="" class="modal-linc" target="_blank">
-      <svg class="modal-linc-svg">
-        <use href=""></use>
-      </svg>
-    </a>
-  </div>
-</div>
-`
-modalBook.innerHTML = modalMarkup
-  openModal()
+  // відкриття модалки
+// const modalMarkup = 
+// `
+// <img src="${resp.data.book_image}" alt="" class="modal-book-img" />
+// <div class="modal-book-info-wrap">
+//   <h2 class="modal-book-name">${resp.data.title}</h2>
+//   <p class="modal-book-autor">${resp.data.author}</p>
+//   <p class="modal-book-info">
+//   ${resp.data.description}
+//   </p>
+//   <div class="modal-linc-box">
+//     <a href="" class="modal-linc" target="_blank">
+//       <svg class="modal-linc-svg">
+//         <use href=""></use>
+//       </svg>
+//     </a>
+//     <a href="" class="modal-linc" target="_blank">
+//       <svg class="modal-linc-svg">
+//         <use href=""></use>
+//       </svg>
+//     </a>
+//     <a href="" class="modal-linc" target="_blank">
+//       <svg class="modal-linc-svg">
+//         <use href=""></use>
+//       </svg>
+//     </a>
+//   </div>
+// </div>
+// `
+// modalBook.innerHTML = modalMarkup
+//   openModal()
 })
 .catch(err => console.log(err))
                 })
