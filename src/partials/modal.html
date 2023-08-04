@@ -1,86 +1,91 @@
 <footer class="footer">
-  <!-- Path to images as from index.html file -->
-  <div class="backdrop js-backdrop">
-    <div class="modal">
-      <button type="button" class="modal-close-btn js-modal-close-btn">
-        <svg class="modal-close-svg">
-          <use href="../img/sprite.svg#close"></use>
-        </svg>
-      </button>
-      <div>
-        <img src="../img/card-m.jpg" alt="" class="modal-book-img" />
-        <div>
-          <h2 class="modal-book-name">HELLO BEAUTIFUL</h2>
-          <p class="modal-book-autor">Ann Napolitano</p>
-          <p class="modal-book-info">
-            In a homage to Louisa May Alcott’s “Little Women,” a young man’s
-            dark past resurfaces as he gets to the know the family of his
-            college sweetheart.
-          </p>
-          <div class="modal-linc-box">
-            <a href="" class="modal-linc" target="_blank">
-              <svg class="modal-linc-svg">
-                <use href=""></use>
-              </svg>
-            </a>
-            <a href="" class="modal-linc" target="_blank">
-              <svg class="modal-linc-svg">
-                <use href=""></use>
-              </svg>
-            </a>
-            <a href="" class="modal-linc" target="_blank">
-              <svg class="modal-linc-svg">
-                <use href=""></use>
-              </svg>
-            </a>
-          </div>
+  <button class="js-modal-open" type="button">MODAL OPEN</button>
+</footer>
+<!-- is-hidden -->
+<div class="backdrop js-modal-backdrop">
+  <div class="modal">
+    <button type="button" class="modal-close-btn js-modal-close-btn">
+      <svg class="modal-close-svg">
+        <use href="../img/sprite.svg#close"></use>
+      </svg>
+    </button>
+    <div class="modal-book">
+      <img src="../img/card-m.jpg" alt="" class="modal-book-img" />
+      <div class="modal-book-info-wrap">
+        <h2 class="modal-book-name">HELLO BEAUTIFUL</h2>
+        <p class="modal-book-autor">Ann Napolitano</p>
+        <p class="modal-book-info">
+          In a homage to Louisa May Alcott’s “Little Women,” a young man’s dark
+          past resurfaces as he gets to the know the family of his college
+          sweetheart.
+        </p>
+        <div class="modal-linc-box">
+          <a href="" class="modal-linc" target="_blank">
+            <svg class="modal-linc-svg">
+              <use href=""></use>
+            </svg>
+          </a>
+          <a href="" class="modal-linc" target="_blank">
+            <svg class="modal-linc-svg">
+              <use href=""></use>
+            </svg>
+          </a>
+          <a href="" class="modal-linc" target="_blank">
+            <svg class="modal-linc-svg">
+              <use href=""></use>
+            </svg>
+          </a>
         </div>
       </div>
-      <button class="modal-ls-add-btn js-modal-localstostorage-add-btn">
-        add to shopping list
-      </button>
     </div>
+    <button class="modal-ls-btn js-modal-localstostorage-add-btn">
+      add to shopping list
+    </button>
   </div>
+</div>
 
-  <!-- <div class="backdrop js-backdrop">
-    <div class="modal">
-      <button type="button" class="modal-close-btn js-modal-close-btn">
-        <svg class="modal-close-svg">
-          <use href=""></use>
-        </svg>
-      </button>
+<!-- <div class="backdrop js-backdrop">
+  <div class="modal">
+    <button type="button" class="modal-close-btn js-modal-close-btn">
+      <svg class="modal-close-svg">
+        <use href="../img/sprite.svg#close"></use>
+      </svg>
+    </button>
+    <div class="modal-book">
       <img src="../img/card-m.jpg" alt="" class="modal-book-img" />
-      <h2 class="modal-book-name">HELLO BEAUTIFUL</h2>
-      <p class="modal-book-autor">Ann Napolitano</p>
-      <p class="modal-book-info">
-        In a homage to Louisa May Alcott’s “Little Women,” a young man’s dark
-        past resurfaces as he gets to the know the family of his college
-        sweetheart.
-      </p>
-      <div class="modal-linc-box">
-        <a href="" class="modal-linc" target="_blank">
-          <svg class="modal-linc-svg">
-            <use href=""></use>
-          </svg>
-        </a>
-        <a href="" class="modal-linc" target="_blank">
-          <svg class="modal-linc-svg">
-            <use href=""></use>
-          </svg>
-        </a>
-        <a href="" class="modal-linc" target="_blank">
-          <svg class="modal-linc-svg">
-            <use href=""></use>
-          </svg>
-        </a>
+      <div class="modal-book-info-wrap">
+        <h2 class="modal-book-name">HELLO BEAUTIFUL</h2>
+        <p class="modal-book-autor">Ann Napolitano</p>
+        <p class="modal-book-info">
+          In a homage to Louisa May Alcott’s “Little Women,” a young man’s dark
+          past resurfaces as he gets to the know the family of his college
+          sweetheart.
+        </p>
+        <div class="modal-linc-box">
+          <a href="" class="modal-linc" target="_blank">
+            <svg class="modal-linc-svg">
+              <use href=""></use>
+            </svg>
+          </a>
+          <a href="" class="modal-linc" target="_blank">
+            <svg class="modal-linc-svg">
+              <use href=""></use>
+            </svg>
+          </a>
+          <a href="" class="modal-linc" target="_blank">
+            <svg class="modal-linc-svg">
+              <use href=""></use>
+            </svg>
+          </a>
+        </div>
       </div>
-      <button class="modal-ls-remove-btn js-modal-localstostorage-remove-btn">
-        remove from the shopping list
-      </button>
-      <p class="modal-text">
-        Сongratulations! You have added the book to the shopping list. To
-        delete, press the button “Remove from the shopping list”.
-      </p>
     </div>
-  </div> -->
-</footer>
+    <button class="modal-ls-btn remove js-modal-localstostorage-remove-btn">
+      remove from the shopping list
+    </button>
+    <p class="modal-text">
+      Сongratulations! You have added the book to the shopping list. To delete,
+      press the button “Remove from the shopping list”.
+    </p>
+  </div>
+</div> -->
