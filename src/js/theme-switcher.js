@@ -28,4 +28,8 @@ const switchTheme = () => {
   }
 };
 
-module.exports = { initTheme, switchTheme };
+const isThemeDark = () => {
+  return localStorage.getItem('theme') === 'dark' ? true : false;
+};
+
+module.exports = { initTheme, switchTheme, isThemeDark };
