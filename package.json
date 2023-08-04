@@ -19,7 +19,7 @@
   "sass support by": "dolphin-vr <https://github.com/dolphin-vr>",
   "dependencies": {
     "axios": "^1.4.0",
-    "firebase": "^8.6.8",
+    "firebase": "^10.1.0",
     "modern-normalize": "^2.0.0",
     "notiflix": "^3.2.6",
     "vite-plugin-full-reload": "^1.0.5",
