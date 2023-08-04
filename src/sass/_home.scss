@@ -206,3 +206,32 @@
     height: 256px;
   }
 }
+.category-link {
+  color: rgba(17, 17, 17, 0.60);
+font-family: DM Sans;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 18px;
+letter-spacing: -0.32px;
+margin-bottom: 24px;
+}
+.selected-category {
+  color: #4F2EE8;
+  font-family: DM Sans;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 18px; 
+  letter-spacing: -0.32px;
+  text-transform: uppercase;
+}
+.category-list {
+  height: 228px;
+  overflow: scroll;
+}
+.category-list li:not(:last-child) {
+  margin-bottom: 24px;
+}
+
+
