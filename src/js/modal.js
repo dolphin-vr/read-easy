@@ -3,7 +3,7 @@ const refs = {
   modalEl: document.querySelector('.js-modal-backdrop'),
   closeModalBtnEL: document.querySelector('.js-modal-close-btn'),
 };
-
+console.log(refs.openModalBtnEl);
 refs.openModalBtnEl.addEventListener('click', openModal);
 refs.closeModalBtnEL.addEventListener('click', closeModal);
 
