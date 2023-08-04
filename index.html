@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Read Easy</title>
     
-    <script type="module" crossorigin src="/read-easy/assets/index-9ab37eaa.js"></script>
-    <link rel="stylesheet" href="/read-easy/assets/index-b18fc714.css">
+    <script type="module" crossorigin src="/read-easy/assets/index-a3723715.js"></script>
+    <link rel="stylesheet" href="/read-easy/assets/index-74484faf.css">
   </head>
   <body>
     <header class="header">
@@ -20,8 +20,10 @@
   </div>
   <nav>
     <ul class="navigation">
-      <li><a href="index.html">HOME</a></li>
-      <li><a href="shoplist.html">SHOPPING LIST</a></li>
+      <li class="li-navigation"><a href="index.html" class="current">HOME</a></li>
+      <li class="li-navigation"><a href="shoplist.html" class = "shoplist">SHOPPING LIST <svg class="" width="28" height="28">
+        <use class = "svg-navigation" href="../img/symbol-shop.svg#icon-Vector-4"></use>
+      </svg> </a></li>
     </ul>
   </nav>
   <div class="theme-switch">
@@ -34,15 +36,25 @@
   <button type="button" class="sign-up-button"></button>
 </div>
 <button type="button" class="menu-btn" data-menu-open="" aria-expanded="false">
-   <img class="img-menu img-passive" src="../img/align-left (1).jpg" alt="Іконка меню" width="28" height="28"
+  <img class="img-menu img-passive" src="../img/align-left (1).jpg" alt="Іконка меню" width="28" height="28"
     class="btn-header-icons">
- </button>
-
-<!-- Модальне вікно -->
-<!-- <div class="backdrop is-hidden data-menu">
-  <p>Привіт</p>
-</div> -->
-  <script src="../js/header.js"></script>
+</button>
+<!-- модальне вікно -->
+<div class="backdrop is-hidden modal" data-menu>
+  <div>
+  <button type="button" class="sign-up-button modal-btn"></button>
+  <img class="img-burger-menu" src="../img/menu-bg.png" alt="burger">
+  <!-- <nav>
+    <ul class="navigation-modal">
+      <li class="li-navigation-modal"><a href="index.html" class="current">HOME</a></li>
+      <li class="li-navigation-modal"><a href="shoplist.html" class="shoplist">SHOPPING LIST <svg class="" width="28"
+            height="28">
+            <use class="svg-navigation" href="../img/symbol-shop.svg#icon-Vector-4"></use>
+          </svg> </a></li>
+    </ul>
+  </nav> -->
+</div>
+<script src="../js/header-burger.js"></script>
 </header>
     <section class="home">
   <!---------------------- TOP SECTION CATEGOTY  -->
