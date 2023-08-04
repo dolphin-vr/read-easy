@@ -31,7 +31,6 @@
   position: absolute;
   top: 12px;
   right: 12px;
-  font-size: 24px;
   width: 24px;
   height: 24px;
   display: flex;
@@ -39,12 +38,12 @@
   justify-content: center;
   background-color: transparent;
   border: none;
+  padding: 0;
 }
 
 .modal-close-svg {
-  font-size: 48px;
-  width: 48px;
-  height: 48px;
+  width: 24px;
+  height: 24px;
   stroke: $black;
 }
 .modal-book-img {
@@ -72,8 +71,11 @@
 .modal-book-info {
   margin-top: 18px;
   color: $black;
+  font-size: 14px;
   line-height: 1.28;
   letter-spacing: -0.56px;
+  width: 287px;
+  height: 70px;
 }
 
 .modal-linc-box {
@@ -98,7 +100,6 @@
   text-transform: uppercase;
   display: flex;
   align-items: center;
-
   margin: 0 auto;
 }
 .modal-ls-btn.remove {
@@ -140,8 +141,7 @@
     display: flex;
     gap: 24px;
   }
-  .modal-book-info-wrap {
-  }
+
   .modal-book-img {
     width: 192px;
     height: 281px;
