@@ -25,6 +25,5 @@ function onEscKeyPress(e) {
 function onClickBackdrop(e) {
   if (e.target === refs.backdrop) {
     refs.modal.classList.toggle('is-hidden');
-    refs.modal.removeEventListener('click', onClickBackdrop);
   }
 }
