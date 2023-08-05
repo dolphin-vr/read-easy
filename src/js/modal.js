@@ -1,20 +1,32 @@
 const refs = {
-  bodyEl: document.querySelector('body'),
-  openModalBtnEl: document.querySelector('.js-modal-open'),
-  modalEl: document.querySelector('.js-modal-backdrop'),
-  closeModalBtnEL: document.querySelector('.js-modal-close-btn'),
+  openModalBtnEl: document.querySelector('.js-modal-book-open'),
+  modalEl: document.querySelector('.js-modal-book-backdrop'),
 };
 
-refs.openModalBtnEl.addEventListener('click', openModal);
-refs.closeModalBtnEL.addEventListener('click', closeModal);
+refs.openModalBtnEl.addEventListener('click', openModalBook);
+refs.modalEl.addEventListener('click', closeModalBook);
 
-function openModal() {
-  refs.modalEl.classList.toggle('is-hidden');
-  refs.bodyEl.classList.toggle('no-scroll');
+function openModalBook() {
+  toggleModalBook();
+  document.addEventListener('keydown', closeModalBookOnEsc);
 }
 
-function closeModal() {
-  refs.modalEl.classList.toggle('is-hidden');
-  refs.bodyEl.classList.toggle('no-scroll');
+function closeModalBook(evt) {
+  if (
+    evt.target.classList.contains('js-modal-book-backdrop') ||
+    evt.target.closest('.js-modal-book-close-btn')
+  ) {
+    toggleModalBook();
+  }
 }
-export { openModal, closeModal}
+function closeModalBookOnEsc(evt) {
+  if (evt.code === 'Escape') {
+    toggleModalBook();
+    document.removeEventListener('keydown', closeModalBookOnEsc);
+  }
+}
+function toggleModalBook() {
+  refs.modalEl.classList.toggle('is-hidden');
+  document.body.classList.toggle('no-scroll');
+}
+export { openModalBook, closeModalBook };
