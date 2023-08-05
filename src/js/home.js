@@ -1,27 +1,11 @@
-import { getCategoryList, getTopBooks } from './api-books';
+import { getTopBooks, getCategoryList } from './api-books';
 
-// -----------------------------ВІДМАЛЬОВКА КАТЕГОРІЙ---------------------------
-(async () => {
-    const categoryList = await getCategoryList();
-    const categoryUl = document.getElementById('category-list');
-
-    const sortedCategories = categoryList.data.sort((a, b) => {
-        return a.list_name.localeCompare(b.list_name);
-    });
-
-    sortedCategories.forEach((category) => {
-        const li = document.createElement('li');
-        li.classList.add('name-category');
-        li.textContent = category.list_name;
-        categoryUl.appendChild(li);
-    });
-})();
-// -----------------------------ВІДМАЛЬОВКА КНИГ---------------------------
 // Очищаємо контейнер перед відмальовкою
 const topbookContainer = document.getElementById('top-book-container');
 topbookContainer.innerHTML = '';
+
 // Функція для створення розмітки книги
-const createMarkup = (book) => {
+const createMarkup = book => {
     const bookLi = document.createElement('li');
     bookLi.classList.add('book-thumb', 'js-book-thumb');
 
@@ -45,12 +29,31 @@ const createMarkup = (book) => {
     return bookLi;
 };
 
-async function homeMarkup () {
-    try {
-        const categoryList = await getCategoryList();
-        const categoryContainer = document.getElementById('top-book-container');
+// Функція для відмальовки заголовка
+const createHeader = title => {
+    const h1 = document.createElement('h1');
+    h1.classList.add('book-list-title');
 
-        categoryList.data.forEach(async (category) => {
+    const span = document.createElement('span');
+    span.classList.add('spn-books');
+    span.textContent = 'Books';
+
+    h1.textContent = title;
+    h1.appendChild(span);
+
+    return h1;
+};
+
+async function homeMarkup() {
+    try {
+        const topBooksResponse = await getTopBooks();
+        const categories = topBooksResponse.data;
+
+        // Відмальовка заголовка
+        const header = createHeader("Best Sellers");
+        topbookContainer.appendChild(header);
+
+        categories.forEach(category => {
             const categoryDiv = document.createElement('div');
             categoryDiv.classList.add('container-top-book');
 
@@ -63,34 +66,25 @@ async function homeMarkup () {
             bookList.classList.add('best-category', 'js-top-cat');
             categoryDiv.appendChild(bookList);
 
-            const topBooksResponse = await getTopBooks();
-            const categories = topBooksResponse.data;
-
-            for (const cat of categories) {
-                if (cat.list_name === category.list_name) {
-                    const topBooks = cat.books;
-
-                    for (let i = 0; i < 5; i++) {
-                        if (topBooks[i]) {
-                            const bookMarkup = createMarkup(topBooks[i]);
-                            bookList.appendChild(bookMarkup);
-                        }
-                    }
-
-                    break;
+            for (let i = 0; i < 5; i++) {
+                if (category.books[i]) {
+                    const bookMarkup = createMarkup(category.books[i]);
+                    bookList.appendChild(bookMarkup);
                 }
             }
 
             const seeMoreButton = document.createElement('button');
             seeMoreButton.classList.add('btn-see-more');
             seeMoreButton.textContent = 'SEE MORE';
+            seeMoreButton.type = 'button';
+            seeMoreButton.dataset.categoryName = category.list_name;
             categoryDiv.appendChild(seeMoreButton);
 
-            categoryContainer.appendChild(categoryDiv);
+            topbookContainer.appendChild(categoryDiv);
         });
     } catch (error) {
         console.error('Помилка:', error);
     }
-};
+}
 
-export {homeMarkup}
+export { homeMarkup };
