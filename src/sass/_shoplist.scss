@@ -14,7 +14,7 @@
 }
 
 .shopping-titel-list {
-    color: #4F2EE8;
+    $dk-violet: #1e1823;
 }
 
 .button-trash {
@@ -22,22 +22,26 @@
     right: 14px;
     width: 16px;
     height: 16px;
+    fill: #4F2EE8;
+    stroke: #ffffff;    
+}
+.shopping-box {
+    margin-top: 40px;
+    width: 335px;
 }
 
 .shopping-card {
-    margin-top: 40px;
     position: relative;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    max-width: 335px;
     height: 170px;
     padding: 14px 14px;
     align-items: flex-start;
     gap: 14px;
     border-radius: 16px;
     border: 2px solid rgba(79, 46, 232, 0.40);
-    background: $bg-body;
+    $bg-body: #fafafa;
 }
 .shopping-list-empty{
     margin-top: 120px;
@@ -69,7 +73,7 @@
 }
 
 .shopping-book-name {
-    color: #111;
+    $black: #111111;
     font-size: 16px;
     font-weight: 700;
     line-height: 1.12;
@@ -98,7 +102,6 @@
 }
 
 .shopping-book-autor {
-    margin-top: 16px;
     color: #B4AFAF;
     font-size: 12px;
     font-style: italic;
@@ -106,15 +109,32 @@
     letter-spacing: -0.48px;
 }
 
-.shopping-linc-box {
-    margin-top: 14px;
+.shop-box {
+    margin-top: 16px;
     display: flex;
-    gap: 20px;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.shopping-linc {
+.shop-linc-box {
     display: flex;
-    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+.shop-linc-icon {
+    width: 16px;
+    height: 16px;
+    filter: grayscale(100);
+}
+.shop-linc-icon:hover,
+.shop-linc-icon:focus {
+box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.15);
+
+}
+.amazon{
+    width: 32px;
+    height: 11px;
 }
 
 /* =====================media-tablet================== */
@@ -128,13 +148,15 @@
     .shopping-titel {
         font-size: 48px;
         font-weight: 700;
-        line-height: 1,08;
+        line-height: 1.08;
         letter-spacing: -1.92px;
     }
 
+    .shopping-box {
+    width: 704px;
+    margin-top: 40px;
+}
    .shopping-card {
-        margin-top: 40px;
-        max-width: 704px;
         height: 213px;
         padding: 30px 24px;
         gap: 14px;
@@ -167,12 +189,27 @@
         height: 53px;
     }
 
-    .shopping-book-autor {
-        margin-top: 48px;
-    }
+.shop-box {
+    margin-top: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 
+.shop-linc-box {
+    gap: 16px;
+}
+
+.shop-linc-icon {
+    width: 32px;
+    height: 30px;
+}
+.amazon {
+    width: 48px;
+    height: 15px;
+}
   .button-trash {
-      right: 24px;
+      right: 32px;
       width: 18px;
       height: 18px;
   }
@@ -180,20 +217,26 @@
 }
 /* =====================media-desktop================== */
 @media screen and (min-width: 1440px) {
+.shoplist {
+     align-items: flex-start;
+     padding-right: 0;
+    }
     .shooping-list {
-        padding-left: 0;
-        padding-right: 0;
+       margin-top: 0;
+       margin-bottom: 0;
     }
 
     .shopping-titel {
         font-size: 48px;
         font-weight: 700;
-        line-height: 1, 08;
+        line-height: 1.08;
         letter-spacing: -1.92px;
     }
-
+        .shopping-box {
+            width: 996px;
+            margin-top: 40px;
+        }
    .shopping-card {
-        max-width: 996px;
         height: 213px;
         padding: 30px 24px;
         gap: 14px;
@@ -212,11 +255,6 @@
         width: 808px;
     }
 
-    .button-trash {
-        right: 24px;
-        width: 18px;
-        height: 18px;
-    }
 .fonds {
     display: block;
     width: 356px;
