@@ -45,7 +45,7 @@ const createMarkup = (book) => {
     return bookLi;
 };
 
-(async () => {
+async function homeMarkup () {
     try {
         const categoryList = await getCategoryList();
         const categoryContainer = document.getElementById('top-book-container');
@@ -91,4 +91,6 @@ const createMarkup = (book) => {
     } catch (error) {
         console.error('Помилка:', error);
     }
-})();
+};
+
+export {homeMarkup}
