@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Read Easy</title>
     
-    <script type="module" crossorigin src="/read-easy/assets/index-eaefe4dc.js"></script>
-    <link rel="stylesheet" href="/read-easy/assets/index-8dee3f02.css">
+    <script type="module" crossorigin src="/read-easy/assets/index-bd0d8dce.js"></script>
+    <link rel="stylesheet" href="/read-easy/assets/index-cd65653d.css">
   </head>
   <body>
     <header class="header">
@@ -165,17 +165,17 @@
 
 </section>
     <footer class="footer">
-  <button class="js-modal-open" type="button">MODAL OPEN</button>
+  <button class="js-modal-book-open" type="button">MODAL OPEN</button>
 </footer>
 
-<div class="backdrop js-modal-backdrop is-hidden">
-  <div class="modal">
-    <button type="button" class="modal-close-btn js-modal-close-btn">
-      <svg class="modal-close-svg">
+<div class="modal-book-backdrop js-modal-book-backdrop is-hidden">
+  <div class="modal-book">
+    <button type="button" class="modal-book-close-btn js-modal-book-close-btn">
+      <svg class="modal-book-close-svg">
         <use href="/read-easy/assets/sprite-096a2a80.svg#close"></use>
       </svg>
     </button>
-    <div class="modal-book">
+    <div class="modal-book-wrap">
       <img src="/read-easy/assets/card-m-53ff6006.jpg" alt="" class="modal-book-img" />
       <div class="modal-book-info-wrap">
         <h2 class="modal-book-name">HELLO BEAUTIFUL</h2>
@@ -185,33 +185,33 @@
           past resurfaces as he gets to the know the family of his college
           sweetheart.
         </p>
-        <div class="modal-linc-box">
-          <a href="" class="modal-linc" target="_blank">
-            <img src="data:image/png;base64,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" alt="" class="modal-linc-icon" />
+        <div class="modal-book-linc-box">
+          <a href="" class="modal-book-linc" target="_blank">
+            <img src="data:image/png;base64,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" alt="" class="modal-book-linc-icon" />
           </a>
-          <a href="" class="modal-linc" target="_blank">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAgCAYAAACcuBHKAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAN4SURBVHgB7VdLaBRBEH3Vk91VokYFv/EQA0bjwQ8i8RAEiRc/KCp4EsWLN8GDiF48BmL8YC4aUERv6inghxwSEUQCQTQBMRdjkHzRIEmUmM1ulzUzSXZ6ZnZ2jOstBc1sd7+uel1d1V0LLIgrFDXJD1NVWZ2pJdAqBSTB0XifZtYa0wwetBJWJ51Of8oPDTN+H5sZicfyczv+VWwL7PzqJTVdR2fRFwYxCTQnt7DFHTJVhmILI0NJ7KIz6W7vcEkAR3gJrYpPYNZemp8wo5poxj8iyovI3E0eFxYVzrQ09n2L0bSmzdnm1AGTmUeIaR+zeULs+xZDJNAPyedFOAlNlWEJQCVLgcrDQKJU2GSBsT5wf5tMKBNXvhdYWglYSWByGBjpBP8aCuojrPf2zZhgShmxKudAuy+DdlwAUstMRSPvwK2nwBNfQaXlwP57oA17TWtTY0BnA7irCYYvNZZ4YcZWdFYpAWC2UcVRUM3VAAFH1uwSww8EJ0SPtAQJ2JIqA9XWgypPwKtXNqciPOF4I9cv3YAoofV7wMuqgZXVkTgsWiPGvR42j9wkoX3xwDEuyBXbCmNsPV7dPrUBEt4soDgpQYnCGDvNPST8W/OR8EF0DE/EIco+Xb7d+WJC/f2FMB8SiIqJLJwkNhbHMRAHY8RXlCdstga28HFwnOB1AtPTpwhP2MFDzstiM7ULAhQuIDQKikNUq7xLAjHB7BJw+zF2GTN42WOZaJ4xwb/lCv7e6/Cj8p3hmOw0MCqYScGurgItXp4jGvuesHfOvh0MdEE/vyJF2ntRlHEHFy2HqjkHVXdpDq/bb4I77oAnf8xtxCarjjWFZEcUCS2+oFw9xh9boDsfyfg0cuzI2al+1Sgvj+UQ16310G9uuRCaCUI7tvo/IHu7VjxSZnqMI0hIPTHhRrvLmsdHc4ZDQlS3XQcqauWVfOoSmvGe8YUl3vkJ463UPJWXhFQ9Q/mc5glX7wrg82uZs6QWibvGHqcv3r7xpCpWz+w0DbSZB8j+BueVOxfSEKKH3fep3WuXfMwpfXFtjxxnFf6f9CUbhzcinyfs3CDLOilezsylVTFbFuMJooN+Vso/kGwY6EoksEnc0lusCttNUe5mUjV0bSjwTyzyups6v3YrlVi75RTXiY8S8R6KWc1S97FKy4pvbOFt6sZgDxakgPwBnSGqSUuOBR0AAAAASUVORK5CYII=" alt="" class="modal-linc-icon" />
+          <a href="" class="modal-book-linc" target="_blank">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAgCAYAAACcuBHKAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAN4SURBVHgB7VdLaBRBEH3Vk91VokYFv/EQA0bjwQ8i8RAEiRc/KCp4EsWLN8GDiF48BmL8YC4aUERv6inghxwSEUQCQTQBMRdjkHzRIEmUmM1ulzUzSXZ6ZnZ2jOstBc1sd7+uel1d1V0LLIgrFDXJD1NVWZ2pJdAqBSTB0XifZtYa0wwetBJWJ51Of8oPDTN+H5sZicfyczv+VWwL7PzqJTVdR2fRFwYxCTQnt7DFHTJVhmILI0NJ7KIz6W7vcEkAR3gJrYpPYNZemp8wo5poxj8iyovI3E0eFxYVzrQ09n2L0bSmzdnm1AGTmUeIaR+zeULs+xZDJNAPyedFOAlNlWEJQCVLgcrDQKJU2GSBsT5wf5tMKBNXvhdYWglYSWByGBjpBP8aCuojrPf2zZhgShmxKudAuy+DdlwAUstMRSPvwK2nwBNfQaXlwP57oA17TWtTY0BnA7irCYYvNZZ4YcZWdFYpAWC2UcVRUM3VAAFH1uwSww8EJ0SPtAQJ2JIqA9XWgypPwKtXNqciPOF4I9cv3YAoofV7wMuqgZXVkTgsWiPGvR42j9wkoX3xwDEuyBXbCmNsPV7dPrUBEt4soDgpQYnCGDvNPST8W/OR8EF0DE/EIco+Xb7d+WJC/f2FMB8SiIqJLJwkNhbHMRAHY8RXlCdstga28HFwnOB1AtPTpwhP2MFDzstiM7ULAhQuIDQKikNUq7xLAjHB7BJw+zF2GTN42WOZaJ4xwb/lCv7e6/Cj8p3hmOw0MCqYScGurgItXp4jGvuesHfOvh0MdEE/vyJF2ntRlHEHFy2HqjkHVXdpDq/bb4I77oAnf8xtxCarjjWFZEcUCS2+oFw9xh9boDsfyfg0cuzI2al+1Sgvj+UQ16310G9uuRCaCUI7tvo/IHu7VjxSZnqMI0hIPTHhRrvLmsdHc4ZDQlS3XQcqauWVfOoSmvGe8YUl3vkJ463UPJWXhFQ9Q/mc5glX7wrg82uZs6QWibvGHqcv3r7xpCpWz+w0DbSZB8j+BueVOxfSEKKH3fep3WuXfMwpfXFtjxxnFf6f9CUbhzcinyfs3CDLOilezsylVTFbFuMJooN+Vso/kGwY6EoksEnc0lusCttNUe5mUjV0bSjwTyzyups6v3YrlVi75RTXiY8S8R6KWc1S97FKy4pvbOFt6sZgDxakgPwBnSGqSUuOBR0AAAAASUVORK5CYII=" alt="" class="modal-book-linc-icon" />
           </a>
-          <a href="" class="modal-linc" target="_blank">
-            <img src="data:image/png;base64,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" alt="" class="modal-linc-icon" />
+          <a href="" class="modal-book-linc" target="_blank">
+            <img src="data:image/png;base64,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" alt="" class="modal-book-linc-icon" />
           </a>
         </div>
       </div>
     </div>
-    <button class="modal-ls-btn js-modal-localstostorage-add-btn">
+    <button class="modal-book-ls-btn js-modal-book-localstostorage-add-btn">
       add to shopping list
     </button>
   </div>
 </div>
 
-<!-- <div class="backdrop js-modal-backdrop is-hidden">
-  <div class="modal">
-    <button type="button" class="modal-close-btn js-modal-close-btn">
-      <svg class="modal-close-svg">
+<!-- <div class="modal-book-backdrop js-modal-book-backdrop is-hidden">
+  <div class="modal-book">
+    <button type="button" class="modal-book-close-btn js-modal-book-close-btn">
+      <svg class="modal-book-close-svg">
         <use href="./img/sprite.svg#close"></use>
       </svg>
     </button>
-    <div class="modal-book">
+    <div class="modal-book-wrap">
       <img src="./img/card-m.jpg" alt="" class="modal-book-img" />
       <div class="modal-book-info-wrap">
         <h2 class="modal-book-name">HELLO BEAUTIFUL</h2>
@@ -221,23 +221,25 @@
           past resurfaces as he gets to the know the family of his college
           sweetheart.
         </p>
-        <div class="modal-linc-box">
-          <a href="" class="modal-linc" target="_blank">
-            <img src="./img/shop1.png" alt="" class="modal-linc-icon" />
+        <div class="modal-book-linc-box">
+          <a href="" class="modal-book-linc" target="_blank">
+            <img src="./img/shop1.png" alt="" class="modal-book-linc-icon" />
           </a>
-          <a href="" class="modal-linc" target="_blank">
-            <img src="./img/shop2.png" alt="" class="modal-linc-icon" />
+          <a href="" class="modal-book-linc" target="_blank">
+            <img src="./img/shop2.png" alt="" class="modal-book-linc-icon" />
           </a>
-          <a href="" class="modal-linc" target="_blank">
-            <img src="./img/shop3.png" alt="" class="modal-linc-icon" />
+          <a href="" class="modal-book-linc" target="_blank">
+            <img src="./img/shop3.png" alt="" class="modal-book-linc-icon" />
           </a>
         </div>
       </div>
     </div>
-    <button class="modal-ls-btn remove js-modal-localstostorage-remove-btn">
+    <button
+      class="modal-book-ls-btn remove js-modal-book-localstostorage-remove-btn"
+    >
       remove from the shopping list
     </button>
-    <p class="modal-text">
+    <p class="modal-book-text">
       Сongratulations! You have added the book to the shopping list. To delete,
       press the button “Remove from the shopping list”.
     </p>
