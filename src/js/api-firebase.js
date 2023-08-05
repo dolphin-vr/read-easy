@@ -136,7 +136,7 @@ const returnAuth = () => {
   return getAuth(app);
 };
 
-module.exports = {
+export {
   createAccount,
   signInApp,
   isSignIn,
