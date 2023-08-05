@@ -118,6 +118,7 @@
   right: 32px;
   width: 18px;
   height: 18px;
+  fill: none;
   stroke: $black;
 }
 
@@ -150,6 +151,7 @@
   font-weight: 700;
   line-height: 1.28;
   letter-spacing: -0.14px;
+  cursor: pointer;
 }
 
 .authorization-link-active {
@@ -159,7 +161,7 @@
   line-height: 1.28;
   letter-spacing: -0.14px;
   text-decoration-line: underline;
-  cursor: pointer;
+  cursor: default;
 }
 
 @media screen and (min-width: 1440px) {
