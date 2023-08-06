@@ -16,6 +16,10 @@ const shoppingRemoveBtn = document.querySelector('.js-shopping-remove-btn');
     
 shoppingRemoveBtn.addEventListener('click', shoppingRemove);
 
+function shoppingRemove(){
+  console.log(shoppingRemoveBtn)
+}
+
 // // createMarkupFunds
 // import { createMarkupFunds } from './createMarkup111' 
 // //add <ul class="js-funds"></ul> to home.html (partial)     
