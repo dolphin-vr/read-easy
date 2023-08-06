@@ -1,3 +1,3 @@
-const keyPage = 'activpage';
+// const keyPage = 'activpage';
 
-export {keyPage}
+// export {keyPage}
