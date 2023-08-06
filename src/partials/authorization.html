@@ -25,7 +25,7 @@
           required
         />
         <svg class="authorization-input-icon">
-          <use href="../img/sprite.svg#close"></use>
+          <use href="../img/sprite.svg#mail"></use>
         </svg>
       </div>
       <div class="authorization-input-wrap">
@@ -39,14 +39,22 @@
           maxlength="20"
         />
         <svg class="authorization-input-icon">
-          <use href="../img/sprite.svg#close"></use>
+          <use href="../img/sprite.svg#lock"></use>
         </svg>
       </div>
-      <button type="submit" class="authorization-btn">SIGN UP</button>
+      <button type="submit" class="authorization-sign-up-btn authorization-btn">
+        SIGN UP
+      </button>
+      <button
+        type="submit"
+        class="authorization-sign-in-btn authorization-btn is-hidden"
+      >
+        SIGN IN
+      </button>
     </form>
     <div class="authorization-link-wrap">
-      <p class="authorization-link" href="">SIGN UP</p>
-      <p class="authorization-link" href="">SIGN IN</p>
+      <p class="authorization-link authorization-sign-up" href="">SIGN UP</p>
+      <p class="authorization-link authorization-sign-in" href="">SIGN IN</p>
     </div>
   </div>
   <div class="authorization-backdrop js-authorization-backdrop"></div>

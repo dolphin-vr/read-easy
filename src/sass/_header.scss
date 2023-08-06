@@ -1,7 +1,8 @@
 
+
 .header {
     display: flex;
-    
+    max-height: 1440px;
     align-items: center;
     padding: 18px 20px;
     border: 1.5px solid #111111;
@@ -150,7 +151,7 @@
         margin-right: 40px;
     }
     .navigation {
-            margin-right: 97px;
+            margin-right: 57px;
     
         }
     .menu-btn {
@@ -169,17 +170,44 @@
         margin-right: 76px;
     }
     .navigation {
-        margin-right: 733px;
+        margin-right: 685px;
     }
 }
+@media screen and (min-width: 1280px){ 
+.header {
+    width: 1440px;
+    padding-left: 24px;
+    padding-right: 24px;
+    display: flex;
+     flex-direction: row;
+    margin: auto;
+}
+}
 
-/* Додайте фото як фон кнопки */
-.sign-up-button {
-    background-image: url('../img/btn\ \(1\).jpg');
-    /* Додайте інші стилі за бажанням, наприклад, розмір, кольори тощо */
+    .modal-btn{
+    margin-top: 40px;
+    margin-left: 20px;
+}
+
+.sign-up-button{
+    display: flex;
+    align-items: center;
+   
+        
+
+    border-radius: 18px;
+    border: 1.5px solid #111;
+    background: #4F2EE8;
     width: 184px;
     height: 48px;
-    border: none;
+    color: #FFF;
+    font-family: DM Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px;
+    padding-left: 14px;
+    letter-spacing: -0.56px;
 }
 /* Показати модальне вікно, коли воно активне */
 .mobile-menu.show-modal {
@@ -203,16 +231,12 @@ input:checked+.slider:before {
 
 .backdrop {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    
     transform: translateY(69px);
     background: radial-gradient(189.32% 190.93% at 59.76% -23.42%, #4F2EE8 18.03%, #FFF 100%);
-    /* Змініть альфа-канал для забарвлення, щоб змінювати прозорість */
+    
     display: flex;
-    max-width: 375px;
-    max-height: 812px;
+   
     z-index: 9999;
 }
 
@@ -237,12 +261,10 @@ input:checked+.slider:before {
     margin-bottom: 18px;
 }
 
-.modal-btn{
-    margin-left: 20px;
-    margin-top: 40px;
-}
+
 
 .img-burger-menu{
     position: absolute;
     bottom: 0;
 }
+
