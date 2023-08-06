@@ -13,11 +13,6 @@ const fundsData = [
         img: './img/fund-02.png',
     },
     {
-        title: 'UNITED24',
-        url: 'https://u24.gov.ua/uk',
-        img: './img/fund-03.png',
-    },
-    {
         title: 'International Medical Corps',
         url: 'https://internationalmedicalcorps.org/country/ukraine/',
         img: './img/fund-04.png',
@@ -38,22 +33,27 @@ const fundsData = [
         img: './img/fund-07.png',
     },
     {
+        title: 'Serhiy Prytula Charity Foundation',
+        url: 'https://prytulafoundation.org/en',
+        img: './img/fund-09.png',
+    },
+    {
         title: 'World vision',
         url: 'https://www.wvi.org/emergencies/ukraine',
         img: './img/fund-08.png',
     },
     {
-        title: 'Serhiy Prytula Charity Foundation',
-        url: 'https://prytulafoundation.org/en',
-        img: './img/fund-09.png',
+        title: 'UNITED24',
+        url: 'https://u24.gov.ua/uk',
+        img: './img/fund-03.png',
     },
 ];
 
 //add <ul class="js-funds"></ul> to home.html (partial)     
-const fundsList = document.querySelector('.bf');
-fundsList.addEventListener('click', createMarkupFunds);
+const fundsList = document.querySelector('.funds-list');
+// fundsList.addEventListener('click', createMarkupFunds); // не нужно, вызывало ошибку, что array.map не функция при клике на фондах
 
 // add to DOM
 fundsList.insertAdjacentHTML('beforeend', createMarkupFunds(fundsData));
 
-// mobile, tablet - 4, desctop - 6 funds on page, scroll
+// mobile - 4, tablet, desktop - 6 funds on page, scroll
