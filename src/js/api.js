@@ -1,7 +1,9 @@
 // import axios from 'axios';
 // import { Notify } from '../../node_modules/notiflix/build/notiflix-notify-aio';
 // import { Notify } from 'notiflix/build/notiflix-notify-aio';
-import { keyPage } from "./vars";
+// import { keyPage } from "./vars";
+const keyPage = 'activpage';
+
 
 const optNotiflx = {
   position: 'center-bottom',
