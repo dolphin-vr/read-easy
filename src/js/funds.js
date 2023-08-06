@@ -53,12 +53,6 @@ const fundsData = [
 const fundsList = document.querySelector('.bf');
 fundsList.addEventListener('click', createMarkupFunds);
 
-// fundsList.style.display = 'display-flex'
-// fundsList.style.filter = 'invert(1)' // 'brightness(0) invert(1)'
-// fundsList.style.backgroundImage = 'radial-gradient(at top center, rgba(79, 46, 232, 1), transparent), radial-gradient(at bottom center, rgba(79, 46, 232, 1), transparent);'
-
-// console.log(fundsList.style.filter);
-// fundsList.style.filter = "filter: brightness(0) invert(1)"
 // add to DOM
 fundsList.insertAdjacentHTML('beforeend', createMarkupFunds(fundsData));
 
