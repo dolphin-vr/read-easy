@@ -1,7 +1,7 @@
 import {getCategoryList, getTopBooks, getCategory, getBookById} from "./api-books"
-import { openModal, closeModal} from "./modal"
+import { homeMarkup } from './home';
 const categoryList = document.querySelector(".js-category-list")
-const booksList = document.querySelector(".best-category")
+const booksList = document.querySelector(".book-list")
 const modalBook = document.querySelector(".modal-book")
 getCategoryList()
 .then(resp => {
@@ -24,66 +24,44 @@ getCategoryList()
               });
       
               link.classList.add("selected-category");
-              if (event.target.textContent === "All categories") {
-                getTopBooks()
-                .then(resp => {
-                    
-                })
+              if (event.target.textContent === "All Categories") {
+homeMarkup()
               } else {
                      getCategory(event.target.textContent)
               .then(resp => {
                 const booksOfCategory = resp.data
-              console.log(resp);
-              const markupCategoriesBooks = booksOfCategory.map(book => `
-              <li class="book-thumb">
-              <a href="" class="book-link" id="${book._id}"> 
-                <img class="img-book" src="${book.book_image}" alt="book-test" />
-        <p class="book-name">${book.title}</p>
-        <p class="author">${book.author}</p>
-              </a>
-      </li>
-              `).join("")
+              console.log(booksOfCategory);
+              const arrayOfWordsOfCategory = event.target.textContent.split(" ")
+
+              const lastWordFromCategory = arrayOfWordsOfCategory.length - 1
+               const categoryNameWithoutLastWord = arrayOfWordsOfCategory.slice(0, lastWordFromCategory).join(" ")
+
+
+             
+              let markupCategoriesBooks = `
+              <h1 class="book-list-title">${categoryNameWithoutLastWord} <span class="spn-books">${arrayOfWordsOfCategory[lastWordFromCategory]}</span>
+    </h1>
+    <ul class="category-ul">`
+    booksOfCategory.forEach(book => {
+// сформувати рядочок лішки 
+ markupCategoriesBooks += 
+      ` 
+      
+    <li class="book-thumb-category">
+            <a href="" class="book-link" id="${book._id}"> 
+          <img class="img-book-category" src="${book.book_image}" alt="book-test" />
+       <p class="book-name">${book.title}</p>
+       <p class="author">${book.author}</p>
+             </a>
+     </li>
+      `
+    })
+    markupCategoriesBooks += "</ul>"
               booksList.innerHTML = markupCategoriesBooks
               const booksWithId = document.querySelectorAll(".book-link")
               booksWithId.forEach(bookFromList => {
                 bookFromList.addEventListener("click", function (event) {
                   event.preventDefault()
-getBookById(event.currentTarget.id)
-.then(resp => {
-  console.log(resp);
-  // відкриття модалки
-// const modalMarkup = 
-// `
-// <img src="${resp.data.book_image}" alt="" class="modal-book-img" />
-// <div class="modal-book-info-wrap">
-//   <h2 class="modal-book-name">${resp.data.title}</h2>
-//   <p class="modal-book-autor">${resp.data.author}</p>
-//   <p class="modal-book-info">
-//   ${resp.data.description}
-//   </p>
-//   <div class="modal-linc-box">
-//     <a href="" class="modal-linc" target="_blank">
-//       <svg class="modal-linc-svg">
-//         <use href=""></use>
-//       </svg>
-//     </a>
-//     <a href="" class="modal-linc" target="_blank">
-//       <svg class="modal-linc-svg">
-//         <use href=""></use>
-//       </svg>
-//     </a>
-//     <a href="" class="modal-linc" target="_blank">
-//       <svg class="modal-linc-svg">
-//         <use href=""></use>
-//       </svg>
-//     </a>
-//   </div>
-// </div>
-// `
-// modalBook.innerHTML = modalMarkup
-//   openModal()
-})
-.catch(err => console.log(err))
                 })
               })
              })
