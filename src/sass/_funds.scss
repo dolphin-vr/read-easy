@@ -1,23 +1,47 @@
-.funds {
-   width: 335px;
-   height: 352px;
-   border-radius: 16px;
-   background-image: radial-gradient(
-       at top center,
-       rgba(79, 46, 232, 1),
-       transparent
-     ),
-     radial-gradient(at bottom center, rgba(79, 46, 232, 1), transparent);
-   margin-bottom: 40px;
- }
+// .funds {
+//    width: 335px;
+//    height: 352px;
+//    border-radius: 16px;
+//    background-image: radial-gradient(
+//        at top center,
+//        rgba(79, 46, 232, 1),
+//        transparent
+//      ),
+//      radial-gradient(at bottom center, rgba(79, 46, 232, 1), transparent);
+//    margin-bottom: 40px;
+//  }
 
- .funds {
-   width: 335px;
-   height: 472px;
-   margin-bottom: 100px;
- }
+//  .funds {
+//    width: 335px;
+//    height: 472px;
+//    margin-bottom: 100px;
+//  }
 
- .funds {
-   width: 356px;
-   margin-bottom: 0;
+//  .funds {
+//    width: 356px;
+//    margin-bottom: 0;
+//  }
+
+.funds-title{
+  color:#fff;
+  font-size: 25px;
+  text-align: center;
+  padding-top: 10px;
+}
+
+.funds-href {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+  
+}
+
+.funds-div {
+  margin-right: 50px;
+  color: #fff;
+}
+
+ .funds-img {
+  filter: brightness(0) invert(1);
+  padding-left: 20px;
  }
