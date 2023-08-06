@@ -16,10 +16,7 @@
     </ul>
   </nav>
   <div class="theme-switch">
-    <label class="switch">
-      <input type="checkbox">
-      <span class="slider round"></span>
-    </label>
+    <span class="slider-bgr slider-light"><span class="slider-shadow"></span><span class="slider"></span></span>
   </div>
   <div class="sign-up">
     <button type="button" class="sign-up-button js-authorization-open">
@@ -51,8 +48,8 @@
         </svg>
       </button>
     </div>
-    <div>
-      <button type="button" class="sign-up-button js-authorization-open" style="margin-top: 104px;">
+    <div id="modal" class="modal">
+      <button type="button" class="sign-up-button .modal .js-authorization-open" style="margin-top: 104px;">
         Sign up
         <svg width="20" height="20" style="margin-left: 90px;">
           <use class="sign-up-foto" href="./img/sprite.svg#loginout" style="stroke: #EAC645;"></use>
@@ -61,5 +58,6 @@
       <img class="img-burger-menu" src="./img/menu-bg.png" alt="burger">
     </div>
   </div>
-  <script src="./js/header-burger.js"></script>
+
+
 </header>
