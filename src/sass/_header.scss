@@ -9,6 +9,7 @@
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     overflow-x: hidden;
+    
 }
 @media screen and (min-width: 768px) {
 .li-navigation>.current{
@@ -50,7 +51,7 @@
     list-style: none;
     
 }
-.shoplist{
+.shoplist-header{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -138,6 +139,11 @@
     .theme-switch {
         margin-left: 144px;
     }
+    .header{
+        height: 64px;
+    }
+    
+ 
  
     
 }
@@ -184,17 +190,14 @@
 }
 }
 
-    .modal-btn{
-    margin-top: 40px;
-    margin-left: 20px;
-}
+  
 
 .sign-up-button{
     display: flex;
     align-items: center;
    
-        
-
+       
+    margin-left: 20px;
     border-radius: 18px;
     border: 1.5px solid #111;
     background: #4F2EE8;
@@ -229,16 +232,7 @@ input:checked+.slider:before {
     }
 }
 
-.backdrop {
-    position: fixed;
-    
-    transform: translateY(69px);
-    background: radial-gradient(189.32% 190.93% at 59.76% -23.42%, #4F2EE8 18.03%, #FFF 100%);
-    
-    display: flex;
-   
-    z-index: 9999;
-}
+
 
 .backdrop.is-hidden {
     display: none;
@@ -266,5 +260,57 @@ input:checked+.slider:before {
 .img-burger-menu{
     position: absolute;
     bottom: 0;
+    left: 0;
 }
 
+
+.modal-header{
+      
+        position: fixed;
+        
+        
+        
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        width: 100%;
+        height: 100%;
+        z-index: 1000;
+        top: 0;
+        left: 0;
+        background: radial-gradient(189.32% 190.93% at 59.76% -23.42%, #4F2EE8 18.03%, #FFF 100%);
+}
+.header-backdrop{
+    display: flex;
+    max-height: 1440px;
+    align-items: center;
+    padding: 18px 20px;
+    border: 1.5px solid #111111;
+    background: white;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    height: 64px;
+}
+
+.modal-header.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.logo-modal{
+    padding-right: 144px;
+}
+
+.btn-close{
+    margin-left: 14px;
+}
+
+.btn-close-svg {
+    stroke: black;
+    fill: none;
+}
+.menu-btn-svg:hover,
+.menu-btn-svg:focus {
+    stroke: #4F2EE8;
+}
