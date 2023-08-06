@@ -56,4 +56,4 @@ fundsList.addEventListener('click', createMarkupFunds);
 // add to DOM
 fundsList.insertAdjacentHTML('beforeend', createMarkupFunds(fundsData));
 
-// mobile, tablet - 4, desctop - 6 funds on page, scroll
+// mobile - 4, tablet, desktop - 6 funds on page, scroll
