@@ -31,4 +31,8 @@ async function serviceGetTopBooks() {
   }
 }
 
-export { serviceGetTopBooks };
+function activePage(){
+  let currentPage = null;
+}
+
+export { serviceGetTopBooks, activePage };
