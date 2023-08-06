@@ -5,7 +5,7 @@ import './js/header-burger';
 import './js/shoppinglist';
 
 import { homeMarkup } from './js/home';
-// import { activePage } from './js/api';
+import { showActivePage } from './js/api';
 
-activePage();
+showActivePage();
 homeMarkup();
