@@ -1,4 +1,4 @@
-import"./index-1bad0939.js";const Se=e=>e.map(({title:t,url:n,img:o},r)=>`<li>
+import"./index-cffbb237.js";const Se=e=>e.map(({title:t,url:n,img:o},r)=>`<li>
         <a class ="funds-href" href="${n}" target="_blank">
             <div class="funds-number">${(r+1).toString().padStart(2,0)}</>
             <img class="funds-img" src="${o}" alt="${t}"/>
