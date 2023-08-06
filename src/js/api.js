@@ -1,4 +1,14 @@
 import axios from 'axios';
+// import { Notify } from '../../node_modules/notiflix/build/notiflix-notify-aio';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
+
+const optNotiflx = {
+  position: 'center-bottom',
+  width: '380px',
+  timeout: 5000,
+  fontSize: '28px',
+};
+
 const configAx = {
    method: 'get',
    baseURL: 'https://books-backend.p.goit.global/',
@@ -14,6 +24,7 @@ const configAx = {
 async function serviceGetTopBooks() {
   try {
     const { data } = await axios('/books/top-books', configAx);
+    Notify.failure(`Wrong set userName`, optNotiflx);
     return data;
   } catch (error) {
     console.log(error.message);
