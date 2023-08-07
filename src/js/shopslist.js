@@ -30,7 +30,7 @@ function bookShopsMurkup(shops){
 
 let markup = '<ul class="shops-list">';
 shopIcons.forEach(el => {
-   markup += `<li class="shop"><a href="${el.url}" class="shop-link"></a><img src="${el.path}" alt="${el.name}" class="shop-icon"></li>`
+   markup += `<li class="shop"><a href="${el.url}" class="shop-link" target="_blank" rel="noreferrer noopener"><img src="${el.path}" alt="${el.name}" class="shop-icon"></a></li>`
 } )
 markup += '</ul>'
 
