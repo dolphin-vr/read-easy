@@ -2,19 +2,18 @@
 // for light theme
 
 :root {
-//    --bgr-color: #ffffff;
-//   --text-color: : #000000;
+   --bgr-color: #F6F6F6;
+  --text-color: #111111;
+   --category-accent: #4F2EE8;
+   --shoplist-bgr: #FFFFFF;
 }
 
 // for a dark theme
 :root[theme='dark'] {
-//   --bg-color: #57606f;
-//   --text-color: : #f1f2f6;
+   --bgr-color: #202024;
+  --text-color: #FFFFFF;
+   --category-accent: #EAC645;
+   --shoplist-bgr: #111111;
 }
 
 
-// $bg-body: #fafafa;
-// $black: #111111;
-// $dk-violet: #4F2EE8;
-// $orange: #fd9222;
-// $grey: #B4AFAF;
