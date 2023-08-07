@@ -1,5 +1,5 @@
 import { getTopBooks, getCategoryList } from './api-books';
-
+import { onBtnClickCategory } from './category';
 // Очищаємо контейнер перед відмальовкою
 const topbookContainer = document.getElementById('top-book-container');
 topbookContainer.innerHTML = '';
@@ -82,6 +82,10 @@ async function homeMarkup() {
 
             topbookContainer.appendChild(categoryDiv);
         });
+        const btns = document.querySelectorAll(".btn-see-more")
+        btns.forEach(btn => {
+            btn.addEventListener("click", onBtnClickCategory)
+        })
     } catch (error) {
         console.error('Помилка:', error);
     }

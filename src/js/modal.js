@@ -1,33 +1,56 @@
+import { getBookById } from './api-books';
 import {
-  getCategoryList,
-  getTopBooks,
-  getCategory,
-  getBookById,
-} from './api-books';
+  createAccount,
+  setUserName,
+  signInApp,
+  isSignIn,
+  signOutApp,
+  removeAccount,
+  removeAccountInfo,
+  getUserShoppingList,
+  updateUserShoppingList,
+  getUserName,
+  getUserEmail,
+  returnAuth,
+} from './api-firebase';
 
 const refs = {
   openModalBtnEl: document.querySelector('.js-modal-book-open'),
   modalEl: document.querySelector('.js-modal-book-backdrop'),
-  shoppingListBtnEl: document.querySelector(
-    '.js-modal-book-localstostorage-add-btn'
-  ),
+  booksList: document.querySelector('.book-list'),
 };
 
-refs.openModalBtnEl.addEventListener('click', openModalBook);
+refs.booksList.addEventListener('click', hendlerClick);
+// refs.openModalBtnEl.addEventListener('click', openModalBook);
 refs.modalEl.addEventListener('click', closeModalBook);
 
+function hendlerClick(evt) {
+  const currentBook = evt.target.closest('.book-link');
+  const bookId = currentBook.id;
+  openModalBook(bookId);
+}
 async function openModalBook(id) {
   try {
     const bookInfo = await getBookById(id);
-    const modalBookMarkup = createModalBookMarkup(bookInfo);
-    modalEl.innerHTL = modalBookMarkup;
+    console.log(bookInfo.data.buy_links);
+    const modalBookMarkup = createModalBookMarkup(bookInfo.data);
+    refs.modalEl.innerHTML = modalBookMarkup;
+    const modalText = document.querySelector('.modal-book-text');
+    const adShoppingListBtnEl = document.querySelector(
+      '.js-modal-book-localstostorage-add-btn'
+    );
+    const removeShoppingListBtnEl = document.querySelector(
+      '.js-modal-book-localstostorage-remove-btn'
+    );
+    adShoppingListBtnEl.addEventListener('click', () => {});
+    removeShoppingListBtnEl.addEventListener('click', () => {});
     toggleModalBook();
     document.addEventListener('keydown', closeModalBookOnEsc);
   } catch (err) {
     //     Notiflix.Notify.info('Oops! Something went wrong: no such book was found!');
+    console.log(err);
   }
 }
-
 function closeModalBook(evt) {
   if (
     evt.target.classList.contains('js-modal-book-backdrop') ||
@@ -50,7 +73,6 @@ export { openModalBook, closeModalBook };
 
 function createModalBookMarkup(resp) {
   const { book_image, list_name, author, description, buy_links } = resp;
-  const shop = buy_links.map(item => item);
   return ` <div class="modal-book">
     <button type="button" class="modal-book-close-btn js-modal-book-close-btn">
       <svg class="modal-book-close-svg">
@@ -62,18 +84,16 @@ function createModalBookMarkup(resp) {
       <div class="modal-book-info-wrap">
         <h2 class="modal-book-name">${list_name}</h2>
         <p class="modal-book-autor">${author}</p>
-        <p class="modal-book-info">
-         ${description}
-        </p>
+        <p class="modal-book-info"> ${description}</p>
         <div class="modal-book-linc-box">
-          <a href="${shop.url}" class="modal-book-linc" target="_blank">
-            <img src="./img/shop1.png" alt="${shop.name}" class="modal-book-linc-icon" />
+          <a href="${buy_links[0].url}" class="modal-book-linc" target="_blank">
+            <img src="./img/shop1.png" alt="${buy_links[0].name}" class="modal-book-linc-icon" />
           </a>
-          <a href="" class="modal-book-linc" target="_blank">
-            <img src="./img/shop2.png" alt="" class="modal-book-linc-icon" />
+          <a href="${buy_links[1].url}" class="modal-book-linc" target="_blank">
+            <img src="./img/shop2.png" alt="${buy_links[1].name}" class="modal-book-linc-icon" />
           </a>
-          <a href="" class="modal-book-linc" target="_blank">
-            <img src="./img/shop3.png" alt="" class="modal-book-linc-icon" />
+          <a href="${buy_links[4].url}" class="modal-book-linc" target="_blank">
+            <img src="./img/shop3.png" alt="${buy_links[4].name}" class="modal-book-linc-icon" />
           </a>
         </div>
       </div>
@@ -81,5 +101,14 @@ function createModalBookMarkup(resp) {
     <button class="modal-book-ls-btn js-modal-book-localstostorage-add-btn">
       add to shopping list
     </button>
+     <button
+      class="modal-book-ls-btn remove js-modal-book-localstostorage-remove-btn is-hidden"
+    >
+      remove from the shopping list
+    </button>
+    <p class="modal-book-text is-hidden">
+      Сongratulations! You have added the book to the shopping list. To delete,
+      press the button “Remove from the shopping list”.
+    </p>
   </div>`;
 }

@@ -1,0 +1,19 @@
+// The following settings must be set for the functionality to work:
+// for light theme
+
+:root {
+   --bgr-color: #F6F6F6;
+  --text-color: #111111;
+   --category-accent: #4F2EE8;
+   --shoplist-bgr: #FFFFFF;
+}
+
+// for a dark theme
+:root[theme='dark'] {
+   --bgr-color: #202024;
+  --text-color: #FFFFFF;
+   --category-accent: #EAC645;
+   --shoplist-bgr: #111111;
+}
+
+

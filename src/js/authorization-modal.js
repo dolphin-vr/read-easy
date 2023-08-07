@@ -6,17 +6,16 @@ const refs = {
   btnmodal: document.querySelector('.btnmodal')
 };
 
-
 refs.btnmodal.addEventListener('click', toggleModal);
 
 refs.openModalBtn.addEventListener('click', toggleModal);
 refs.closeModalBtn.addEventListener('click', toggleModal);
-document.addEventListener('keydown', onEscKeyPress);
-refs.modal.addEventListener('click', onClickBackdrop);
 
 function toggleModal() {
   refs.modal.classList.toggle('is-hidden');
   document.body.classList.toggle('no-scroll');
+  document.addEventListener('keydown', onEscKeyPress);
+  refs.modal.addEventListener('click', onClickBackdrop);
 }
 
 function onEscKeyPress(e) {
