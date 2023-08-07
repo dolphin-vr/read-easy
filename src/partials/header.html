@@ -6,17 +6,21 @@
       </svg>
     </a>
   </div>
-  <nav>
-    <ul class="navigation">
-      <li class="li-navigation"><a href="index.html" class="current">HOME</a></li>
-      <li class="li-navigation"><a href="shoplist.html" class="shoplist-header">SHOPPING LIST <svg
-            class="svg-navigation" width="28" height="28">
-            <use class="svg-navigation" href="./img/symbol-shop.svg#icon-Vector-4"></use>
-          </svg> </a></li>
-    </ul>
-  </nav>
+ <nav>
+  <ul class="navigation">
+    <li class="li-navigation"><a href="index.html" class="current">HOME</a></li>
+    <li class="li-navigation"><a href="shoplist.html" class="shoplist-header ">SHOPPING LIST <svg
+          class="svg-navigation" width="28" height="28">
+          <use class="svg-navigation" href="./img/symbol-shop.svg#icon-Vector-4"></use>
+        </svg> </a></li>
+  </ul>
+</nav>
   <div class="theme-switch">
-    <span class="slider-bgr slider-light"><span class="slider-shadow"></span><span class="slider"></span></span>
+   
+    <label class="slider">
+      <input type="checkbox">
+      <span class="slider-btn"></span>
+    </label>
   </div>
   <div class="sign-up">
     <button type="button" class="sign-up-button js-authorization-open">
@@ -33,14 +37,14 @@
   <!-- Модальне вікно -->
   <div class="modal-header" data-menu aria-expanded="false">
     <div class="header-backdrop">
-      <a class="logo-modal" href="index.html">
+      <a class="logo-modal" href="index.html" style="margin-right: auto;">
         <svg class="foto-logo">
           <use href="./img/symbol-defs.svg#icon-logo-2"></use>
         </svg>
       </a>
-      <label class="switch">
+      <label class="slider" style = "margin-right: 34px;">
         <input type="checkbox">
-        <span class="slider round"></span>
+        <span class="slider-btn"></span>
       </label>
       <button type="button" class="menu-btn btn-close" data-menu-close>
         <svg class="img-menu btn-header-icons btn-close-svg" width="28" height="28">
@@ -48,8 +52,8 @@
         </svg>
       </button>
     </div>
-    <div id="modal" class="modal">
-      <button type="button" class="sign-up-button .modal .js-authorization-open" style="margin-top: 104px;">
+    <div>
+      <button type="button" class="sign-up-button btnmodal" style="margin-top: 104px;">
         Sign up
         <svg width="20" height="20" style="margin-left: 90px;">
           <use class="sign-up-foto" href="./img/sprite.svg#loginout" style="stroke: #EAC645;"></use>
