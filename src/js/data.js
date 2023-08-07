@@ -6,16 +6,15 @@
 const iconPaths = [
    {
      name: "Amazon",
-     path: "/img/shop1.png",
-     url: "https://www.amazon.com/Wish-Barbara-OConnor/dp/1250144051?tag=NYTBSREV-20"
+     path: "./img/shop1.png",
    },
    {
      name: "Apple Books",
-     path: "/img/shop2.png"
+     path: "./img/shop2.png",
    },
    {
      name: "Bookshop",
-     path: "/img/shop3.png"
+     path: "./img/shop3.png",
    }
  ];
 
