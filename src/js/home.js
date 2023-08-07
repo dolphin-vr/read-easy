@@ -1,34 +1,44 @@
-import { getTopBooks, getCategoryList } from './api-books';
+import { getTopBooks } from './api-books';
 import { onBtnClickCategory } from './category';
 // Очищаємо контейнер перед відмальовкою
 const topbookContainer = document.getElementById('top-book-container');
 topbookContainer.innerHTML = '';
 
-// Функція для створення розмітки книги
 const createMarkup = book => {
+    // Створення <li> елемента
     const bookLi = document.createElement('li');
     bookLi.classList.add('book-thumb', 'js-book-thumb');
 
+    // Створення <a> елемента
+    const bookLink = document.createElement('a');
+    bookLink.classList.add('book-link');
+    bookLink.id = book._id;
+    bookLink.href = '#';
+
+    // Створення <img> елемента
     const bookImage = document.createElement('img');
     bookImage.classList.add('img-book', 'js-img-book');
     bookImage.src = book.book_image;
     bookImage.alt = book.title;
+    bookLink.appendChild(bookImage);
 
+    // Створення першого <p> елемента
     const bookName = document.createElement('p');
     bookName.classList.add('book-name', 'js-book-name');
     bookName.textContent = book.title;
+    bookLink.appendChild(bookName);
 
+    // Створення другого <p> елемента
     const bookAuthor = document.createElement('p');
     bookAuthor.classList.add('author', 'js-author');
     bookAuthor.textContent = book.author;
+    bookLink.appendChild(bookAuthor);
 
-    bookLi.appendChild(bookImage);
-    bookLi.appendChild(bookName);
-    bookLi.appendChild(bookAuthor);
+    // Вкладення <a> елемента всередину <li> елемента
+    bookLi.appendChild(bookLink);
 
     return bookLi;
 };
-
 // Функція для відмальовки заголовка
 const createHeader = title => {
     const h1 = document.createElement('h1');
@@ -48,11 +58,9 @@ async function homeMarkup() {
     try {
         const topBooksResponse = await getTopBooks();
         const categories = topBooksResponse.data;
-
         // Відмальовка заголовка
         const header = createHeader("Best Sellers");
         topbookContainer.appendChild(header);
-
         categories.forEach(category => {
             const categoryDiv = document.createElement('div');
             categoryDiv.classList.add('container-top-book');
