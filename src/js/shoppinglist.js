@@ -19,7 +19,7 @@ function showShoppingList() {
   sessionStorage.setItem(keyPage, JSON.stringify('shoppinglist'));
 }
 function createShoppinglistBookMarkup(resp) {
-  const { book_image, list_name, author,publisher, description, buy_links } = resp;
+  const { book_image, list_name, author, titel, description, buy_links } = resp;
    const shop = buy_links.map(item => item);
   return `<div class="shooping-list-container" id="shooping-list-container">
    <h1 class="shopping-titel">Shopping <span class="shopping-titel-list">List</span></h1>
@@ -30,24 +30,24 @@ function createShoppinglistBookMarkup(resp) {
             <use href="${sprite}#trash"></use>
          </svg>
       </a>
-      <img src="${book_image}" alt="${list_name}" class="shopping-book-img" />
+      <img src="${book_image}" alt="${titel}" class="shopping-book-img" />
       <div>
-         <h2 class="shopping-book-name">${list_name}</h2>
-         <p class="shopping-book-category">${publisher}</p>
+         <h2 class="shopping-book-name">${titel}</h2>
+         <p class="shopping-book-category">${list_name}</p>
          <div class="shopping-book-info">
             <p> ${description}</p>
          </div>
          <div class="shop-box">
             <p class="shopping-book-autor">${author}</p>
       <div class="shop-linc-box">
-         <a href="${shop.url}" class="shop-linc" target="_blank">
-            <img src="./img/shop1.png" alt="${shop.name}" class="shop-linc-icon amazon" />
+         <a href="${buy_links[0].url}" class="shop-linc" target="_blank">
+            <img src="./img/shop1.png" alt="${buy_links[0].name}" class="shop-linc-icon amazon" />
          </a>
-         <a href="" class="shop-linc" target="_blank">
-            <img src="./img/shop2.png" alt="${shop.name}" class="shop-linc-icon" />
+         <a href="${buy_links[1].url}" class="shop-linc" target="_blank">
+            <img src="./img/shop2.png" alt="${buy_links[1].name}" class="shop-linc-icon" />
          </a>
-         <a href="" class="shop-linc" target="_blank">
-            <img src="./img/shop3.png" alt="${shop.name}" class="shop-linc-icon" />
+         <a href="${buy_links[4].url}" class="shop-linc" target="_blank">
+            <img src="./img/shop3.png" alt="${buy_links[4].name}" class="shop-linc-icon" />
          </a>
       </div>
          </div>
@@ -63,9 +63,6 @@ const emptyPage = document.querySelector(`#page-empty`)
 function showShoppingListEmpty() {
    console.log(emptyPage);
 }
-
-
-
 
 // remove book from shoppinglist
 
