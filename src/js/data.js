@@ -6,7 +6,8 @@
 const iconPaths = [
    {
      name: "Amazon",
-     path: "/img/shop1.png"
+     path: "/img/shop1.png",
+     url: "https://www.amazon.com/Wish-Barbara-OConnor/dp/1250144051?tag=NYTBSREV-20"
    },
    {
      name: "Apple Books",
