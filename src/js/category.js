@@ -3,63 +3,55 @@ import { homeMarkup } from './home';
 const categoryList = document.querySelector(".js-category-list")
 const booksList = document.querySelector(".book-list")
 const modalBook = document.querySelector(".modal-book")
-// homeMarkup()
-// .then(resp => {
-//   const btn = document.querySelectorAll(".btn-see-more")
-//   btn.forEach(button => {
-// button.addEventListener("click", function (event) {
+homeMarkup()
+function onBtnClickCategory (event) {
+  getCategory(event.currentTarget.getAttribute('data-category-name'))
+              .then(resp => {
+                const booksOfCategory = resp.data
+              console.log(booksOfCategory);
+              const arrayOfWordsOfCategory = event.target.getAttribute('data-category-name').split(" ")
 
-//   getCategory(event.target.getAttribute('data-category-name'))
-//               .then(resp => {
-//                 const booksOfCategory = resp.data
-//               console.log(booksOfCategory);
-//               const arrayOfWordsOfCategory = event.target.getAttribute('data-category-name').split(" ")
-
-//               const lastWordFromCategory = arrayOfWordsOfCategory.length - 1
-//                const categoryNameWithoutLastWord = arrayOfWordsOfCategory.slice(0, lastWordFromCategory).join(" ")
-//                const itemLinks = document.querySelectorAll(".category-link");
-//                document.querySelectorAll(".selected-category").forEach((selectedLink) => {
-//                 selectedLink.classList.remove("selected-category")
-//               })
-//                itemLinks.forEach((link) => {
-// if (event.target.getAttribute('data-category-name') === link.textContent) {
-//     link.classList.add("selected-category");
-// }
-//                })
+              const lastWordFromCategory = arrayOfWordsOfCategory.length - 1
+               const categoryNameWithoutLastWord = arrayOfWordsOfCategory.slice(0, lastWordFromCategory).join(" ")
+               const itemLinks = document.querySelectorAll(".category-link");
+               document.querySelectorAll(".selected-category").forEach((selectedLink) => {
+                selectedLink.classList.remove("selected-category")
+              })
+               itemLinks.forEach((link) => {
+if (event.target.getAttribute('data-category-name') === link.textContent) {
+    link.classList.add("selected-category");
+}
+               })
              
-//               let markupCategoriesBooks = `
-//               <h1 class="book-list-title">${categoryNameWithoutLastWord} <span class="spn-books">${arrayOfWordsOfCategory[lastWordFromCategory]}</span>
-//     </h1>
-//     <ul class="category-ul">`
-//     booksOfCategory.forEach(book => {
-// // сформувати рядочок лішки 
-//  markupCategoriesBooks += 
-//       ` 
+              let markupCategoriesBooks = `
+              <h1 class="book-list-title">${categoryNameWithoutLastWord} <span class="spn-books">${arrayOfWordsOfCategory[lastWordFromCategory]}</span>
+    </h1>
+    <ul class="category-ul">`
+    booksOfCategory.forEach(book => {
+// сформувати рядочок лішки 
+ markupCategoriesBooks += 
+      ` 
       
-//     <li class="book-thumb-category">
-//             <a href="" class="book-link" id="${book._id}"> 
-//           <img class="img-book-category" src="${book.book_image}" alt="book-test" />
-//        <p class="book-name">${book.title}</p>
-//        <p class="author">${book.author}</p>
-//              </a>
-//      </li>
-//       `
-//     })
-//     markupCategoriesBooks += "</ul>"
-//               booksList.innerHTML = markupCategoriesBooks
-//               const booksWithId = document.querySelectorAll(".book-link")
-//               booksWithId.forEach(bookFromList => {
-//                 bookFromList.addEventListener("click", function (event) {
-//                   event.preventDefault()
-//                 })
-//               })
-//              })
-//              .catch(err => console.log(err)) 
-// })
-
-//   })
-// })
-
+    <li class="book-thumb-category">
+            <a href="" class="book-link" id="${book._id}"> 
+          <img class="img-book-category" src="${book.book_image}" alt="book-test" />
+       <p class="book-name">${book.title}</p>
+       <p class="author">${book.author}</p>
+             </a>
+     </li>
+      `
+    })
+    markupCategoriesBooks += "</ul>"
+              booksList.innerHTML = markupCategoriesBooks
+              const booksWithId = document.querySelectorAll(".book-link")
+              booksWithId.forEach(bookFromList => {
+                bookFromList.addEventListener("click", function (event) {
+                  event.preventDefault()
+                })
+              })
+             })
+             .catch(err => console.log(err)) 
+}
 getCategoryList()
 .then(resp => {
     if (!resp.statusText === "OK") {
@@ -129,7 +121,7 @@ getCategoryList()
           });
 })
 .catch(err => console.log(err))
-
+export { onBtnClickCategory }
 
 
 
