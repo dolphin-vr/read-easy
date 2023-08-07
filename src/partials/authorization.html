@@ -14,7 +14,6 @@
         id="authorization-text"
         type="text"
         placeholder="NAME"
-        required
       />
       <div class="authorization-input-wrap">
         <input
@@ -22,6 +21,7 @@
           id="authorization-mail"
           type="email"
           placeholder="EMAIL"
+          pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
           required
         />
         <svg class="authorization-input-icon">
@@ -42,13 +42,13 @@
           <use href="./img/sprite.svg#lock"></use>
         </svg>
       </div>
-      <button type="submit" class="authorization-sign-up-btn authorization-btn">
-        SIGN UP
-      </button>
       <button
         type="submit"
-        class="authorization-sign-in-btn authorization-btn is-hidden"
+        class="authorization-sign-up-btn authorization-btn is-hidden"
       >
+        SIGN UP
+      </button>
+      <button type="submit" class="authorization-sign-in-btn authorization-btn">
         SIGN IN
       </button>
     </form>
