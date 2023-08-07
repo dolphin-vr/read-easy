@@ -14,7 +14,7 @@
 }
 
 .shopping-titel-list {
-    $dk-violet: #4F2EE8;
+    color: #4F2EE8;
 }
 
 .button-trash {
@@ -146,7 +146,7 @@ box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.15);
 
 /* =====================media-tablet================== */
 @media screen and (min-width: 768px) {
-    .shooping-list {
+    .shooping-list-container {
         margin: auto;
         padding-left: 32px;
         padding-right: 32px;
@@ -228,7 +228,7 @@ box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.15);
      align-items: flex-start;
      padding-right: 0;
     }
-    .shooping-list {
+    .shooping-list-container {
        margin-top: 0;
        margin-bottom: 0;
     }
@@ -261,16 +261,4 @@ box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.15);
     .shopping-book-info {
         width: 808px;
     }
-
-    .fonds {
-    display: block;
-    width: 356px;
-    height: 474px;
-    border-radius: 16px;
-    background-image: radial-gradient(at top center,
-            rgba(79, 46, 232, 1),
-            transparent),
-        radial-gradient(at bottom center, rgba(79, 46, 232, 1), transparent);
-    margin-bottom: 40px;
-}
 }
