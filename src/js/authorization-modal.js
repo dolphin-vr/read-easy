@@ -3,18 +3,16 @@ const refs = {
   closeModalBtn: document.querySelector('.js-authorization-close'),
   modal: document.querySelector('.js-authorization-modal'),
   backdrop: document.querySelector('.js-authorization-backdrop'),
- 
 };
-
 
 refs.openModalBtn.addEventListener('click', toggleModal);
 refs.closeModalBtn.addEventListener('click', toggleModal);
-document.addEventListener('keydown', onEscKeyPress);
-refs.modal.addEventListener('click', onClickBackdrop);
 
 function toggleModal() {
   refs.modal.classList.toggle('is-hidden');
   document.body.classList.toggle('no-scroll');
+  document.addEventListener('keydown', onEscKeyPress);
+  refs.modal.addEventListener('click', onClickBackdrop);
 }
 
 function onEscKeyPress(e) {
