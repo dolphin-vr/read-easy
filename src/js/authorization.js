@@ -15,7 +15,8 @@ const form = {
 
 // createAccount ----------------------------------------------------------------------------
 
-form.buttonSignUp.addEventListener('click', () => {
+form.buttonSignUp.addEventListener('click', e => {
+  e.preventDefault();
   createAccount(form.mail.value, form.password.value)
     .then(createAccountRes => {
       Notify.success(`createAccount success`);
@@ -58,7 +59,8 @@ form.buttonSignUp.addEventListener('click', () => {
 
 // signIn-------------------------------------------------------------------------------------------
 
-form.buttonSignIn.addEventListener('click', () => {
+form.buttonSignIn.addEventListener('click', e => {
+  e.preventDefault();
   signInApp(form.mail.value, form.password.value)
     .then(signInAppRes => {
       Notify.success(`signInApp success `);
