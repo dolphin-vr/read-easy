@@ -1,1 +1,0 @@
-import{s as e}from"./api-firebase-fa888dad.js";e("test@g.com","12345678").then(o=>{console.log("signInApp success"),console.log(o)}).catch(o=>{console.log("signInApp wrong")});document.querySelector("#page-empty");const n=document.querySelector(".js-shopping-remove-btn");console.log(n);
