@@ -1,4 +1,4 @@
-import"./api-firebase-2f9ac7ef.js";const Ve=e=>e.map(({title:t,url:n,img:o},r)=>`<li>
+import"./api-firebase-d148f57a.js";const Ve=e=>e.map(({title:t,url:n,img:o},r)=>`<li>
         <a class ="funds-href" href="${n}" target="_blank">
             <div class="funds-number">${(r+1).toString().padStart(2,0)}</>
             <img class="funds-img" src="${o}" alt="${t}" height="32"/>

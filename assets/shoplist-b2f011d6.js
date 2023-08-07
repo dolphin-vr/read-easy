@@ -1,0 +1,1 @@
+import{s as e}from"./api-firebase-d148f57a.js";e("test@g.com","12345678").then(n=>{console.log("signInApp success"),console.log(n)}).catch(n=>{console.log("signInApp wrong")});const o=document.querySelector(".js-shopping-remove-btn");console.log(o);o.addEventListener("click",s);function s(){console.log(o)}
