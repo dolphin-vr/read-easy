@@ -11,46 +11,38 @@
 }
 // --Секція категорії------------------------
 .category {
-  height: 228px;
-  overflow: auto;
   margin-bottom: 40px;
 }
-.title-category {
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
-  color: #4f2ee8;
-  margin-bottom: 24px;
-}
-.is-active {
-  text-transform: uppercase;
-  font-weight: 700;
-}
-.name-category {
-  font-size: 15px;
-  font-weight: 400;
-  line-height: 1.2;
-  letter-spacing: -0.04em;
-  color: rgba(17, 17, 17, 0.6);
-}
-.name-category:not(:last-child) {
-  margin-bottom: 24px;
-}
+
 // ----------------------Секція фонди--------------------------------
 .funds {
-  width: 335px;
-  height: 352px;
-  border-radius: 16px;
-  background-image: radial-gradient(
-      at top center,
-      rgba(79, 46, 232, 1),
-      transparent
-    ),
-    radial-gradient(at bottom center, rgba(79, 46, 232, 1), transparent);
   margin-bottom: 40px;
 }
 // ------------------------Секція КНИГИ-------------------------------------
+// .loader {
+//   font-size: 48px;
+//   font-weight: 700px;
+//   display: inline-block;
+//   letter-spacing: -0.04em;
+//   font-family: 'DM Sans', sans-serif;
+//   color: #4f2ee8;
+//   box-sizing: border-box;
+//   animation: spotlight 1.2s linear infinite alternate;
+// }
+
+// @keyframes spotlight {
+//   0%,
+//   20% {
+//     opacity: 1;
+//     letter-spacing: 2px;
+//   }
+//   80%,
+//   100% {
+//     opacity: 0;
+//     letter-spacing: 32px;
+//   }
+// }
+
 .book-list-title {
   font-size: 32px;
   font-weight: 700;
@@ -61,6 +53,9 @@
 }
 .spn-books {
   color: #4f2ee8;
+}
+.best-category {
+  margin-bottom: 8px;
 }
 .book-category {
   text-transform: uppercase;
@@ -74,7 +69,6 @@
 .book-thumb {
   width: 335px;
   height: 535px;
-  margin-bottom: 8px;
 }
 .book-thumb:nth-child(n + 2) {
   display: none;
@@ -86,6 +80,9 @@
   border-radius: 8px;
 }
 .book-name {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   font-size: 16px;
   font-weight: 700;
   line-height: 1.15;
@@ -95,6 +92,9 @@
   margin-bottom: 4px;
 }
 .author {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   font-size: 12px;
   font-weight: 400;
   font-style: italic;
@@ -117,7 +117,7 @@
   margin-left: auto;
   border-radius: 40px;
 }
-
+// --------------------------------------768 px------------------------
 @media screen and (min-width: 768px) {
   .home {
     width: 768px;
@@ -156,11 +156,11 @@
   .best-category {
     display: flex;
     gap: 25px;
+    margin-bottom: 20px;
   }
   .book-thumb {
     width: 218px;
     height: 366px;
-    margin-bottom: 20px;
   }
 
   .book-thumb:nth-child(n + 4) {
@@ -171,7 +171,7 @@
     height: 316px;
   }
 }
-
+// ---------------------------------------1440
 @media screen and (min-width: 1440px) {
   .home {
     width: 1440px;
@@ -202,10 +202,27 @@
     width: 996px;
   }
   .book-thumb {
-    margin-bottom: 8px;
+    position: relative;
     width: 180px;
     height: 306px;
-    margin-bottom: 32px;
+  }
+
+  .book-link:hover::after {
+    content: 'QUICK VIEW';
+    display: block;
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    text-align: center;
+    line-height: 70px;
+    font-size: 14px;
+    font-weight: 500;
+    background: #eac645;
+    cursor: pointer;
   }
   .book-thumb:nth-child(n + 2) {
     display: block;
@@ -217,6 +234,7 @@
   .best-category {
     display: flex;
     gap: 24px;
+    margin-bottom: 32px;
   }
 
   .img-book {
@@ -230,5 +248,3 @@
     outline: none;
   }
 }
-
-
