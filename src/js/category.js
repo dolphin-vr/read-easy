@@ -17,8 +17,15 @@ const modalBook = document.querySelector(".modal-book")
 
 //               const lastWordFromCategory = arrayOfWordsOfCategory.length - 1
 //                const categoryNameWithoutLastWord = arrayOfWordsOfCategory.slice(0, lastWordFromCategory).join(" ")
-
-
+//                const itemLinks = document.querySelectorAll(".category-link");
+//                document.querySelectorAll(".selected-category").forEach((selectedLink) => {
+//                 selectedLink.classList.remove("selected-category")
+//               })
+//                itemLinks.forEach((link) => {
+// if (event.target.getAttribute('data-category-name') === link.textContent) {
+//     link.classList.add("selected-category");
+// }
+//                })
              
 //               let markupCategoriesBooks = `
 //               <h1 class="book-list-title">${categoryNameWithoutLastWord} <span class="spn-books">${arrayOfWordsOfCategory[lastWordFromCategory]}</span>
@@ -75,6 +82,7 @@ getCategoryList()
       
               link.classList.add("selected-category");
               if (event.target.textContent === "All Categories") {
+                console.log(event.target.textContent);
               homeMarkup()
               } else {
                      getCategory(event.target.textContent)
