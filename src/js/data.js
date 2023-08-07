@@ -1,7 +1,7 @@
-// import { getCategoryList, getTopBooks, getCategory, getBookById } from './api-books';
+import { bookShopsMurkup } from "./shopslist";
 
-// import { serviceGetTopBooks } from "./api";
 
+bookShopsMurkup
 
 const iconPaths = [
    {
