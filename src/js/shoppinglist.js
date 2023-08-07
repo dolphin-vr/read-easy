@@ -11,53 +11,59 @@ import {
       console.log("signInApp wrong");
     });
 
-// showShoppingList create markup
+const getStorageShopingList = () => {
+  return JSON.parse(localStorage.getItem(KEY_SHOPINGLIST));
+};
 
+// showShoppingList create markup
 import sprite from "../img/sprite.svg";
 
-function showShoppingList() {
-  sessionStorage.setItem(keyPage, JSON.stringify('shoppinglist'));
-}
-function createShoppinglistBookMarkup(resp) {
-  const { book_image, list_name, author, titel, description, buy_links } = resp;
-   const shop = buy_links.map(item => item);
-  return `<div class="shooping-list-container" id="shooping-list-container">
-   <h1 class="shopping-titel">Shopping <span class="shopping-titel-list">List</span></h1>
-   <ul class="shopping-box">
-   <li class="shopping-card">
-      <a href="#" class="button-trash js-shopping-remove-btn">
-         <svg width="18" height="18">
-            <use href="${sprite}#trash"></use>
-         </svg>
-      </a>
-      <img src="${book_image}" alt="${titel}" class="shopping-book-img" />
-      <div>
-         <h2 class="shopping-book-name">${titel}</h2>
-         <p class="shopping-book-category">${list_name}</p>
-         <div class="shopping-book-info">
-            <p> ${description}</p>
-         </div>
-         <div class="shop-box">
-            <p class="shopping-book-autor">${author}</p>
-      <div class="shop-linc-box">
-         <a href="${buy_links[0].url}" class="shop-linc" target="_blank">
-            <img src="./img/shop1.png" alt="${buy_links[0].name}" class="shop-linc-icon amazon" />
-         </a>
-         <a href="${buy_links[1].url}" class="shop-linc" target="_blank">
-            <img src="./img/shop2.png" alt="${buy_links[1].name}" class="shop-linc-icon" />
-         </a>
-         <a href="${buy_links[4].url}" class="shop-linc" target="_blank">
-            <img src="./img/shop3.png" alt="${buy_links[4].name}" class="shop-linc-icon" />
-         </a>
-      </div>
-         </div>
-      </div>
-   </li>
-   </ul>
+const shoplist = [
+   {_id,
+   title,
+   author,
+   list_name,
+   description,
+   book_image,
+   buy_links: [url1, url2, url3]
+   }
+]
+   
+const listOfBooks = shoplist.map(el => createBookCard(el)).join('');
 
-   </div>`;
+function   createBookCard(book){
+   return `<li class="shopping-card">
+      <button class="button-trash js-trash" aria-label="Close window" type="button"  id="${book._id}><svg class="icon"><use href="${sprite}#trash"></use></svg></button>
+      <img src="${book.book_image}" alt="${book.titel}" class="shopping-book-img" />
+         <div class="card-item"
+         <p class="shopping-book-name">${book.titel}</p>
+         <p class="shopping-book-category">${book.list_name}</p>
+         <div class="shopping-book-info">
+         <p> ${book.description}</p>
+         </div>
+         <p class="book-author">${book.author}</p>
+         </div>${bookShopsMurkup(book.shops)}
+         </li>`
 }
- 
+ function bookShopsMurkup(shops) {
+   
+const iconPaths = [
+   {
+     name: "Amazon",
+     path: shop1png,
+   },
+   {
+     name: "Apple Books",
+     path: shop2png,
+   },
+   {
+     name: "Bookshop",
+     path: shop3png,
+   }
+ ];
+
+ return 'shops list'
+}
 // <!-- shopping-list page is empty -->
 const emptyPage = document.querySelector(`#page-empty`)
 function showShoppingListEmpty() {
