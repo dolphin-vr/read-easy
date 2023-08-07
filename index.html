@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Read Easy</title>
     
-    <script type="module" crossorigin src="/read-easy/assets/index-bc06d72f.js"></script>
-    <link rel="modulepreload" crossorigin href="/read-easy/assets/api-firebase-dcb211eb.js">
+    <script type="module" crossorigin src="/read-easy/assets/index-5e1f1b3a.js"></script>
+    <link rel="modulepreload" crossorigin href="/read-easy/assets/api-firebase-2c29aaa6.js">
     <link rel="stylesheet" href="/read-easy/assets/api-firebase-e543ac46.css">
   </head>
   <body>
@@ -212,7 +212,6 @@
         id="authorization-text"
         type="text"
         placeholder="NAME"
-        required
       />
       <div class="authorization-input-wrap">
         <input
@@ -220,6 +219,7 @@
           id="authorization-mail"
           type="email"
           placeholder="EMAIL"
+          pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
           required
         />
         <svg class="authorization-input-icon">
@@ -240,13 +240,13 @@
           <use href="/read-easy/assets/sprite-c6a76667.svg#lock"></use>
         </svg>
       </div>
-      <button type="submit" class="authorization-sign-up-btn authorization-btn">
-        SIGN UP
-      </button>
       <button
         type="submit"
-        class="authorization-sign-in-btn authorization-btn is-hidden"
+        class="authorization-sign-up-btn authorization-btn is-hidden"
       >
+        SIGN UP
+      </button>
+      <button type="submit" class="authorization-sign-in-btn authorization-btn">
         SIGN IN
       </button>
     </form>
