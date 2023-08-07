@@ -1,10 +1,11 @@
+@import './vars';
+@import './root';
 @import './reset';
 @import './fonts';
-@import './vars';
 @import './mixin';
 @import './common';
 @import './header';
-// @import './category';
+@import './category';
 @import './funds';
 @import './home';
 @import './catalog';

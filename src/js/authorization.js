@@ -1,4 +1,4 @@
-// import { createAccount, signInApp } from './api-firebase';
+import { createAccount, signInApp } from './api-firebase';
 
 const form = {
   form: document.querySelector('.authorization-form'),
@@ -13,21 +13,21 @@ const form = {
 
 // createAccount ----------------------------------------------------------------------------
 
-// form.buttonSignUp.addEventListener('click', () => {
-//   const register = createAccount(
-//     form.mail.value,
-//     form.password.value,
-//     form.name.value
-//   );
-//   console.log(register);
-// });
+form.buttonSignUp.addEventListener('click', () => {
+  const register = createAccount(
+    form.mail.value,
+    form.password.value,
+    form.name.value
+  );
+  console.log(register);
+});
 
 // signIn-------------------------------------------------------------------------------------------
 
-// form.buttonSignIn.addEventListener('click', () => {
-//   const answer = signInApp(form.mail.value, form.password.value);
-//   console.log(answer);
-// });
+form.buttonSignIn.addEventListener('click', () => {
+  const answer = signInApp(form.mail.value, form.password.value);
+  console.log(answer);
+});
 
 // Переключання sign-in, sign-up ------------------------------------------------------------------------
 

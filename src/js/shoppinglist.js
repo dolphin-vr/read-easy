@@ -10,70 +10,75 @@ import {
     .catch(signInAppError => {
       console.log("signInApp wrong");
     });
-    
+
+// showShoppingList create markup
+
+import sprite from "../img/sprite.svg";
+
+function showShoppingList() {
+  sessionStorage.setItem(keyPage, JSON.stringify('shoppinglist'));
+}
+function createShoppinglistBookMarkup(resp) {
+  const { book_image, list_name, author,publisher, description, buy_links } = resp;
+   const shop = buy_links.map(item => item);
+  return `<div class="shooping-list-container" id="shooping-list-container">
+   <h1 class="shopping-titel">Shopping <span class="shopping-titel-list">List</span></h1>
+   <ul class="shopping-box">
+   <li class="shopping-card">
+      <a href="#" class="button-trash js-shopping-remove-btn">
+         <svg width="18" height="18">
+            <use href="${sprite}#trash"></use>
+         </svg>
+      </a>
+      <img src="${book_image}" alt="${list_name}" class="shopping-book-img" />
+      <div>
+         <h2 class="shopping-book-name">${list_name}</h2>
+         <p class="shopping-book-category">${publisher}</p>
+         <div class="shopping-book-info">
+            <p> ${description}</p>
+         </div>
+         <div class="shop-box">
+            <p class="shopping-book-autor">${author}</p>
+      <div class="shop-linc-box">
+         <a href="${shop.url}" class="shop-linc" target="_blank">
+            <img src="./img/shop1.png" alt="${shop.name}" class="shop-linc-icon amazon" />
+         </a>
+         <a href="" class="shop-linc" target="_blank">
+            <img src="./img/shop2.png" alt="${shop.name}" class="shop-linc-icon" />
+         </a>
+         <a href="" class="shop-linc" target="_blank">
+            <img src="./img/shop3.png" alt="${shop.name}" class="shop-linc-icon" />
+         </a>
+      </div>
+         </div>
+      </div>
+   </li>
+   </ul>
+
+   </div>`;
+}
+ 
+// <!-- shopping-list page is empty -->
+const emptyPage = document.querySelector(`#page-empty`)
+function showShoppingListEmpty() {
+   console.log(emptyPage);
+}
+
+
+
+
 // remove book from shoppinglist
+
 const shoppingRemoveBtn = document.querySelector('.js-shopping-remove-btn');
+
+console.log(shoppingRemoveBtn);
     
-shoppingRemoveBtn.addEventListener('click', shoppingRemove);
+// shoppingRemoveBtn.addEventListener('click', shoppingRemove);
 
-// // createMarkupFunds
-// import { createMarkupFunds } from './createMarkup111' 
-// //add <ul class="js-funds"></ul> to home.html (partial)     
-// const fundsList = document.querySelector('.js-funds');
-// // array of funds
-// const fundsData = [
-//     {
-//         title: 'Save the Children',
-//         url: 'https://www.savethechildren.net/what-we-do/emergencies/ukraine-crisis',
-//         img: '../img/fund-01.png',
-//     },
-//     {
-//         title: 'Project HOPE',
-//         url: 'https://www.projecthope.org/country/ukraine/',
-//         img: '../img/fund-02.png',
-//     },
-//     {
-//         title: 'UNITED24',
-//         url: 'https://u24.gov.ua/uk',
-//         img: '../img/fund-03.png',
-//     },
-//     {
-//         title: 'International Medical Corps',
-//         url: 'https://internationalmedicalcorps.org/country/ukraine/',
-//         img: '../img/fund-04.png',
-//     },
-//     {
-//         title: 'Medicins Sans Frontieres',
-//         url: 'https://www.msf.org/ukraine',
-//         img: '../img/fund-05.png',
-//     },
-//     {
-//         title: 'RAZOM',
-//         url: 'https://www.razomforukraine.org/',
-//         img: '../img/fund-06.png',
-//     },
-//     {
-//         title: 'Action against hunger',
-//         url: 'https://www.actionagainsthunger.org/location/europe/ukraine/',
-//         img: '../img/fund-07.png',
-//     },
-//     {
-//         title: 'World vision',
-//         url: 'https://www.wvi.org/emergencies/ukraine',
-//         img: '../img/fund-08.png',
-//     },
-//     {
-//         title: 'Serhiy Prytula Charity Foundation',
-//         url: 'https://prytulafoundation.org/en',
-//         img: '../img/fund-09.png',
-//     },
-// ];
-// fundsList.addEventListener('click', createMarkupFunds);
+function shoppingRemove(){
+  console.log(shoppingRemoveBtn)
+}
 
-// // add to DOM
-// fundsList.insertAdjacentHTML('afterbegin', createMarkupFunds());
-
-// mobile, tablet - 4, desctop - 6 funds on page, scroll
 
 
 

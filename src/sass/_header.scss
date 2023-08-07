@@ -1,5 +1,4 @@
 
-
 .header {
     display: flex;
     max-height: 1440px;
@@ -9,17 +8,26 @@
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     overflow-x: hidden;
-}
-@media screen and (min-width: 768px) {
-.li-navigation>.current{
-    color: #111111;
-    /*  бажаний колір тексту для активного посилання */
-    background-color: #EAC645;
-    /* бажаний фоновий колір для активного посилання */
-    padding: 8px 16px 8px 16px;
-    border-radius: 36px;
+    width: 375px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
+.li-navigation a {
+    
+    
+    color: #000;
+    /* Чорний колір тексту посилань */
+}
+
+.li-navigation a:hover,
+.li-navigation a:focus,
+.li-navigation a.current {
+  
+    background-color: #EAC645;
+    
+    border-radius: 36px;
+    padding: 8px 16px;
 }
 .foto-logo {
     height: 28px;
@@ -50,7 +58,7 @@
     list-style: none;
     
 }
-.shoplist{
+.shoplist-header{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -83,47 +91,65 @@
     border: none;
 }
 
-
-.switch {
+.slider {
     position: relative;
     display: inline-block;
     width: 40px;
-    height: 20px;
+    /* Розмір ширина перемикача у неактивному стані */
+    height: 24px;
+    /* Розмір висоти перемикача у неактивному стані */
+   
 }
 
-.switch input {
+/* Стилі для самого перемикача */
+.slider input {
     opacity: 0;
     width: 0;
     height: 0;
 }
 
-.slider {
+
+.slider-btn {
     position: absolute;
     cursor: pointer;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url("../img/Switcher-off.jpg");
-    /* Зображення для пасивного стану */
-    background-size: cover;
+    background-image: linear-gradient(180deg, #4F2EE8 0%, #DCDCDC 100%);
+    /* Колір, коли перемикач неактивний */
+    border-radius: 24px;
+    /* Радіус закруглення для кнопки перемикача */
+    box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.10) inset;
     transition: 0.4s;
-    border-radius: 34px;
 }
 
-.slider:before {
+
+.slider input:checked+.slider-btn {
+    background-image: linear-gradient(180deg, #4F2EE8 0%, #686868 100%);
+    
+}
+
+
+.slider input:checked+.slider-btn:before {
+    transform: translateX(16px);
+    
+}
+
+
+.slider-btn:before {
     position: absolute;
     content: "";
-    // height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-image: url("../img/Switcher-on.jpg");
-    /* Зображення для активного стану */
-    background-size: cover;
-    transition: 0.4s;
+    height: 24px;
+    
+    width: 24px;
+    
+    
+    background-color: white;
     border-radius: 50%;
+    transition: 0.4s;
 }
+
 
 .sign-up {
     display: none;
@@ -138,6 +164,12 @@
     .theme-switch {
         margin-left: 144px;
     }
+    .header{
+        height: 64px;
+    }
+   
+    
+ 
  
     
 }
@@ -151,7 +183,7 @@
         margin-right: 40px;
     }
     .navigation {
-            margin-right: 57px;
+            margin-right: 40px;
     
         }
     .menu-btn {
@@ -164,18 +196,29 @@
             margin-right: 16px;
             /* бажаний відступ між посиланнями, окрім останнього */
         }
-}
+    .header {
+            width: 768px;
+         }
+    .modal-header {
+             display: none;
+         }
+    }
+
 @media screen and (min-width: 1440px) {
     .logo {
         margin-right: 76px;
     }
     .navigation {
-        margin-right: 685px;
+        margin-right: 668px;
+    }
+    .header {
+        width: 1440px;
     }
 }
+
 @media screen and (min-width: 1280px){ 
 .header {
-    width: 1440px;
+    max-width: 1440px;
     padding-left: 24px;
     padding-right: 24px;
     display: flex;
@@ -184,17 +227,14 @@
 }
 }
 
-    .modal-btn{
-    margin-top: 40px;
-    margin-left: 20px;
-}
+  
 
 .sign-up-button{
     display: flex;
     align-items: center;
    
-        
-
+       
+    margin-left: 20px;
     border-radius: 18px;
     border: 1.5px solid #111;
     background: #4F2EE8;
@@ -229,16 +269,7 @@ input:checked+.slider:before {
     }
 }
 
-.backdrop {
-    position: fixed;
-    
-    transform: translateY(69px);
-    background: radial-gradient(189.32% 190.93% at 59.76% -23.42%, #4F2EE8 18.03%, #FFF 100%);
-    
-    display: flex;
-   
-    z-index: 9999;
-}
+
 
 .backdrop.is-hidden {
     display: none;
@@ -266,5 +297,61 @@ input:checked+.slider:before {
 .img-burger-menu{
     position: absolute;
     bottom: 0;
+    left: 0;
+    width: 100%;
 }
 
+
+.modal-header{
+      
+        position: fixed;
+        
+        
+        
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        width: 100%;
+        height: 100%;
+        z-index: 9;
+        top: 0;
+        left: 0px;
+        background: radial-gradient(189.32% 190.93% at 59.76% -23.42%, #4F2EE8 18.03%, #FFF 100%);
+}
+.header-backdrop{
+    display: flex;
+    max-height: 1440px;
+    align-items: center;
+    padding: 18px 20px;
+    border: 1.5px solid #111111;
+    background: white;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    height: 64px;
+}
+
+.modal-header.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.logo-modal{
+    padding-right: 144px;
+}
+
+.btn-close{
+        top: 18px;
+        right: 20px;
+        position: absolute;
+    }
+
+
+.btn-close-svg {
+    stroke: black;
+    fill: none;
+}
+.menu-btn-svg:hover,
+.menu-btn-svg:focus {
+    stroke: #4F2EE8;
+}
