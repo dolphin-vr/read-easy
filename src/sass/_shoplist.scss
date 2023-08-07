@@ -14,7 +14,7 @@
 }
 
 .shopping-titel-list {
-    color: #4F2EE8;
+    color: var(--category-accent);
 }
 
 .button-trash {
@@ -25,10 +25,10 @@
     height: 28px;
     align-items: center;
     justify-content: center;
-    fill: #4F2EE8;
-    stroke: #ffffff;
+    fill: var(--category-accent);
+    stroke: var(--shoplist-bgr);
     border-radius: 50%;
-    background-color: #4F2EE8;
+    background-color: var(--category-accent);
     border: 1px solid rgba(0, 0, 0, 0.1);
 }
 .shopping-box {
@@ -79,7 +79,7 @@
 }
 
 .shopping-book-name {
-    $black: #111111;
+    color: var(--text-color);
     font-size: 16px;
     font-weight: 700;
     line-height: 1.12;
@@ -97,7 +97,7 @@
 
 .shopping-book-info {
     margin-top: 4px;
-    $black: #111111;
+    color: var(--text-color);
     font-size: 14px;
     line-height: 1.28;
     letter-spacing: -0.56px;
