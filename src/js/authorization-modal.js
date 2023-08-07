@@ -3,9 +3,11 @@ const refs = {
   closeModalBtn: document.querySelector('.js-authorization-close'),
   modal: document.querySelector('.js-authorization-modal'),
   backdrop: document.querySelector('.js-authorization-backdrop'),
- 
+  btnmodal: document.querySelector('.btnmodal')
 };
 
+
+refs.btnmodal.addEventListener('click', toggleModal);
 
 refs.openModalBtn.addEventListener('click', toggleModal);
 refs.closeModalBtn.addEventListener('click', toggleModal);
