@@ -36,7 +36,7 @@ async function openModalBook(id) {
     const modalBookMarkup = createModalBookMarkup(bookInfo.data);
     refs.modalEl.innerHTML = modalBookMarkup;
     const modalText = document.querySelector('.modal-book-text');
-    const adShoppingListBtnEl = document.querySelector(
+    const addShoppingListBtnEl = document.querySelector(
       '.js-modal-book-localstostorage-add-btn'
     );
     const removeShoppingListBtnEl = document.querySelector(
@@ -44,27 +44,27 @@ async function openModalBook(id) {
     );
     isSignIn().then(isSign => {
       if (!isSign) {
-        adShoppingListBtnEl.disabled = true;
-        adShoppingListBtnEl.style.pointerEvents = 'none';
+        addShoppingListBtnEl.disabled = true;
+        addShoppingListBtnEl.style.pointerEvents = 'none';
         modalText.textContent =
           'You need to log in to add a book to the shopping list!';
         isHiddenToggle(modalText);
       }
     });
     if (isInSoppinList(id)) {
-      isHiddenToggle(adShoppingListBtnEl);
+      isHiddenToggle(addShoppingListBtnEl);
       isHiddenToggle(removeShoppingListBtnEl);
       isHiddenToggle(modalText);
     }
-    adShoppingListBtnEl.addEventListener('click', () => {
-      adBookToShoppingList(bookInfo.data);
-      isHiddenToggle(adShoppingListBtnEl);
+    addShoppingListBtnEl.addEventListener('click', () => {
+      addBookToShoppingList(bookInfo.data);
+      isHiddenToggle(addShoppingListBtnEl);
       isHiddenToggle(removeShoppingListBtnEl);
       isHiddenToggle(modalText);
     });
     removeShoppingListBtnEl.addEventListener('click', () => {
       removeBookFromShoppingList(id);
-      isHiddenToggle(adShoppingListBtnEl);
+      isHiddenToggle(addShoppingListBtnEl);
       isHiddenToggle(removeShoppingListBtnEl);
       isHiddenToggle(modalText);
     });
@@ -103,7 +103,7 @@ function isInSoppinList(id) {
   const booksId = ls.map(book => book._id);
   return booksId.includes(id);
 }
-function adBookToShoppingList(obj) {
+function addBookToShoppingList(obj) {
   let ls = getStorageShopingList();
   if (!ls) {
     ls = [];
@@ -175,4 +175,4 @@ function createModalBookMarkup(resp) {
   </p>
 </div>`;
 }
-export { openModalBook, closeModalBook };
+export { openModalBook, closeModalBook, removeBookFromShoppingList };
