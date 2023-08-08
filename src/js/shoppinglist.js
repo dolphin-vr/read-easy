@@ -1,86 +1,74 @@
-import {
-  signInApp,
-} from './api-firebase';
+import { isSignIn, signInApp,} from './api-firebase';
+import { getStorageShopingList } from './api-shiping-localstorage';
+// import sprite from "../img/sprite.svg";
 
-  signInApp('test@g.com', '12345678')
-    .then(signInAppRes => {
-      console.log("signInApp success");
-      console.log(signInAppRes);
-    })
-    .catch(signInAppError => {
-      console.log("signInApp wrong");
-    });
+const refs = {
+  shoplist: document.querySelector('.shoplist'),
+}
 
-const getStorageShopingList = () => {
-  return JSON.parse(localStorage.getItem(KEY_SHOPINGLIST));
-};
+let shoplistMurkup = '<div class="shooping-list"><h1 class="shopping-titel">Shopping <span class="shopping-titel-list">List</span></h1>';
+
+const shoppingList = getStorageShopingList();
+
+if (shoppingList) {
+  // додати розмітку списка книг
+  shoplistMurkup += '<ul class="book-list">';
+  shoplistMurkup += shoppingList.map(el => createBookCard(el)).join('');
+  shoplistMurkup += '</ul>;'
+// } else if (false) {  //емуляція залогіненого юзера
+} else if (!isSignIn()) {
+  // додати розмітку порожнього шоплиста з текстом   // Please sign-up to manage your Shopping List
+  shoplistMurkup += '<div class="shopping-list-empty"><a><p class="shopping-book-empty">Please sign-up to manage your Shopping List</p><img src="./img/empty.png" alt="Empty Shopping List" class="shopping-book-empty-img"></a></div>'
+} else {
+  // додати розмітку порожнього шоплиста з текстом  // This page is empty, add some books and proceed to order.
+  shoplistMurkup += '<div class="shopping-list-empty"><a><p class="shopping-book-empty">This page is empty, add some books and proceed to order.</p><img src="./img/empty.png" alt="Empty Shopping List" class="shopping-book-empty-img"></a></div>'
+}
+
+refs.shoplist.innerHTML = shoplistMurkup;
+
+  // signInApp('test@g.com', '12345678')
+  //   .then(signInAppRes => {
+  //     console.log("signInApp success");
+  //     console.log(signInAppRes);
+  //   })
+  //   .catch(signInAppError => {
+  //     console.log("signInApp wrong");
+  //   });
+
 
 // showShoppingList create markup
-import sprite from "../img/sprite.svg";
+// import { getStorageShopingList } from './api-shiping-localstorage';
 
-const shoplist = [
-   {_id,
-   title,
-   author,
-   list_name,
-   description,
-   book_image,
-   buy_links: [url1, url2, url3]
-   }
-]
+// const shoplist = [
+//    {_id,
+//    title,
+//    author,
+//    list_name,
+//    description,
+//    book_image,
+//    buy_links: [url1, url2, url3]
+//    }
+// ]
    
-const listOfBooks = shoplist.map(el => createBookCard(el)).join('');
+// const listOfBooks = 
 
-function   createBookCard(book){
-   return `<li class="shopping-card">
-      <button class="button-trash js-trash" aria-label="Close window" type="button"  id="${book._id}><svg class="icon"><use href="${sprite}#trash"></use></svg></button>
-      <img src="${book.book_image}" alt="${book.titel}" class="shopping-book-img" />
-         <div class="card-item"
-         <p class="shopping-book-name">${book.titel}</p>
-         <p class="shopping-book-category">${book.list_name}</p>
-         <div class="shopping-book-info">
-         <p> ${book.description}</p>
-         </div>
-         <p class="book-author">${book.author}</p>
-         </div>${bookShopsMurkup(book.shops)}
-         </li>`
-}
- function bookShopsMurkup(shops) {
-   
-const iconPaths = [
-   {
-     name: "Amazon",
-     path: shop1png,
-   },
-   {
-     name: "Apple Books",
-     path: shop2png,
-   },
-   {
-     name: "Bookshop",
-     path: shop3png,
-   }
- ];
-
- return 'shops list'
-}
 // <!-- shopping-list page is empty -->
-const emptyPage = document.querySelector(`#page-empty`)
-function showShoppingListEmpty() {
-   console.log(emptyPage);
-}
+// const emptyPage = document.querySelector(`#page-empty`)
+// function showShoppingListEmpty() {
+//    console.log(emptyPage);
+// }
 
 // remove book from shoppinglist
 
-const shoppingRemoveBtn = document.querySelector('.js-shopping-remove-btn');
+// const shoppingRemoveBtn = document.querySelector('.js-shopping-remove-btn');
 
-console.log(shoppingRemoveBtn);
+// console.log(shoppingRemoveBtn);
     
 // shoppingRemoveBtn.addEventListener('click', shoppingRemove);
 
-function shoppingRemove(){
-  console.log(shoppingRemoveBtn)
-}
+// function shoppingRemove(){
+//   console.log(shoppingRemoveBtn)
+// }
 
 
 
