@@ -7,6 +7,7 @@
     <title>Read Easy</title>
     
     <script type="module" crossorigin src="/read-easy/assets/api-firebase-644d44e9.js"></script>
+    <script type="module" crossorigin src="/read-easy/assets/funds-d3a5d90d.js"></script>
     <script type="module" crossorigin src="/read-easy/assets/shoppinglist-29d1afae.js"></script>
     <link rel="stylesheet" href="/read-easy/assets/api-firebase-e70c8146.css">
   </head>
@@ -80,7 +81,53 @@
 
 
 </header>
-    ENOENT: no such file or directory, open '/home/runner/work/read-easy/read-easy/src/partials/shoplist.html'
+
+    <section class="shoplist">
+      <!-- Path to images as from index.html file -->
+      <section class="funds">
+  <div class="funds-title-wrapper">
+    <p class="funds-title">Support Ukraine</p>
+    <svg class="" width="20" height="32">
+      <use class="funds-title-tryzub" href="/read-easy/assets/sprite-c6a76667.svg#tryzub"></use>
+    </svg>
+  </div>
+  <ul class="funds-list list"></ul>
+  <div class="funds-buttons">
+    <button class="funds-btn-bottom" type="button">
+      <svg class="funds-btn-svg" width="22" height="22">
+        <use class="" href="/read-easy/assets/sprite-c6a76667.svg#2bottom"></use>
+      </svg>
+    </button>
+    <button class="funds-btn-top is-hidden" type="button">
+      <svg class="funds-btn-svg" width="22" height="22">
+        <use class="" href="/read-easy/assets/sprite-c6a76667.svg#2top"></use>
+      </svg>
+    </button>
+  </div>
+  
+</section>
+
+      <!-- shopping list page -->
+   
+   <!-- shopping-list page is empty -->
+   <!-- <div class="shoplist empty" id="page-empty">
+      <div class="shooping-list">
+         <h1 class="shopping-titel">Shopping <span class="shopping-titel-list">List</span></h1>
+         <ul class="shopping-box"></ul>
+         <div class="shopping-list-empty">
+            <a>
+               <p class="shopping-book-empty">This page is empty, add some books and proceed to order.</p>      
+               <img src="./img/empty.png" alt="Empty Shopping List" class="shopping-book-empty-img" />
+            </a>
+         </div>
+         <ul class="book-list">
+            
+         </ul>
+      </div>
+   
+   </div> -->
+   </section>
+
     <div class="modal-book-backdrop js-modal-book-backdrop is-hidden">
   <!-- <div class="modal-book js-modal-book">
     <button type="button" class="modal-book-close-btn js-modal-book-close-btn">
@@ -158,6 +205,68 @@
     </p>
   </div>
 </div> -->
+
+    <div class="authorization-container js-authorization-modal is-hidden">
+  <div class="authorization-frame">
+    <button
+      type="button"
+      class="authorization-close-btn js-authorization-close"
+    >
+      <svg class="authorization-icon-btn">
+        <use href="/read-easy/assets/sprite-c6a76667.svg#close"></use>
+      </svg>
+    </button>
+    <form class="authorization-form">
+      <input
+        class="authorization-input"
+        id="authorization-text"
+        type="text"
+        placeholder="NAME"
+      />
+      <div class="authorization-input-wrap">
+        <input
+          class="authorization-input"
+          id="authorization-mail"
+          type="email"
+          placeholder="EMAIL"
+          pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
+          required
+        />
+        <svg class="authorization-input-icon">
+          <use href="/read-easy/assets/sprite-c6a76667.svg#mail"></use>
+        </svg>
+      </div>
+      <div class="authorization-input-wrap">
+        <input
+          class="authorization-input"
+          id="authorization-password"
+          type="password"
+          placeholder="PASSWORD"
+          required
+          minlength="6"
+          maxlength="20"
+        />
+        <svg class="authorization-input-icon">
+          <use href="/read-easy/assets/sprite-c6a76667.svg#lock"></use>
+        </svg>
+      </div>
+      <button
+        type="submit"
+        class="authorization-sign-up-btn authorization-btn is-hidden"
+      >
+        SIGN UP
+      </button>
+      <button type="submit" class="authorization-sign-in-btn authorization-btn">
+        SIGN IN
+      </button>
+    </form>
+    <div class="authorization-link-wrap">
+      <p class="authorization-link authorization-sign-up" href="">SIGN UP</p>
+      <p class="authorization-link authorization-sign-in" href="">SIGN IN</p>
+    </div>
+  </div>
+  <div class="authorization-backdrop js-authorization-backdrop"></div>
+</div>
 
 
     
