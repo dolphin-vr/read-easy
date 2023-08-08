@@ -1,8 +1,11 @@
 <header class="header">
   <div class="logo">
     <a href="index.html">
-      <svg class="foto-logo">
-        <use href="./img/symbol-defs.svg#icon-logo-2"></use>
+      <svg class="logo-svg" width="24" height="24">
+        <use href="./img/sprite.svg#logo"></use>
+      </svg>
+      <svg class="logo-text" width="77" height="28">
+        <use class="bookshelf" href="../img/sprite.svg#bookshelf"></use>
       </svg>
     </a>
   </div>
@@ -16,14 +19,11 @@
   </ul>
 </nav>
   
-<span class="slider-bgr"><span class="slider-shadow"></span><span class="slider"></span></span>
+  <span class="slider-header slider-bgr">
+    <span class="slider-shadow"></span>
+    <span class="slider"></span>
+  </span>
 
-<!-- <div class="theme-switch">
-       <label class="slider">
-      <input type="checkbox">
-      <span class="slider-btn"></span>
-    </label>
-  </div> -->
   <div class="sign-up">
     <button type="button" class="sign-up-button js-authorization-open">
       Sign up
@@ -32,22 +32,30 @@
       </svg>
     </button>
   </div>
+ 
   <button type="button" class="menu-btn" data-menu-open aria-expanded="false">
-    <img class="img-menu img-passive btn-header-icons" src="./img/align-left (1).jpg" alt="Іконка меню" width="28"
-      height="28">
-  </button>
+    <svg class="img-menu img-passive btn-header-icons" width="28" height="28">
+      <use href="./img/symbol-defs.svg#icon-align-left" />
+    </svg>
+  </button> 
+
   <!-- Модальне вікно -->
+  
+   
   <div class="modal-header" data-menu aria-expanded="false">
     <div class="header-backdrop">
-      <a class="logo-modal" href="index.html" style="margin-right: auto;">
-        <svg class="foto-logo">
-          <use href="./img/symbol-defs.svg#icon-logo-2"></use>
+      <a class="logo-modal" href="index.html" >
+        <svg class="logo-svg" width="24" height="24">
+          <use href="./img/sprite.svg#logo"></use>
+        </svg>
+        <svg class="logo-text" width="77" height="28">
+          <use class="bookshelf" href="../img/sprite.svg#bookshelf"></use>
         </svg>
       </a>
-      <label class="slider" style = "margin-right: 34px;">
-        <input type="checkbox">
-        <span class="slider-btn"></span>
-      </label>
+      <span class="slider-header slider-bgr">
+        <span class="slider-shadow"></span>
+        <span class="slider"></span>
+      </span>
       <button type="button" class="menu-btn btn-close" data-menu-close>
         <svg class="img-menu btn-header-icons btn-close-svg" width="28" height="28">
           <use href="./img/sprite.svg#close"></use>
@@ -63,7 +71,5 @@
       </button>
       <img class="img-burger-menu" src="./img/menu-bg.png" alt="burger">
     </div>
-  </div>
-
-
+  </div> 
 </header>

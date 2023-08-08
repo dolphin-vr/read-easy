@@ -3,7 +3,7 @@
     max-height: 1440px;
     align-items: center;
     padding: 18px 20px;
-    border: 1.5px solid #111111;
+    border: 1.5px solid var(--text-color);
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     overflow-x: hidden;
@@ -15,13 +15,14 @@
     border-radius: 36px;
     background: #EAC645;
     padding: 8px 16px;
+    color: var(--text-color);
 }
 
 .foto-logo {
     height: 28px;
     width: 109px;
     border-radius: 36px;
-    
+    fill: var(--text-color);
 }
 .btnmodal{
     margin-left: 20px;
@@ -37,6 +38,7 @@
 }
 .svg-navigation{
     margin-left: 4px;
+    fill: var(--text-color);
         
 }
 .theme-switch{
@@ -57,7 +59,7 @@
 .navigation li a {
     text-decoration: none;
   
-        color: #111;
+        color:var(--text-color);
         font-family: DM Sans;
         font-size: 14px;
         font-style: normal;
@@ -83,6 +85,7 @@
     
     padding-left: 0;
     padding-right: 0;
+    stroke: var(--text-color);
 }
 .btn-header-icons {
     
@@ -165,7 +168,10 @@
     .header{
         height: 64px;
     }
-   
+    .slider-header {
+             margin-left: 130px;
+             margin-right: 14px;
+         }
     
  
  
@@ -245,20 +251,13 @@
     line-height: 18px;
     padding-left: 14px;
     letter-spacing: -0.56px;
+    margin-left: 24px;
 }
 /* Показати модальне вікно, коли воно активне */
 .mobile-menu.show-modal {
     max-height: 100vh;
 }
 
-input:checked+.slider {
-    background-image: url("../img/Switcher-on.jpg");
-    /* Зображення для активного стану */
-}
-
-input:checked+.slider:before {
-    transform: translateX(26px);
-}
 
 @media screen and (max-width: 767px) {
     .navigation {
@@ -320,8 +319,8 @@ input:checked+.slider:before {
     max-height: 1440px;
     align-items: center;
     padding: 18px 20px;
-    border: 1.5px solid #111111;
-    background: white;
+    border-color: 1.5px var(--text-color);
+    background: var(--bgr-color);
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     height: 64px;
@@ -333,19 +332,19 @@ input:checked+.slider:before {
     pointer-events: auto;
 }
 
-.logo-modal{
-    padding-right: 144px;
-}
+
 
 .btn-close{
         top: 18px;
         right: 20px;
-        position: absolute;
+        
     }
 
-
+.modal-header.is-open>.btn-close-svg{
+    display: block;
+}
 .btn-close-svg {
-    stroke: black;
+    stroke: var(--text-color);
     fill: none;
 }
 .menu-btn-svg:hover,
@@ -406,4 +405,9 @@ input:checked+.slider:before {
     top: 1px;
     right: 0;
  }
- 
+
+.bookshelf{
+    fill: var(--text-color);
+}
+
+
