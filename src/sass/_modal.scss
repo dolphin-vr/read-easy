@@ -25,8 +25,8 @@
   height: 100%;
   position: relative;
   border-radius: 18px;
-  border: 2px solid $black;
-  background: $bg-body;
+  border: 2px solid var(--text-color);
+  background: var(--shoplist-bgr);
   padding: 40px 24px;
   overflow: auto;
 }
@@ -48,7 +48,7 @@
 .modal-book-close-svg {
   width: 24px;
   height: 24px;
-  stroke: $black;
+  stroke: var(--text-color);
 }
 
 .modal-book-close-svg:hover,
@@ -61,7 +61,7 @@
 }
 .modal-book-name {
   margin-top: 14px;
-  color: $black;
+  color: var(--text-color);
   font-size: 16px;
   font-weight: 700;
   line-height: 1.12;
@@ -79,7 +79,7 @@
 
 .modal-book-info {
   margin-top: 18px;
-  color: $black;
+  color: var(--text-color);
   font-size: 14px;
   line-height: 1.28;
   letter-spacing: -0.56px;
@@ -108,7 +108,7 @@
   border-radius: 40px;
   border: 2px solid #4f2ee8;
   padding: 14px 28px;
-  color: $black;
+  color: var(--text-color);
   font-size: 14px;
   font-weight: 700;
   line-height: 1.28;
@@ -121,8 +121,9 @@
 .modal-book-ls-btn:hover,
 .modal-book-ls-btn:focus {
   background: #4f2ee8;
-  color: $bg-body;
+  color: #ffffff;
 }
+
 .modal-book-ls-btn.remove {
   padding: 14px 22px;
   gap: 10px;
@@ -185,7 +186,6 @@
     margin-top: 20px;
     width: 279px;
     height: 70px;
-    // overflow: scroll;
   }
   .modal-book-linc-box {
     margin-top: 20px;
