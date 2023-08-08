@@ -6,17 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Read Easy</title>
     
-    <script type="module" crossorigin src="/read-easy/assets/api-firebase-969a0fc7.js"></script>
+    <script type="module" crossorigin src="/read-easy/assets/api-firebase-9cae6518.js"></script>
     <script type="module" crossorigin src="/read-easy/assets/funds-d3a5d90d.js"></script>
-    <script type="module" crossorigin src="/read-easy/assets/shoppinglist-8a892d9f.js"></script>
-    <link rel="stylesheet" href="/read-easy/assets/api-firebase-ecb1b03f.css">
+    <script type="module" crossorigin src="/read-easy/assets/shoppinglist-5ae29294.js"></script>
+    <link rel="stylesheet" href="/read-easy/assets/api-firebase-9d0b0458.css">
   </head>
   <body>
     <header class="header">
   <div class="logo">
     <a href="index.html">
-      <svg class="foto-logo">
-        <use href="/read-easy/assets/symbol-defs-1918fb77.svg#icon-logo-2"></use>
+      <svg class="logo-svg" width="24" height="24">
+        <use href="/read-easy/assets/sprite-c6a76667.svg#logo"></use>
+      </svg>
+      <svg class="logo-text" width="77" height="28">
+        <use class="bookshelf" href="../img/sprite.svg#bookshelf"></use>
       </svg>
     </a>
   </div>
@@ -30,14 +33,11 @@
   </ul>
 </nav>
   
-<span class="slider-bgr"><span class="slider-shadow"></span><span class="slider"></span></span>
+  <span class="slider-header slider-bgr">
+    <span class="slider-shadow"></span>
+    <span class="slider"></span>
+  </span>
 
-<!-- <div class="theme-switch">
-       <label class="slider">
-      <input type="checkbox">
-      <span class="slider-btn"></span>
-    </label>
-  </div> -->
   <div class="sign-up">
     <button type="button" class="sign-up-button js-authorization-open">
       Sign up
@@ -46,22 +46,30 @@
       </svg>
     </button>
   </div>
+ 
   <button type="button" class="menu-btn" data-menu-open aria-expanded="false">
-    <img class="img-menu img-passive btn-header-icons" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAgICAgJCAkKCgkNDgwODRMREBARExwUFhQWFBwrGx8bGx8bKyYuJSMlLiZENS8vNUROQj5CTl9VVV93cXecnNEBCAgICAkICQoKCQ0ODA4NExEQEBETHBQWFBYUHCsbHxsbHxsrJi4lIyUuJkQ1Ly81RE5CPkJOX1VVX3dxd5yc0f/CABEIABwAHAMBIgACEQEDEQH/xAArAAACAwEAAAAAAAAAAAAAAAAGBwABBQMBAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhADEAAAAHJldsM1i8VKgHG27BfMC4f/xAAvEAABAwMCAgYLAAAAAAAAAAACAQMEAAUGERITFBciVXKk0gcVICQzQVZXYYKV/9oACAEBAAE/ALxm+L2SZydyuPBf2IezhOn1S7grXSjgnbPh3/JXSjgnbPh3/JVvmxJ8NiZEc3sPAhtnoo7kX8FWRSsgan7YF+s0NnhCvClfErn8x+rsaqx3W4tPvLesjsj7Kh1EjmgEhU2426AuNmJgSaiQrqiovzRaym3PybpvDAY92ThD70ctpku7oVepZX2kif0WKsmLwJrzwXT0fRLcAhqB8wEjev6VGjR4kdqPHaFtlsUEAFNEFE9n/8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAgEBPwAf/8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAwEBPwAf/9k=" alt="Іконка меню" width="28"
-      height="28">
-  </button>
+    <svg class="img-menu img-passive btn-header-icons" width="28" height="28">
+      <use href="/read-easy/assets/symbol-defs-6df122a0.svg#icon-align-left" />
+    </svg>
+  </button> 
+
   <!-- Модальне вікно -->
+  
+   
   <div class="modal-header" data-menu aria-expanded="false">
     <div class="header-backdrop">
-      <a class="logo-modal" href="index.html" style="margin-right: auto;">
-        <svg class="foto-logo">
-          <use href="/read-easy/assets/symbol-defs-1918fb77.svg#icon-logo-2"></use>
+      <a class="logo-modal" href="index.html" >
+        <svg class="logo-svg" width="24" height="24">
+          <use href="/read-easy/assets/sprite-c6a76667.svg#logo"></use>
+        </svg>
+        <svg class="logo-text" width="77" height="28">
+          <use class="bookshelf" href="../img/sprite.svg#bookshelf"></use>
         </svg>
       </a>
-      <label class="slider" style = "margin-right: 34px;">
-        <input type="checkbox">
-        <span class="slider-btn"></span>
-      </label>
+      <span class="slider-header slider-bgr">
+        <span class="slider-shadow"></span>
+        <span class="slider"></span>
+      </span>
       <button type="button" class="menu-btn btn-close" data-menu-close>
         <svg class="img-menu btn-header-icons btn-close-svg" width="28" height="28">
           <use href="/read-easy/assets/sprite-c6a76667.svg#close"></use>
@@ -77,9 +85,7 @@
       </button>
       <img class="img-burger-menu" src="/read-easy/assets/menu-bg-2b739152.png" alt="burger">
     </div>
-  </div>
-
-
+  </div> 
 </header>
 
     <section class="shoplist">
