@@ -2,7 +2,7 @@
 .home {
   font-family: 'DM Sans', sans-serif;
   width: 375px;
-  background-color: #f6f6f6;
+  background-color: var(--bgr-color);
   padding-top: 40px;
   padding-bottom: 80px;
   padding-left: 20px;
@@ -11,56 +11,84 @@
 }
 // --Секція категорії------------------------
 .category {
-  height: 228px;
-  overflow: auto;
   margin-bottom: 40px;
 }
-.title-category {
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
-  color: #4f2ee8;
-  margin-bottom: 24px;
-}
-.is-active {
-  text-transform: uppercase;
-  font-weight: 700;
-}
-.name-category {
-  font-size: 15px;
-  font-weight: 400;
-  line-height: 1.2;
-  letter-spacing: -0.04em;
-  color: rgba(17, 17, 17, 0.6);
-}
-.name-category:not(:last-child) {
-  margin-bottom: 24px;
-}
+
 // ----------------------Секція фонди--------------------------------
 .funds {
-  width: 335px;
-  height: 352px;
-  border-radius: 16px;
-  background-image: radial-gradient(
-      at top center,
-      rgba(79, 46, 232, 1),
-      transparent
-    ),
-    radial-gradient(at bottom center, rgba(79, 46, 232, 1), transparent);
   margin-bottom: 40px;
 }
 // ------------------------Секція КНИГИ-------------------------------------
+// -----------------------------LOADER--------------------------------------
+.loader {
+  width: 200px;
+  height: 140px;
+  background: #979797;
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 8px;
+  perspective: 1000px;
+}
+
+.loader:before {
+  content: '';
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  top: 10px;
+  bottom: 10px;
+  border-radius: 8px;
+  background: #f6f6f6 no-repeat;
+  background-size: 60px 10px;
+  background-image: linear-gradient(#ddd 100px, transparent 0),
+    linear-gradient(#ddd 100px, transparent 0),
+    linear-gradient(#ddd 100px, transparent 0),
+    linear-gradient(#ddd 100px, transparent 0),
+    linear-gradient(#ddd 100px, transparent 0),
+    linear-gradient(#ddd 100px, transparent 0);
+
+  background-position: 15px 30px, 15px 60px, 15px 90px, 105px 30px, 105px 60px,
+    105px 90px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+}
+.loader:after {
+  content: '';
+  position: absolute;
+  width: calc(50% - 10px);
+  right: 10px;
+  top: 10px;
+  bottom: 10px;
+  border-radius: 8px;
+  background: #fff no-repeat;
+  background-size: 60px 10px;
+  background-image: linear-gradient(#ddd 100px, transparent 0),
+    linear-gradient(#ddd 100px, transparent 0),
+    linear-gradient(#ddd 100px, transparent 0);
+  background-position: 50% 30px, 50% 60px, 50% 90px;
+  transform: rotateY(0deg);
+  transform-origin: left center;
+  animation: paging 1s linear infinite;
+}
+
+@keyframes paging {
+  to {
+    transform: rotateY(-180deg);
+  }
+}
+// ----------------------------------------------------------------------------
 .book-list-title {
   font-size: 32px;
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: -0.04em;
-  color: #111111;
+  color: var(--text-color);
   margin-bottom: 40px;
 }
 .spn-books {
-  color: #4f2ee8;
+  color: var(--category-accent);
+}
+.best-category {
+  margin-bottom: 8px;
 }
 .book-category {
   text-transform: uppercase;
@@ -68,13 +96,12 @@
   font-weight: 400;
   line-height: 1.3;
   letter-spacing: -0.04em;
-  color: #b4afaf;
+  color: var(--text-category-author);
   margin-bottom: 18px;
 }
 .book-thumb {
   width: 335px;
   height: 535px;
-  margin-bottom: 8px;
 }
 .book-thumb:nth-child(n + 2) {
   display: none;
@@ -86,30 +113,36 @@
   border-radius: 8px;
 }
 .book-name {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   font-size: 16px;
   font-weight: 700;
   line-height: 1.15;
   letter-spacing: -0.04em;
-  color: #111111;
+  color: var(--text-color);
   text-transform: uppercase;
   margin-bottom: 4px;
 }
 .author {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   font-size: 12px;
   font-weight: 400;
   font-style: italic;
   line-height: 1.2;
   letter-spacing: -0.04em;
-  color: #b4afaf;
+  color: var(--text-category-author);
 }
 .btn-see-more {
   font-size: 14px;
   font-weight: 700;
-  border-color: #4f2ee8;
-  background-color: white;
+  border-color: var(--category-accent);
+  background-color: var(--bgr-color);
   line-height: 1.3;
   letter-spacing: -0.01em;
-  color: #111111;
+  color: var(--text-color);
   display: block;
   width: 124px;
   height: 46px;
@@ -117,7 +150,7 @@
   margin-left: auto;
   border-radius: 40px;
 }
-
+// --------------------------------------768 px------------------------
 @media screen and (min-width: 768px) {
   .home {
     width: 768px;
@@ -156,11 +189,11 @@
   .best-category {
     display: flex;
     gap: 25px;
+    margin-bottom: 20px;
   }
   .book-thumb {
     width: 218px;
     height: 366px;
-    margin-bottom: 20px;
   }
 
   .book-thumb:nth-child(n + 4) {
@@ -171,7 +204,7 @@
     height: 316px;
   }
 }
-
+// ---------------------------------------1440
 @media screen and (min-width: 1440px) {
   .home {
     width: 1440px;
@@ -186,13 +219,13 @@
     margin-bottom: 86px;
     margin-right: 40px;
   }
-  .title-category {
-    font-size: 18px;
-    line-height: 1.3;
-    letter-spacing: -0.02em;
-    color: #4f2ee8;
-    margin-bottom: 32px;
-  }
+  // .title-category {
+  //   font-size: 18px;
+  //   line-height: 1.3;
+  //   letter-spacing: -0.02em;
+  //   color: #4f2ee8;
+  //   margin-bottom: 32px;
+  // }
 
   .funds {
     width: 356px;
@@ -202,11 +235,29 @@
     width: 996px;
   }
   .book-thumb {
-    margin-bottom: 8px;
+    position: relative;
     width: 180px;
     height: 306px;
-    margin-bottom: 32px;
   }
+
+  .book-link:hover::after {
+    content: 'QUICK VIEW';
+    display: block;
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background-color: var(--text-color);
+    color: var(--text-color);
+    text-align: center;
+    line-height: 70px;
+    font-size: 14px;
+    font-weight: 500;
+    background: #eac645;
+    cursor: pointer;
+  }
+
   .book-thumb:nth-child(n + 2) {
     display: block;
   }
@@ -217,6 +268,7 @@
   .best-category {
     display: flex;
     gap: 24px;
+    margin-bottom: 32px;
   }
 
   .img-book {
@@ -225,10 +277,8 @@
   }
   .btn-see-more:hover,
   .btn-see-more:focus {
-    background-color: #4f2ee8;
-    color: #ffffff;
+    background-color: var(--category-accent);
+    color: var(--shoplist-bgr);
     outline: none;
   }
 }
-
-

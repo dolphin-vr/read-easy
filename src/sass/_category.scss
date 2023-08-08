@@ -9,7 +9,7 @@
     margin-bottom: 24px;
   }
   .selected-category {
-    color: #4F2EE8;
+    color: var(--category-accent);
     font-family: DM Sans;
     font-size: 16px;
     font-style: normal;
@@ -23,6 +23,7 @@
     height: 228px;
     overflow: scroll;
     overflow-x: hidden;
+    background-color: var(--bgr-color);
   }
   .category-list li:not(:last-child) {
     margin-bottom: 24px;
@@ -100,7 +101,7 @@
         letter-spacing: -0.36px;
       }
       .selected-category {
-        color: #4F2EE8;
+        color: var(--category-accent);
         font-family: DM Sans;
         font-size: 18px;
         font-style: normal;
@@ -131,14 +132,11 @@
       height: 472px;
     }
     .book-thumb-category {
-      margin-bottom: 8 px;
       position: relative;
       width: 180px;
       height: 306px;
-      margin-bottom: 32px;
     }
-    
-    .book-thumb-category:hover::after {
+    .book-link:hover::after {
       content: 'QUICK VIEW';
       display: block;
       position: absolute;
@@ -150,7 +148,29 @@
       color: white;
       text-align: center;
       line-height: 70px;
-      font-size: 16px;
+      font-size: 14px;
+      font-weight: 500;
       background: #eac645;
+      cursor: pointer;
+    }
+    .category-link:hover {
+      color: var(--category-accent);
     }
   }
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: var(--bgr-color);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--scroll-color);
+    border-radius: 12px; // Встановлюємо border-radius
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #8d8d8d;
+  }
+
