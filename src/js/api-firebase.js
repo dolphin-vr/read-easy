@@ -38,7 +38,8 @@ const signInApp = async (email, password) => {
   return signInWithEmailAndPassword(getAuth(app), email, password);
 };
 
-const isSignIn = () => {
+const isSignIn = async () => {
+  await getAuth(app)._initializationPromise;
   return getAuth(app).currentUser === null ? false : true;
 };
 
@@ -170,7 +171,8 @@ export {
 
 // --- removeAccountInfo ---
 
-//   if (isSignIn()) {
+// isSignIn().then(isSign => {
+//   if (isSign) {
 //     removeAccountInfo()
 //       .then(removeAccountInfoRes => {
 //         console.log('removeAccountInfo success');
@@ -191,32 +193,35 @@ export {
 //         console.log(removeAccountInfoError.code);
 //       });
 //   }
+// });
 
 //===============================================================================
 
 // --- getUserShoppingList ---
 
-//   if (isSignIn()) {
-//     getUserShoppingList()
-//       .then(shoppingList => {
-//         console.log(shoppingList.data().shoppingList);
-//         if (shoppingList.data().shoppingList.length > 0) {
-//           //Тут рахуємо що все добре і данні є!
-//           console.log('All Ok We have shopinglist');
-//         }
-//       })
-//       .catch(getUserShoppingListError => {
-//         console.log(' getUserShoppingList wrong');
-//         console.log(getUserShoppingListError.code);
-//       });
+// isSignIn().then(isSign => {
+//   if (isSign) {
+//    getUserShoppingList()
+//      .then(shoppingList => {
+//        console.log(shoppingList.data().shoppingList);
+//        if (shoppingList.data().shoppingList.length > 0) {
+//          //Тут рахуємо що все добре і данні є!
+//          console.log('All Ok We have shopinglist');
+//        }
+//      })
+//      .catch(getUserShoppingListError => {
+//        console.log(' getUserShoppingList wrong');
+//        console.log(getUserShoppingListError.code);
+//      });
 //   }
+// });
 
 //===============================================================================
 
 // --- updateUserShoppingList ---
 
-//   const shoppingList = (await getTopBooks()).data[0].books.slice(1, 5);
-//   if (isSignIn()) {
+// isSignIn().then(isSign => {
+//   if (isSign) {
 //     updateUserShoppingList(shoppingList)
 //       .then(shoppingListRes => {
 //         console.log(shoppingListRes);
@@ -227,43 +232,49 @@ export {
 //         console.log(updateUserShoppingListError.code);
 //       });
 //   }
+// });
 
 //===============================================================================
 
 // --- updateShopList ---
 
-//   if (isSignIn()) {
-//     updateShopList()
-//       .then(res => {
-//         // console.log(res);
-//       })
-//       .catch(updateShopListError => {
-//         console.log('updateShopList wrong');
-//         console.log(updateShopListError.code);
-//       });
+// isSignIn().then(isSign => {
+//   if (isSign) {
+//      updateShopList()
+//        .then(res => {
+//          // console.log(res);
+//        })
+//        .catch(updateShopListError => {
+//          console.log('updateShopList wrong');
+//          console.log(updateShopListError.code);
+//        });
 //   }
+// });
 
 //===============================================================================
 
 // --- getUserName ---
 
-//   if (isSignIn()) {
-//     getUserName()
-//       .then(getUserNameRes => {
-//         console.log(getUserNameRes.data().name);
-//         //Тут рахуємо що все добре і данні є!
-//       })
-//       .catch(getUserNameError => {
-//         console.log('getUserName wrong');
-//         console.log(getUserNameError.code);
-//       });
+// isSignIn().then(isSign => {
+//   if (isSign) {
+//    getUserName()
+//      .then(getUserNameRes => {
+//        console.log(getUserNameRes.data().name);
+//        //Тут рахуємо що все добре і данні є!
+//      })
+//      .catch(getUserNameError => {
+//        console.log('getUserName wrong');
+//        console.log(getUserNameError.code);
+//      });
 //   }
+// });
 
 //===============================================================================
 
 // --- getUserEmail ---
 
-//   if (isSignIn()) {
+// isSignIn().then(isSign => {
+//   if (isSign) {
 //     try {
 //       //Тут рахуємо що все добре і данні є!
 //       console.log(getUserEmail());
@@ -271,3 +282,4 @@ export {
 //       console.log('getUserEmail wrong');
 //     }
 //   }
+// });

@@ -8,8 +8,8 @@
   --shoplist-bgr: #ffffff;
   --text-authorization-color: #202024;
   --scroll-color: #e0e0e0;
-  --text-category-author: #b4afaf;
   --filter-amazon: grayscale(100);
+  --category-link-color: rgba(17, 17, 17, 0.6);
 }
 
 // for a dark theme
@@ -21,4 +21,5 @@
   --text-authorization-color: #f6f6f6;
   --scroll-color: rgba(17, 17, 17, 0.6);
   --filter-amazon: grayscale(100) invert(1);
+  --category-link-color: rgba(255, 255, 255, 0.6);
 }
