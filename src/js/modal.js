@@ -4,18 +4,21 @@ import {
   getStorageShopingList,
   removeStorageShopingList,
 } from './api-shiping-localstorage';
+import amazon from '../img/shop1.png';
+import appleBook from '../img/shop2.png';
+import bookShop from '../img/shop3.png';
 
 import { isSignIn, signInApp } from './api-firebase';
 import icon from '../img/sprite.svg';
 
-signInApp('test@g.com', '12345678')
-  .then(signInAppRes => {
-    console.log('signInApp success');
-    console.log(signInAppRes);
-  })
-  .catch(signInAppError => {
-    console.log('signInApp wrong');
-  });
+// signInApp('test@g.com', '12345678')
+//   .then(signInAppRes => {
+//     console.log('signInApp success');
+//     console.log(signInAppRes);
+//   })
+//   .catch(signInAppError => {
+//     console.log('signInApp wrong');
+//   });
 
 const refs = {
   openModalBtnEl: document.querySelector('.js-modal-book-open'),
@@ -135,13 +138,13 @@ function createModalBookMarkup(resp) {
         <p class="modal-book-info"> ${description}</p>
         <div class="modal-book-linc-box">
           <a href="${buy_links[0].url}" class="modal-book-linc" target="_blank">
-            <img src="./img/shop1.png" alt="${buy_links[0].name}" class="modal-book-linc-icon" />
+            <img src="${amazon}" alt="${buy_links[0].name}" class="modal-book-linc-icon" />
           </a>
           <a href="${buy_links[1].url}" class="modal-book-linc" target="_blank">
-            <img src="./img/shop2.png" alt="${buy_links[1].name}" class="modal-book-linc-icon" />
+            <img src="${appleBook}" alt="${buy_links[1].name}" class="modal-book-linc-icon" />
           </a>
           <a href="https://bookshop.org/" class="modal-book-linc" target="_blank">
-            <img src="./img/shop3.png" alt="${buy_links[4].name}" class="modal-book-linc-icon" />
+            <img src="${bookShop}" alt="${buy_links[4].name}" class="modal-book-linc-icon" />
           </a>
         </div>
       </div>

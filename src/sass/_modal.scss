@@ -70,7 +70,7 @@
 
 .modal-book-autor {
   margin-top: 4px;
-  color: #b4afaf;
+  color: var(--text-category-author);
   font-size: 12px;
   font-style: italic;
   line-height: 1.16;
@@ -108,6 +108,7 @@
   border-radius: 40px;
   border: 2px solid #4f2ee8;
   padding: 14px 28px;
+  background-color: inherit;
   color: var(--text-color);
   font-size: 14px;
   font-weight: 700;
@@ -134,7 +135,7 @@
   padding: 0 5px;
   margin: 0 auto;
   margin-top: 8px;
-  color: rgba(17, 17, 17, 0.5);
+  color: var(--text-category-author);
   text-align: center;
   font-size: 10px;
   line-height: 1.2;
