@@ -103,6 +103,9 @@ function isHiddenToggle(el) {
 }
 function isInSoppinList(id) {
   const ls = getStorageShopingList();
+  if (!ls) {
+    return;
+  }
   const booksId = ls.map(book => book._id);
   return booksId.includes(id);
 }
