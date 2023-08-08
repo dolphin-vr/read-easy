@@ -12,7 +12,7 @@
 }
 
 // for a dark theme
-:root[theme='dark'] {
+[theme='dark'] {
   --bgr-color: #202024;
   --text-color: #ffffff;
   --category-accent: #eac645;
