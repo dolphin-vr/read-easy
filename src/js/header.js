@@ -13,7 +13,6 @@ const refs = {
   initTheme()
   setStoredTheme()
 
-  // console.dir(refs.slider);
 // refs.home.addEventListener('click', showHomepage);
 // refs.shoplist.addEventListener('click', showShoppingList);
 // refs.signup.addEventListener('click', showSignUp);
@@ -32,12 +31,9 @@ function themeSwitch(){
 }
 
 function setStoredTheme(){
-  console.log(isThemeDark());
   if (isThemeDark()){
-    console.log('true', isThemeDark());
   refs.slider.classList.add('slider-dark');
   } else{
-    console.log('false', isThemeDark());
   refs.slider.classList.remove('slider-dark');
   }
 }

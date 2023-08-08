@@ -1,6 +1,7 @@
 import shop1png from '../img/shop1.png';
 import shop2png from '../img/shop2.png';
 import shop3png from '../img/shop3.png';
+import sprite from "../img/sprite.svg";
 
 const iconPaths = [
    {
@@ -18,8 +19,22 @@ const iconPaths = [
  ];
 
 
-function bookShopsMurkup(shops){
+ function   createBookCard(book){
+  return `<li class="shopping-card">
+     <button class="button-trash js-trash" aria-label="Close window" type="button"  id="${book._id}><svg class="icon"><use href="${sprite}#trash"></use></svg></button>
+     <img src="${book.book_image}" alt="${book.titel}" class="shopping-book-img" />
+        <div class="card-item"
+        <p class="shopping-book-name">${book.titel}</p>
+        <p class="shopping-book-category">${book.list_name}</p>
+        <div class="shopping-book-info">
+        <p> ${book.description}</p>
+        </div>
+        <p class="book-author">${book.author}</p>
+        </div>${bookShopsMurkup(book.shops)}
+        </li>`
+}
 
+function bookShopsMurkup(shops){
  const shopIcons = [];
  iconPaths.forEach(p => {
    const u = shops.find(b => b.name === p.name);
@@ -27,7 +42,6 @@ function bookShopsMurkup(shops){
      shopIcons.push({name: p.name, path: p.path, url: u.url})
    }
  })
-
 let markup = '<ul class="shops-list">';
 shopIcons.forEach(el => {
    markup += `<li class="shop"><a href="${el.url}" class="shop-link" target="_blank" rel="noreferrer noopener"><img src="${el.path}" alt="${el.name}" class="shop-icon"></a></li>`
@@ -37,4 +51,4 @@ markup += '</ul>'
  return markup
 }
 
-export {bookShopsMurkup}
+export {createBookCard, bookShopsMurkup}
