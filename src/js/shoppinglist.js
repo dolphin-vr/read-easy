@@ -1,5 +1,7 @@
 import { isSignIn, signInApp,} from './api-firebase';
+import { bookShopsMurkup, createBookCard } from "./shopslist";
 import { getStorageShopingList } from './api-shiping-localstorage';
+import emptypng from '../img/empty.png';
 // import sprite from "../img/sprite.svg";
 
 const refs = {
@@ -14,14 +16,14 @@ if (shoppingList) {
   // додати розмітку списка книг
   shoplistMurkup += '<ul class="book-list">';
   shoplistMurkup += shoppingList.map(el => createBookCard(el)).join('');
-  shoplistMurkup += '</ul>;'
+  shoplistMurkup += '</ul>'
 // } else if (false) {  //емуляція залогіненого юзера
-} else if (!isSignIn()) {
+} else if (isSignIn()) {
   // додати розмітку порожнього шоплиста з текстом   // Please sign-up to manage your Shopping List
-  shoplistMurkup += '<div class="shopping-list-empty"><a><p class="shopping-book-empty">Please sign-up to manage your Shopping List</p><img src="./img/empty.png" alt="Empty Shopping List" class="shopping-book-empty-img"></a></div>'
+  shoplistMurkup += `<div class="shopping-list-empty"><a><p class="shopping-book-empty">Please sign-up to manage your Shopping List</p><img src="${emptypng}" alt="Empty Shopping List" class="shopping-book-empty-img"></a></div>`
 } else {
   // додати розмітку порожнього шоплиста з текстом  // This page is empty, add some books and proceed to order.
-  shoplistMurkup += '<div class="shopping-list-empty"><a><p class="shopping-book-empty">This page is empty, add some books and proceed to order.</p><img src="./img/empty.png" alt="Empty Shopping List" class="shopping-book-empty-img"></a></div>'
+  shoplistMurkup += `<div class="shopping-list-empty"><a><p class="shopping-book-empty">This page is empty, add some books and proceed to order.</p><img src="${emptypng}" alt="Empty Shopping List" class="shopping-book-empty-img"></a></div>`
 }
 
 refs.shoplist.innerHTML = shoplistMurkup;
