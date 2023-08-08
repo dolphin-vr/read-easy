@@ -38,11 +38,18 @@
 
 .funds-list {
   // width: 100%;
-  // height: 0%;
-  overflow: hidden;
+  // height: 100%;
+  max-height: 210px;
+  // overflow: hidden;
+  overflow-y: scroll;
+  scrollbar-width: none;
   // display: none;
   padding-left: 40px;
-  height: 350px;
+  // height: 300px;
+}
+
+.funds-list::-webkit-scrollbar {
+  // display: none;
 }
 
 .funds-item {
@@ -71,6 +78,7 @@
 .funds-img {
   filter: brightness(0) invert(1);
   height: 32px;
+  max-width: 150px;
   // margin-left: 16px;
 }
 
@@ -110,7 +118,7 @@
     height: 474px; // почему у Олега 472px было?
     // margin-bottom: 100px;
     padding-top: 26px;
-    padding-bottom: 24px;
+    padding-bottom: 86px;
   }
 
   .funds-title {
@@ -125,12 +133,13 @@
   }
 
   .funds-list {
+    max-height: 292px;
     // width: 100%;
     // height: 0%;
-    overflow: hidden;
+    // overflow: hidden;
     // display: none;
-    padding-left: 40px;
-    height: 330px;
+    // padding-left: 40px;
+    // height: 330px;
   }
 }
 
