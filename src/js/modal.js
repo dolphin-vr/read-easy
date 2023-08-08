@@ -111,7 +111,7 @@ function isInSoppinList(id) {
 }
 function adBookToShoppingList(obj) {
   let ls = getStorageShopingList();
-  if (ls === null) {
+  if (!ls) {
     ls = [];
   }
   ls.push(obj);
