@@ -1,4 +1,4 @@
-import{a as h,b as r,c,d as g,g as m,i as u}from"./sprite-a5093366.js";const d=[{name:"Amazon",path:r},{name:"Apple Books",path:c},{name:"Bookshop",path:g}];function y(s){return`<li class="shopping-card">
+import{a as h,b as r,c,d as g,g as m,i as u}from"./sprite-105cc8f8.js";const d=[{name:"Amazon",path:r},{name:"Apple Books",path:c},{name:"Bookshop",path:g}];function y(s){return`<li class="shopping-card">
      <button class="button-trash js-trash" aria-label="Close window" type="button"  id="${s._id}>
      <svg class="trash-icon"><use href="${h}#trash"></use></svg></button>
      <img src="${s.book_image}" alt="${s.title}" class="shopping-book-img" />
