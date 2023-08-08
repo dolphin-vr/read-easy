@@ -5,7 +5,7 @@ import emptypng from '../img/empty.png';
 // import sprite from "../img/sprite.svg";
 
 const refs = {
-  shoplist: document.querySelector('.shoplist'),
+  shoplist: document.querySelector('.shooping-list'),
 }
 
 let shoplistMurkup = '<div class="shooping-list"><h1 class="shopping-titel">Shopping <span class="shopping-titel-list">List</span></h1>';
