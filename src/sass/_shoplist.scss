@@ -1,0 +1,266 @@
+.shoplist {
+    width: 335px;
+    padding: 40px 20px;
+    background-color: var(--bgr-color);
+    margin: 0 auto;
+}
+
+.shop-title {
+    margin-left: 0;
+    font-weight: 700;
+    line-height: 1.18;
+    letter-spacing: -1.28px;
+}
+
+.shop-title-span {
+    color: var(--category-accent);
+}
+// ======== style shop-list-empty==========
+.shop-list-empty {
+    margin-top: 120px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 265px;
+    height: 248px;
+}
+.shop-book-empty-img {
+    margin: auto;
+    width: 265px;
+    height: 198px;
+}
+.shop-book-empty {
+    margin-bottom: 14px;
+    width: 244px;
+    height: 36px;
+    color: rgba(0, 0, 0, 0.60);
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.28;
+    letter-spacing: -0.28px;
+}
+// ======== style shop-card==========
+.shop-box {
+    margin-top: 40px;
+    width: 335px;
+}
+.shop-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 170px;
+    padding: 14px 14px;
+    align-items: flex-start;
+    gap: 14px;
+    border-radius: 16px;
+    border: 2px solid rgba(79, 46, 232, 0.40);
+    $bg-body: #fafafa;
+}
+.shop-book-img {
+    width: 100px;
+    height: 142px;
+    border-radius: 8px;
+}
+
+.button-trash {
+    display: flex;
+    position: absolute;
+    right: 14px;
+    width: 28px;
+    height: 28px;
+    align-items: center;
+    justify-content: center;
+    fill: var(--category-accent);
+    stroke: var(--shoplist-bgr);
+    border-radius: 50%;
+    background-color: var(--category-accent);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.shop-book-name {
+    color: var(--text-color);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.12;
+    letter-spacing: -0.64px;
+    text-transform: uppercase;
+}
+
+.shop-book-category {
+    margin-top: 4px;
+    $grey: #B4AFAF;
+    font-size: 12px;
+    line-height: 1.16;
+    letter-spacing: 0.36px;
+}
+
+.shop-book-info {
+    margin-top: 4px;
+    color: var(--text-color);
+    font-size: 14px;
+    line-height: 1.28;
+    letter-spacing: -0.56px;
+    width: 193px;
+    height: 68px;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+}
+
+.shop-book-autor {
+    $grey: #B4AFAF;
+    font-size: 12px;
+    font-style: italic;
+    line-height: 1.16;
+    letter-spacing: -0.48px;
+}
+
+// .shop-box {
+//     margin-top: 16px;
+//     display: flex;
+//     align-items: center;
+//     justify-content: space-between;
+// }
+
+.shop-linc-box {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: 8px;
+}
+.shop-linc-icon {
+    width: 16px;
+    height: 16px;
+    filter: grayscale(100);
+}
+.shop-linc-icon:hover,
+.shop-linc-icon:focus {
+box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.15);
+
+}
+.amazon{
+    width: 32px;
+    height: 11px;
+}
+
+
+/* =====================media-tablet================== */
+@media screen and (min-width: 768px) {
+    .shoplist {
+        width: 768px;
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+
+    .shop-title {
+        font-size: 48px;
+        font-weight: 700;
+        line-height: 1.08;
+        letter-spacing: -1.92px;
+    }
+
+    .shop-box {
+    width: 704px;
+    margin-top: 40px;
+}
+   .shop-card {
+        height: 213px;
+        padding: 30px 24px;
+        gap: 14px;
+    }
+    .shop-list-empty {
+        margin-top: 140px;
+        width: 349px;
+        height: 309px;
+    }
+    .shop-book-empty {
+        margin-bottom: 20px;
+        width: 349px;
+        height: 48px;
+        font-size: 18px;
+        line-height: 1.33;
+        letter-spacing: -0.36px;
+    }
+    .shop-book-empty-img {
+        width: 322px;
+        height: 241px;
+}
+
+    .shop-book-img {
+        width: 116px;
+        height: 165px;
+    }
+
+    .shop-book-info {
+        width: 508px;
+        height: 53px;
+    }
+
+.shop-box {
+    margin-top: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.shop-linc-box {
+    gap: 16px;
+}
+
+.shop-linc-icon {
+    width: 32px;
+    height: 30px;
+}
+.amazon {
+    width: 48px;
+    height: 15px;
+}
+  .button-trash {
+      right: 32px;
+      width: 18px;
+      height: 18px;
+  }
+
+}
+/* =====================media-desktop================== */
+@media screen and (min-width: 1440px) {
+
+    .shoplist {
+     width: 1440px;
+     display: flex;
+    }
+        .shop-container {
+            margin-left: 40px;
+        }
+
+    .shop-title {
+        font-size: 48px;
+        font-weight: 700;
+        line-height: 1.08;
+        letter-spacing: -1.92px;
+    }
+        .shop-box {
+            width: 996px;
+            margin-top: 40px;
+        }
+   .shop-card {
+        height: 213px;
+        padding: 30px 24px;
+        gap: 14px;
+    }
+
+    .shop-list-empty {
+        margin-top: 140px;
+        width: 349px;
+        height: 309px;
+    }
+
+    .shop-book-info {
+        width: 808px;
+    }
+}
+
+@media screen and (max-width: 1439px) {
+div.funds {
+        display: none;
+    }
+}
