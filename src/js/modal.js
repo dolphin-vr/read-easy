@@ -103,12 +103,15 @@ function isHiddenToggle(el) {
 }
 function isInSoppinList(id) {
   const ls = getStorageShopingList();
+  if (!ls) {
+    return;
+  }
   const booksId = ls.map(book => book._id);
   return booksId.includes(id);
 }
 function adBookToShoppingList(obj) {
   let ls = getStorageShopingList();
-  if (ls === null) {
+  if (!ls) {
     ls = [];
   }
   ls.push(obj);
