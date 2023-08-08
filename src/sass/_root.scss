@@ -2,18 +2,16 @@
 // for light theme
 
 :root {
-   --bgr-color: #F6F6F6;
+  --bgr-color: #f6f6f6;
   --text-color: #111111;
-   --category-accent: #4F2EE8;
-   --shoplist-bgr: #FFFFFF;
+  --category-accent: #4f2ee8;
+  --shoplist-bgr: #ffffff;
 }
 
 // for a dark theme
 :root[theme='dark'] {
-   --bgr-color: #202024;
-  --text-color: #FFFFFF;
-   --category-accent: #EAC645;
-   --shoplist-bgr: #111111;
+  --bgr-color: #202024;
+  --text-color: #ffffff;
+  --category-accent: #eac645;
+  --shoplist-bgr: #111111;
 }
-
-

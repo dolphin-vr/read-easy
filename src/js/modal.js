@@ -1,18 +1,21 @@
 import { getBookById } from './api-books';
 import {
-  createAccount,
-  setUserName,
-  signInApp,
-  isSignIn,
-  signOutApp,
-  removeAccount,
-  removeAccountInfo,
-  getUserShoppingList,
-  updateUserShoppingList,
-  getUserName,
-  getUserEmail,
-  returnAuth,
-} from './api-firebase';
+  setStorageShopingList,
+  getStorageShopingList,
+  removeStorageShopingList,
+} from './api-shiping-localstorage';
+
+import { isSignIn, signInApp } from './api-firebase';
+import icon from '../img/sprite.svg';
+
+signInApp('test@g.com', '12345678')
+  .then(signInAppRes => {
+    console.log('signInApp success');
+    console.log(signInAppRes);
+  })
+  .catch(signInAppError => {
+    console.log('signInApp wrong');
+  });
 
 const refs = {
   openModalBtnEl: document.querySelector('.js-modal-book-open'),
@@ -21,18 +24,18 @@ const refs = {
 };
 
 refs.booksList.addEventListener('click', hendlerClick);
-// refs.openModalBtnEl.addEventListener('click', openModalBook);
 refs.modalEl.addEventListener('click', closeModalBook);
 
 function hendlerClick(evt) {
   const currentBook = evt.target.closest('.book-link');
-  const bookId = currentBook.id;
-  openModalBook(bookId);
+  if (evt.target.closest('.book-link')) {
+    const bookId = currentBook.id;
+    openModalBook(bookId);
+  }
 }
 async function openModalBook(id) {
   try {
     const bookInfo = await getBookById(id);
-    console.log(bookInfo.data.buy_links);
     const modalBookMarkup = createModalBookMarkup(bookInfo.data);
     refs.modalEl.innerHTML = modalBookMarkup;
     const modalText = document.querySelector('.modal-book-text');
@@ -42,13 +45,36 @@ async function openModalBook(id) {
     const removeShoppingListBtnEl = document.querySelector(
       '.js-modal-book-localstostorage-remove-btn'
     );
-    adShoppingListBtnEl.addEventListener('click', () => {});
-    removeShoppingListBtnEl.addEventListener('click', () => {});
+
+    if (!isSignIn()) {
+      adShoppingListBtnEl.disabled = true;
+      adShoppingListBtnEl.style.pointerEvents = 'none';
+      modalText.textContent =
+        'You need to log in to add a book to the shopping list!';
+      isHiddenToggle(modalText);
+    }
+    if (isInSoppinList(id)) {
+      isHiddenToggle(adShoppingListBtnEl);
+      isHiddenToggle(removeShoppingListBtnEl);
+      isHiddenToggle(modalText);
+      removeShoppingListBtnEl.addEventListener('click', () => {
+        removeBookFromShoppingList(id);
+        isHiddenToggle(adShoppingListBtnEl);
+        isHiddenToggle(removeShoppingListBtnEl);
+        isHiddenToggle(modalText);
+      });
+    }
+    adShoppingListBtnEl.addEventListener('click', () => {
+      adBookToShoppingList(bookInfo.data);
+      isHiddenToggle(adShoppingListBtnEl);
+      isHiddenToggle(removeShoppingListBtnEl);
+      isHiddenToggle(modalText);
+    });
+
     toggleModalBook();
     document.addEventListener('keydown', closeModalBookOnEsc);
   } catch (err) {
-    //     Notiflix.Notify.info('Oops! Something went wrong: no such book was found!');
-    console.log(err);
+    console.log(err.message);
   }
 }
 function closeModalBook(evt) {
@@ -69,20 +95,42 @@ function toggleModalBook() {
   refs.modalEl.classList.toggle('is-hidden');
   document.body.classList.toggle('no-scroll');
 }
-export { openModalBook, closeModalBook };
+function isHiddenToggle(el) {
+  el.classList.toggle('is-hidden');
+}
+function isInSoppinList(id) {
+  const ls = getStorageShopingList();
+  const booksId = ls.map(book => book._id);
+  return booksId.includes(id);
+}
+function adBookToShoppingList(obj) {
+  let ls = getStorageShopingList();
+  if (ls === null) {
+    ls = [];
+  }
+  ls.push(obj);
+  setStorageShopingList(ls);
+}
+function removeBookFromShoppingList(id) {
+  const ls = getStorageShopingList();
+  const booksId = ls.map(book => book._id);
+  const idx = booksId.indexOf(id);
+  ls.splice(idx, 1);
+  setStorageShopingList(ls);
+}
 
 function createModalBookMarkup(resp) {
-  const { book_image, list_name, author, description, buy_links } = resp;
-  return ` <div class="modal-book">
+  const { book_image, title, author, description, buy_links, _id } = resp;
+  return ` <div class="modal-book" id ="${_id}">
     <button type="button" class="modal-book-close-btn js-modal-book-close-btn">
       <svg class="modal-book-close-svg">
-        <use href="./img/sprite.svg#close"></use>
+        <use href="${icon}#close"></use>
       </svg>
     </button>
     <div class="modal-book-wrap">
-      <img src="${book_image}" alt="${list_name}" class="modal-book-img" />
+      <img src="${book_image}" alt="${title}" class="modal-book-img" />
       <div class="modal-book-info-wrap">
-        <h2 class="modal-book-name">${list_name}</h2>
+        <h2 class="modal-book-name">${title}</h2>
         <p class="modal-book-autor">${author}</p>
         <p class="modal-book-info"> ${description}</p>
         <div class="modal-book-linc-box">
@@ -92,7 +140,7 @@ function createModalBookMarkup(resp) {
           <a href="${buy_links[1].url}" class="modal-book-linc" target="_blank">
             <img src="./img/shop2.png" alt="${buy_links[1].name}" class="modal-book-linc-icon" />
           </a>
-          <a href="${buy_links[4].url}" class="modal-book-linc" target="_blank">
+          <a href="https://bookshop.org/" class="modal-book-linc" target="_blank">
             <img src="./img/shop3.png" alt="${buy_links[4].name}" class="modal-book-linc-icon" />
           </a>
         </div>
@@ -112,3 +160,4 @@ function createModalBookMarkup(resp) {
     </p>
   </div>`;
 }
+export { openModalBook, closeModalBook };
