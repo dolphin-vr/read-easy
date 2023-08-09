@@ -1,5 +1,5 @@
 .category-link {
-    color: rgba(17, 17, 17, 0.6);
+    color: var(--category-link-color);
     font-family: DM Sans;
     font-size: 16px;
     font-style: normal;
@@ -24,6 +24,8 @@
     overflow: scroll;
     overflow-x: hidden;
     background-color: var(--bgr-color);
+
+
   }
   .category-list li:not(:last-child) {
     margin-bottom: 24px;
@@ -91,8 +93,7 @@
         width: 309px;
         height: 472px;
       }
-      .category-link{
-        color: rgba(17, 17, 17, 0.60);
+      .category-link {
         font-family: DM Sans;
         font-size: 18px;
         font-style: normal;
@@ -157,20 +158,21 @@
       color: var(--category-accent);
     }
   }
-  ::-webkit-scrollbar {
+  
+  .category-list::-webkit-scrollbar {
     width: 8px;
   }
 
-  ::-webkit-scrollbar-track {
+  .category-list::-webkit-scrollbar-track {
     background-color: var(--bgr-color);
   }
 
-  ::-webkit-scrollbar-thumb {
+  .category-list::-webkit-scrollbar-thumb {
     background-color: var(--scroll-color);
     border-radius: 12px; // Встановлюємо border-radius
   }
 
-  ::-webkit-scrollbar-thumb:hover {
+  .category-list::-webkit-scrollbar-thumb:hover {
     background-color: #8d8d8d;
   }
 

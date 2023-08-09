@@ -7,8 +7,9 @@
   --category-accent: #4f2ee8;
   --shoplist-bgr: #ffffff;
   --text-authorization-color: #202024;
-  --scroll-color: #E0E0E0;
-  --text-category-author: #b4afaf;
+  --scroll-color: #e0e0e0;
+  --filter-amazon: grayscale(100);
+  --category-link-color: rgba(17, 17, 17, 0.6);
 }
 
 // for a dark theme
@@ -18,5 +19,7 @@
   --category-accent: #eac645;
   --shoplist-bgr: #1c1a1a;
   --text-authorization-color: #f6f6f6;
-  --scroll-color: rgba(17, 17, 17, 0.60);
+  --scroll-color: rgba(17, 17, 17, 0.6);
+  --filter-amazon: grayscale(100) invert(1);
+  --category-link-color: rgba(255, 255, 255, 0.6);
 }

@@ -53,7 +53,7 @@
 
 .modal-book-close-svg:hover,
 .modal-book-close-svg:focus {
-  stroke: #4f2ee8;
+  stroke: $violet;
 }
 .modal-book-img {
   width: 287px;
@@ -70,7 +70,7 @@
 
 .modal-book-autor {
   margin-top: 4px;
-  color: var(--text-category-author);
+  color: $grey;
   font-size: 12px;
   font-style: italic;
   line-height: 1.16;
@@ -99,6 +99,12 @@
   mix-blend-mode: luminosity;
   filter: grayscale(100);
 }
+.modal-book-linc-icon.amazon {
+  width: 62px;
+  height: 19px;
+  filter: var(--filter-amazon);
+}
+
 .modal-book-linc-icon:hover,
 .modal-book-linc-icon:focus {
   box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.15);
@@ -106,7 +112,7 @@
 
 .modal-book-ls-btn {
   border-radius: 40px;
-  border: 2px solid #4f2ee8;
+  border: 2px solid $violet;
   padding: 14px 28px;
   background-color: inherit;
   color: var(--text-color);
@@ -121,12 +127,12 @@
 }
 .modal-book-ls-btn:hover,
 .modal-book-ls-btn:focus {
-  background: #4f2ee8;
-  color: #ffffff;
+  background: $violet;
+  color: $white;
 }
 
 .modal-book-ls-btn.remove {
-  padding: 14px 22px;
+  padding: 14px 15px;
   gap: 10px;
 }
 
@@ -135,7 +141,7 @@
   padding: 0 5px;
   margin: 0 auto;
   margin-top: 8px;
-  color: var(--text-category-author);
+  color: $grey;
   text-align: center;
   font-size: 10px;
   line-height: 1.2;
