@@ -1,8 +1,11 @@
-import { isSignIn, signInApp } from './api-firebase';
+import { isSignIn } from './api-firebase';
 import { bookShopsMurkup, createBookCard } from './shopslist';
 import { getStorageShopingList } from './api-shiping-localstorage';
-import emptypng from '../img/empty.png';
-// import sprite from "../img/sprite.svg";
+import { removeBookFromShoppingList } from './modal';
+
+import empty from '../img/empty.png';
+import empty2x from '../img/empty2x.png';
+
 import './authorization-modal';
 import './log-out';
 
@@ -10,65 +13,60 @@ const refs = {
   shoplist: document.querySelector('.shooping-list'),
 };
 
-let shoplistMurkup = '<h1 class="shopping-title">Shopping <span class="shopping-title-list">List</span></h1>';
+let shoplistMurkup =
+  '<h2 class="shopping-title">Shopping <span class="shopping-title-list">List</span></h2>';
 
 const shoppingList = getStorageShopingList();
 
-if (shoppingList) {
+if (!shoppingList && shoppingList.length === 0) {
   // додати розмітку списка книг
-  shoplistMurkup += '<ul class="book-list">';
-  shoplistMurkup += shoppingList.map(el => createBookCard(el)).join('');
-  shoplistMurkup += '</ul>';
+  shoplistMurkup += `<div class="shopping-list-empty">
+  <p class="shopping-book-empty">
+    This page is empty, add some books and proceed to order.
+  </p>
+  <img
+    srcset="${empty2x} 2x"
+    src="${empty}"
+    alt="Empty Shopping List"
+    class="shopping-book-empty-img"
+  />
+</div>`;
   // } else if (false) {  //емуляція залогіненого юзера
-} else if (isSignIn()) {
-  // додати розмітку порожнього шоплиста з текстом   // Please sign-up to manage your Shopping List
-  shoplistMurkup += `<div class="shopping-list-empty"><a><p class="shopping-book-empty">Please sign-up to manage your Shopping List</p><img src="${emptypng}" alt="Empty Shopping List" class="shopping-book-empty-img"></a></div>`;
 } else {
-  // додати розмітку порожнього шоплиста з текстом  // This page is empty, add some books and proceed to order.
-  shoplistMurkup += `<div class="shopping-list-empty"><a><p class="shopping-book-empty">This page is empty, add some books and proceed to order.</p><img src="${emptypng}" alt="Empty Shopping List" class="shopping-book-empty-img"></a></div>`;
+  isSignIn().then(isSign => {
+    if (!isSign) {
+      // додати розмітку порожнього шоплиста з текстом   // Please sign-up to manage your Shopping List
+      shoplistMurkup += `<div class="shopping-list-empty">
+  <p class="shopping-book-empty">
+    Please sign-up to manage your Shopping List
+  </p>
+  <img
+    srcset="${empty2x} 2x"
+    src="${empty}"
+    alt="Empty Shopping List"
+    class="shopping-book-empty-img"
+  />
+</div>`;
+    }
+  });
 }
-
+// додати розмітку порожнього шоплиста з текстом  // This page is empty, add some books and proceed to order.
+shoplistMurkup += '<ul class="book-list">';
+shoplistMurkup += shoppingList.map(el => createBookCard(el)).join('');
+shoplistMurkup += '</ul>';
 refs.shoplist.innerHTML = shoplistMurkup;
 
-// signInApp('test@g.com', '12345678')
-//   .then(signInAppRes => {
-//     console.log("signInApp success");
-//     console.log(signInAppRes);
-//   })
-//   .catch(signInAppError => {
-//     console.log("signInApp wrong");
-//   });
-
-// showShoppingList create markup
-// import { getStorageShopingList } from './api-shiping-localstorage';
-
-// const shoplist = [
-//    {_id,
-//    title,
-//    author,
-//    list_name,
-//    description,
-//    book_image,
-//    buy_links: [url1, url2, url3]
-//    }
-// ]
-
-// const listOfBooks =
-
-// <!-- shopping-list page is empty -->
-// const emptyPage = document.querySelector(`#page-empty`)
-// function showShoppingListEmpty() {
-//    console.log(emptyPage);
+// if (shoppingList && shoppingList.length !== 0) {
+const trashBtn = document.querySelector('.js-trash');
+trashBtn.addEventListener('click', trashBook);
 // }
-
-// remove book from shoppinglist
-
-// const shoppingRemoveBtn = document.querySelector('.js-shopping-remove-btn');
-
-// console.log(shoppingRemoveBtn);
-
-// shoppingRemoveBtn.addEventListener('click', shoppingRemove);
-
-// function shoppingRemove(){
-//   console.log(shoppingRemoveBtn)
-// }
+console.log(trashBtn);
+function trashBook(evt) {
+  const trash = evt.target.closest('.js-trash');
+  console.log(trash);
+  if (evt.target.closest('.js-trash')) {
+    const id = trash.id;
+    console.log(id);
+    removeBookFromShoppingList(id);
+  }
+}
