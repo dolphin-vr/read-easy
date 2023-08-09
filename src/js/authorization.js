@@ -24,13 +24,15 @@ form.buttonSignUp.addEventListener('click', e => {
   e.preventDefault();
   createAccount(form.mail.value, form.password.value)
     .then(createAccountRes => {
-      Notify.success(`createAccount success`);
+      console.log(`createAccount success`);
       console.log(createAccountRes);
       setUserName(form.name.value)
         .then(setUserNameRes => {
           //Тут рахуємо що все добре!
-          Notify.success(`setUserName success `);
+          console.log(`setUserName success `);
           console.log(setUserNameRes);
+          Notify.success(`Account created`);
+
           form.modal.classList.toggle('is-hidden');
         })
         .catch(setUserNameError => {
@@ -63,14 +65,16 @@ form.buttonSignUp.addEventListener('click', e => {
 });
 
 // signIn-------------------------------------------------------------------------------------------
+import { initUserName } from './log-out';
 
 form.buttonSignIn.addEventListener('click', e => {
   e.preventDefault();
   signInApp(form.mail.value, form.password.value)
     .then(signInAppRes => {
-      Notify.success(`signInApp success `);
+      console.log(`signInApp success `);
       console.log(signInAppRes);
       form.modal.classList.toggle('is-hidden');
+      initUserName();
       //Тут рахуємо що все добре!
     })
     .catch(signInAppError => {

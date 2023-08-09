@@ -48,6 +48,7 @@
   border-radius: 18px;
   border: 2px solid $black;
   background: var(--bgr-color);
+  fill: var(--bgr-color);
 }
 .authorization-close-btn {
   width: 20px;
@@ -153,6 +154,65 @@
   text-decoration-line: underline;
   cursor: default;
 }
+
+// Log-in Log-out-----------------------------------------------
+
+.user-btn {
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -0.44px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  width: 184px;
+  height: 45px;
+  border-radius: 36px;
+  border: none;
+  background-color: #4f2ee8;
+  padding: 4px 9px;
+  text-overflow: ellipsis;
+}
+.user-foto {
+  margin-right: 9px;
+}
+.user-icon {
+  width: 23px;
+  height: 26px;
+  stroke: var(--bgr-color);
+  margin-left: auto;
+}
+
+.logout-btn {
+  position: absolute;
+  top: 45px;
+  right: 0;
+
+  color: var(--text-authorization-color);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.28;
+  letter-spacing: -0.56px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 184px;
+  height: 48px;
+  padding: 14px;
+  background: var(--bgr-color);
+  border-radius: 18px;
+  border: 1.5px solid #111;
+}
+.logout-icon {
+  width: 20px;
+  height: 20px;
+  stroke: #eac645;
+}
+
+// screen size ------------------------------------------------------------------------
 
 @media screen and (min-width: 1440px) {
   .authorization-frame {
