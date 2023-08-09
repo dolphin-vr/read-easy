@@ -1,5 +1,4 @@
 function initGoTopButton(){
-   console.log('initGoTopButton')
    const goTopBtn = document.getElementById("goTopBtn");
    goTopBtn.addEventListener('click', goTopPage)
    
