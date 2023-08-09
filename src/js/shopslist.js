@@ -26,9 +26,7 @@ const iconPaths = [
 
 function createBookCard(book) {
   return `<li class="shopping-card">
-<button class="button-trash js-trash" aria-label="Close window" type="button"  id="${
-    book._id
-  }">
+<button class="button-trash js-trash" aria-label="Close window" type="button"  id="${book._id}">
 <svg class="trash-icon">
 <use href="${sprite}#trash"></use>
 </svg>

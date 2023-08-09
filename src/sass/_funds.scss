@@ -50,7 +50,7 @@
 
 .funds-item {
   // height: 32px;
-  width: 70%;
+  width: 170px;
 }
 
 .funds-href {
@@ -74,6 +74,9 @@
 .funds-img {
   filter: brightness(0) invert(1);
   height: 32px;
+  max-width: 100%;
+  // max-height: 100%;
+  display: block;
 }
 
 .funds-btn-bottom,

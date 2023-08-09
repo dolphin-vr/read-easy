@@ -96,7 +96,7 @@
   font-weight: 400;
   line-height: 1.3;
   letter-spacing: -0.04em;
-  color: var(--text-category-author);
+  color: $grey;
   margin-bottom: 18px;
 }
 .book-thumb {
@@ -133,7 +133,7 @@
   font-style: italic;
   line-height: 1.2;
   letter-spacing: -0.04em;
-  color: var(--text-category-author);
+  color: $grey;
 }
 .btn-see-more {
   font-size: 14px;
@@ -269,8 +269,8 @@
   }
   .btn-see-more:hover,
   .btn-see-more:focus {
-    background-color: var(--category-accent);
-    color: var(--shoplist-bgr);
+    background-color: $violet;
+    color: $white;
     outline: none;
   }
 }

@@ -1,5 +1,6 @@
 import { initTheme, isThemeDark, switchTheme } from './theme-switcher';
 import './log-out';
+import './authorization-modal';
 
 const refs = {
   logo: document.querySelector('.logo'),
