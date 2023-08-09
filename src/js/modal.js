@@ -3,7 +3,6 @@ import { getBookById } from './api-books';
 import {
   setStorageShopingList,
   getStorageShopingList,
-  removeStorageShopingList,
 } from './api-shiping-localstorage';
 import amazon from '../img/shop1.png';
 import appleBook from '../img/shop2.png';
@@ -134,7 +133,7 @@ function createModalBookMarkup(resp) {
       <p class="modal-book-autor">${author}</p>
       <p class="modal-book-info">${description}</p>
       <div class="modal-book-linc-box">
-        <a href="${buy_links[0].url}" class="modal-book-linc" target="_blank">
+        <a href="${buy_links[0].url}" class="modal-book-linc" target="_blank" rel="noreferrer noopener">
           <img
             srcset="${amazon2x} 2x"
             src="${amazon}"
@@ -142,7 +141,7 @@ function createModalBookMarkup(resp) {
             class="modal-book-linc-icon amazon"
           />
         </a>
-        <a href="${buy_links[1].url}" class="modal-book-linc" target="_blank">
+        <a href="${buy_links[1].url}" class="modal-book-linc" target="_blank" rel="noreferrer noopener">
           <img
             srcset="${appleBook2x} 2x"
             src="${appleBook}"
@@ -150,7 +149,7 @@ function createModalBookMarkup(resp) {
             class="modal-book-linc-icon"
           />
         </a>
-        <a href="https://bookshop.org/" class="modal-book-linc" target="_blank">
+        <a href="https://bookshop.org/" class="modal-book-linc" target="_blank" rel="noreferrer noopener">
           <img
             srcset="${bookShop2x} 2x"
             src="${bookShop}"
