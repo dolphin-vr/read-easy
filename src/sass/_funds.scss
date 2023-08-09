@@ -1,4 +1,7 @@
 .funds {
+  font-family: DM Sans;
+  font-style: normal;
+
   width: 335px;
   height: 352px;
   border-radius: 16px;
@@ -12,47 +15,42 @@
 
   position: relative;
   text-align: center;
-  padding-top: 28px;
-  padding-bottom: 68px;
-
-  // overflow: none;
+  padding: 24px 40px 0px 40px;
 }
 
 .funds-title-wrapper {
   display: flex;
-  text-align: center;
-  margin-bottom: 44px;
+  align-items: center;
+  margin-bottom: 40px;
 }
 
 .funds-title {
-  font-family: DM Sans;
   font-size: 22px;
-  font-style: normal;
   font-weight: 700;
   line-height: 1.09;
   letter-spacing: -0.88px;
   color: #fff;
   margin-right: 12px;
-  padding-left: 40px;
+}
+
+.funds-title-svg {
+  width: 20px;
+  height: 32px;
 }
 
 .funds-list {
-  // width: 100%;
-  // height: 100%;
-  max-height: 210px;
-  // overflow: hidden;
+  max-height: 188px;
   overflow-y: scroll;
   scrollbar-width: none;
-  // display: none;
-  padding-left: 40px;
-  // height: 300px;
 }
 
 .funds-list::-webkit-scrollbar {
-  // display: none;
+  display: none;
 }
 
 .funds-item {
+  // height: 32px;
+  width: 70%;
 }
 
 .funds-href {
@@ -67,9 +65,7 @@
 
 .funds-number {
   color: #fff;
-  font-family: DM Sans;
   font-size: 14px;
-  font-style: normal;
   font-weight: 400;
   line-height: 1.29;
   letter-spacing: -0.56px;
@@ -78,30 +74,17 @@
 .funds-img {
   filter: brightness(0) invert(1);
   height: 32px;
-  max-width: 150px;
-  // margin-left: 16px;
 }
 
-.funds-btn-bottom {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  border-radius: 50%;
-  border: 0;
-
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translate(-50%, 0);
-}
-
+.funds-btn-bottom,
 .funds-btn-top {
   display: flex;
   justify-content: center;
-  text-align: center;
+  align-items: center;
   border-radius: 50%;
   border: 0;
-
+  width: 32px;
+  height: 32px;
   position: absolute;
   bottom: 20px;
   left: 50%;
@@ -110,53 +93,46 @@
 
 .funds-btn-svg {
   fill: #4f2ee8;
+  width: 20px;
+  height: 20px;
 }
 
 @media screen and (min-width: 768px) {
   .funds {
     width: 335px;
-    height: 474px; // почему у Олега 472px было?
-    // margin-bottom: 100px;
-    padding-top: 26px;
-    padding-bottom: 86px;
+    height: 472px;
   }
 
   .funds-title {
-    font-family: DM Sans;
     font-size: 24px;
-    font-style: normal;
-    font-weight: 700;
     line-height: 1.17;
     letter-spacing: -0.96px;
-    color: #fff;
-    margin-right: 12px;
   }
 
   .funds-list {
     max-height: 292px;
-    // width: 100%;
-    // height: 0%;
     // overflow: hidden;
-    // display: none;
-    // padding-left: 40px;
-    // height: 330px;
+  }
+
+  .funds-btn-bottom,
+  .funds-btn-top {
+    bottom: 24px;
+    width: 38px;
+    height: 38px;
+  }
+
+  .funds-btn-svg {
+    width: 22px;
+    height: 22px;
   }
 }
 
 @media screen and (min-width: 1440px) {
   .funds {
     width: 356px;
-    margin-bottom: 0;
+  }
+
+  .funds-href {
+    gap: 14px;
   }
 }
-
-// .funds-title {
-//   color: #fff;
-//   font-family: DM Sans;
-//   font-size: 24px;
-//   font-style: normal;
-//   font-weight: 700;
-//   line-height: 1.17;
-//   letter-spacing: -0.96px;
-//   margin-right: 12px;
-// }

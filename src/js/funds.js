@@ -1,4 +1,3 @@
-// import { createMarkupFunds } from './createMarkup'  // funds rendering
 import fund01 from '../img/fund01.png';
 import fund02 from '../img/fund02.png';
 import fund03 from '../img/fund03.png';
@@ -61,20 +60,15 @@ const fundsList = document.querySelector('.funds-list');
 const fundsButtons = document.querySelector('.funds-buttons');
 
 fundsButtons.addEventListener('click', onClickFunds);
-// fundsButtons.lastElementChild.addEventListener('click', goBottom);
-// fundsButtons.firstElementChild.addEventListener('click', goTop);
 
 function onClickFunds() {
     if (fundsButtons.lastElementChild.classList.contains('is-hidden')) {
-        fundsButtons.firstElementChild.classList.toggle('is-hidden');
-        fundsButtons.lastElementChild.classList.toggle('is-hidden');
         goBottom();
-
     } else { 
-        fundsButtons.lastElementChild.classList.toggle('is-hidden')
-        fundsButtons.firstElementChild.classList.toggle('is-hidden');
         goTop();
     }
+    fundsButtons.firstElementChild.classList.toggle('is-hidden');
+    fundsButtons.lastElementChild.classList.toggle('is-hidden');
 };
 
 function goBottom() {
@@ -89,7 +83,7 @@ const createMarkupFunds = array => array.map(({ title, url, img }, idx) =>
   `<li class="funds-item">
     <a class ="funds-href" href="${url}" target="_blank">
       <span class="funds-number">${(idx + 1).toString().padStart(2, 0)}</span>
-      <img class="funds-img" src="${img}" alt="${title}" height="32" />
+      <img class="funds-img" src="${img}" alt="${title}" />
     </a>
   </li>`).join('');
 
