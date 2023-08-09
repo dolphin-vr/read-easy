@@ -6,21 +6,24 @@ import {
   getUserName,
 } from './api-firebase';
 
-const signUpBtn = document.querySelector('.signup');
+const signUpBtn = document.querySelector('.sign-up-button');
 
 // --- getUserName ---
 
-if (isSignIn()) {
-  getUserName()
-    .then(getUserNameRes => {
-      const userName = getUserNameRes.data().name;
-      signUpBtn.textContent = userName;
-      console.log(`User is signed in as ${userName}`);
-    })
-    .catch(getUserNameError => {
-      console.log('getUserName wrong');
-      console.log(getUserNameError.code);
-    });
-} else {
-  signUpBtn.textContent = 'Sign up';
-}
+const initUserName = async () => {
+  const signIN = await isSignIn();
+  if (signIN) {
+    getUserName()
+      .then(getUserNameRes => {
+        signUpBtn.textContent = getUserNameRes.data().name;
+        console.log(getUserNameRes.data().name);
+        //Тут рахуємо що все добре і данні є!
+      })
+      .catch(getUserNameError => {
+        console.log('getUserName wrong');
+        console.log(getUserNameError.code);
+      });
+  }
+};
+
+initUserName();

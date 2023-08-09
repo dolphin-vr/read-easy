@@ -1,4 +1,9 @@
-import { createAccount, getUserName, signInApp } from './api-firebase';
+import {
+  createAccount,
+  setUserName,
+  getUserName,
+  signInApp,
+} from './api-firebase';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 const form = {
@@ -21,7 +26,7 @@ form.buttonSignUp.addEventListener('click', e => {
     .then(createAccountRes => {
       Notify.success(`createAccount success`);
       console.log(createAccountRes);
-      getUserName(form.name.value)
+      setUserName(form.name.value)
         .then(setUserNameRes => {
           //Тут рахуємо що все добре!
           Notify.success(`setUserName success `);
