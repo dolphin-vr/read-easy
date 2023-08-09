@@ -16,8 +16,8 @@ function createMarkup(book) {
     bookLink.href = '#';
 
     const bookImage = document.createElement('img');
-    bookImage.classList.add('img-book', 'js-img-book');
-    bookImage.src = book.book_image;
+    bookImage.classList.add('img-book', 'js-img-book', 'lazy-load');
+    bookImage.dataset.src = book.book_image; // Зберегаю URL img у датасет
     bookImage.alt = book.title;
     bookLink.appendChild(bookImage);
 
@@ -96,6 +96,25 @@ async function homeMarkup() {
         btns.forEach(btn => {
             btn.addEventListener("click", onBtnClickCategory);
         });
+
+        // Intersection Observer Start
+        const lazyLoadImages = document.querySelectorAll('.lazy-load');
+
+        const lazyLoadObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src;
+                    img.classList.remove('lazy-load');
+                    lazyLoadObserver.unobserve(img);
+                }
+            });
+        });
+
+        lazyLoadImages.forEach(image => {
+            lazyLoadObserver.observe(image);
+        });
+        // End Intersection Observer 
 
     } catch (error) {
         console.error('Помилка:', error);
