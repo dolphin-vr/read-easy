@@ -1,66 +1,31 @@
 
 .shoplist {
-    padding-left: 20px;
-    padding-right: 20px;
+        width: 335px;
+            padding-top: 40px;
+            background-color: var(--bgr-color);
+            margin: 0 auto;
 }
-.empty {
-    display: block;
-}
-
-.shopping-titel {
+.shopping-title {
+    font-size: 32px;
     font-weight: 700;
     line-height: 1.18;
     letter-spacing: -1.28px;
 }
 
-.shopping-titel-list {
+.shopping-title-list {
     color: var(--category-accent);
 }
 
-.button-trash {
-    display: flex;
-    position: absolute;
-    right: 14px;
-    width: 28px;
-    height: 28px;
-    align-items: center;
-    justify-content: center;
-    fill: var(--category-accent);
-    stroke: var(--shoplist-bgr);
-    border-radius: 50%;
-    background-color: var(--category-accent);
-    border: 1px solid rgba(0, 0, 0, 0.1);
+// ======== style shop-list-empty==========
+.empty {
+    display: block;
 }
-.shopping-box {
-    margin-top: 40px;
-    width: 335px;
-}
-
-.shopping-card {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    height: 170px;
-    padding: 14px 14px;
-    align-items: flex-start;
-    gap: 14px;
-    border-radius: 16px;
-    border: 2px solid rgba(79, 46, 232, 0.40);
-    $bg-body: #fafafa;
-}
-.shopping-list-empty{
+.shopping-list-empty {
     margin-top: 120px;
     margin-right: auto;
     margin-left: auto;
     width: 265px;
     height: 248px;
-}
-
-.shopping-book-img {
-    width: 100px;
-    height: 142px;
-    border-radius: 8px;
 }
 .shopping-book-empty-img {
     width: 265px;
@@ -77,6 +42,57 @@
     line-height: 1.28;
     letter-spacing: -0.28px;
 }
+//=========== style button-trash===========
+.button-trash {
+    display: flex;
+    position: absolute;
+    right: 14px;
+    width: 28px;
+    height: 28px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: var(--category-accent);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.trash-icon{
+    // fill: var(--category-accent);
+        stroke: var(--text-color);
+}
+// ======== style shop-card==========
+
+.book-list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin-top: 40px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 335px;
+    gap: 20px;
+}
+
+.shopping-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 170px;
+    padding: 14px 14px;
+    align-items: flex-start;
+    gap: 14px;
+    border-radius: 16px;
+    border: 2px solid rgba(79, 46, 232, 0.40);
+    $bg-body: #fafafa;
+}
+
+
+.shopping-book-img {
+    width: 100px;
+    height: 142px;
+    border-radius: 8px;
+}
+
 
 .shopping-book-name {
     color: var(--text-color);
@@ -107,34 +123,34 @@
     scrollbar-width: thin;
 }
 
-.shopping-book-autor {
+.book-author {
+    margin-top: 16px;
     $grey: #B4AFAF;
     font-size: 12px;
     font-style: italic;
     line-height: 1.16;
     letter-spacing: -0.48px;
 }
-
-.shop-box {
-    margin-top: 16px;
+// =============style shops==============
+.shops-list {
+    position: absolute;
+        right: 14px;
+        top: 136px;
+        width: 80px;
+    // margin-top: 16px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-}
-
-.shop-linc-box {
-    display: flex;
-    justify-content: center;
-    align-items: baseline;
     gap: 8px;
 }
-.shop-linc-icon {
+
+.shop-icon {
     width: 16px;
     height: 16px;
     filter: grayscale(100);
 }
-.shop-linc-icon:hover,
-.shop-linc-icon:focus {
+.shop-icon:hover,
+.shop-icon:focus {
 box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.15);
 
 }
@@ -146,20 +162,21 @@ box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.15);
 
 /* =====================media-tablet================== */
 @media screen and (min-width: 768px) {
-    .shooping-list-container {
+    .shoplist {
+        width: 768px;
         margin: auto;
         padding-left: 32px;
         padding-right: 32px;
     }
 
-    .shopping-titel {
+    .shopping-title {
         font-size: 48px;
         font-weight: 700;
         line-height: 1.08;
         letter-spacing: -1.92px;
     }
 
-    .shopping-box {
+   .book-list {
     width: 704px;
     margin-top: 40px;
 }
@@ -167,6 +184,19 @@ box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.15);
         height: 213px;
         padding: 30px 24px;
         gap: 14px;
+    }
+    .shopping-book-img {
+    width: 116px;
+    height: 165px;
+    }
+        
+    .shopping-book-info {
+    margin-top: 8px;
+    width: 508px;
+    height: 53px;
+    }
+    .book-author{
+        margin-top: 48px;
     }
     .shopping-list-empty {
         margin-top: 140px;
@@ -186,51 +216,25 @@ box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.15);
         height: 241px;
 }
 
-    .shopping-book-img {
-        width: 116px;
-        height: 165px;
-    }
-
-    .shopping-book-info {
-        width: 508px;
-        height: 53px;
-    }
-
-.shop-box {
-    margin-top: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.shop-linc-box {
+.shops-list {
+    right: 14px;
+    top: 170px;
+    width: 144px;
     gap: 16px;
 }
 
-.shop-linc-icon {
+.shop-icon {
     width: 32px;
     height: 30px;
+    filter: grayscale(100);
 }
-.amazon {
-    width: 48px;
-    height: 15px;
-}
-  .button-trash {
-      right: 32px;
-      width: 18px;
-      height: 18px;
-  }
   
 }
 /* =====================media-desktop================== */
 @media screen and (min-width: 1440px) {
 .shoplist {
-     align-items: flex-start;
-     padding-right: 0;
-    }
-    .shooping-list-container {
-       margin-top: 0;
-       margin-bottom: 0;
+    width: 1440px;
+    gap:40px;
     }
 
     .shopping-titel {
@@ -239,14 +243,9 @@ box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.15);
         line-height: 1.08;
         letter-spacing: -1.92px;
     }
-        .shopping-box {
+    .book-list {
             width: 996px;
             margin-top: 40px;
-        }
-   .shopping-card {
-        height: 213px;
-        padding: 30px 24px;
-        gap: 14px;
     }
 
     .shopping-list-empty {
@@ -261,4 +260,10 @@ box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.15);
     .shopping-book-info {
         width: 808px;
     }
+    
 }
+        @media screen and (max-width: 1439px) {
+            div.funds {
+                display: none;
+            }
+        }

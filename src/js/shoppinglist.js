@@ -8,7 +8,7 @@ const refs = {
   shoplist: document.querySelector('.shooping-list'),
 }
 
-let shoplistMurkup = '<div class="shooping-list"><h1 class="shopping-titel">Shopping <span class="shopping-titel-list">List</span></h1>';
+let shoplistMurkup = '<h1 class="shopping-title">Shopping <span class="shopping-title-list">List</span></h1>';
 
 const shoppingList = getStorageShopingList();
 
