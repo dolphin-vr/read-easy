@@ -1,6 +1,6 @@
 import { initTheme, isThemeDark, switchTheme } from './theme-switcher';
 import './log-out';
-import './authorization-modal';
+// import './authorization-modal';
 
 const refs = {
   logo: document.querySelector('.logo'),
@@ -9,7 +9,7 @@ const refs = {
   slider: document.querySelector('.slider-bgr'),
   signup: document.querySelector('.signup'),
   openModalBtn: document.querySelector('[data-menu-open]'),
-  closeModalBtn: document.querySelector('[data-menu-close]'),
+  // closeModalBtn: document.querySelector('[data-menu-close]'),
   modal: document.querySelector('[data-menu]'),
 };
 initTheme();
@@ -20,7 +20,7 @@ setStoredTheme();
 // refs.signup.addEventListener('click', showSignUp);
 refs.slider.addEventListener('click', themeSwitch);
 refs.openModalBtn.addEventListener('click', showBurger);
-refs.closeModalBtn.addEventListener('click', showBurger);
+// refs.closeModalBtn.addEventListener('click', showBurger);
 
 function showBurger() {
   refs.modal.classList.toggle('is-open');

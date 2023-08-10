@@ -6,7 +6,7 @@ import { removeBookFromShoppingList } from './modal';
 import empty from '../img/empty.png';
 import empty2x from '../img/empty2x.png';
 
-import './authorization-modal';
+// import './authorization-modal';
 import './log-out';
 import { showShoppingList } from './api';
 

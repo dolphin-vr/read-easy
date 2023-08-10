@@ -1,4 +1,4 @@
-+(() => {
+function burgerMenu() {
   const mobileMenu = document.querySelector('[data-menu]');
   const openMenuBtn = document.querySelector('[data-menu-open]');
   const closeMenuBtn = document.querySelector('[data-menu-close]');
@@ -17,7 +17,7 @@
   };
 
   openMenuBtn.addEventListener('click', toggleMenu);
-  closeMenuBtn.addEventListener('click', toggleMenu);
+  // closeMenuBtn.addEventListener('click', toggleMenu);
 
   // Close the mobile menu on wider screens if the device orientation changes
   window.matchMedia('(min-width: 768px)').addEventListener('change', e => {
@@ -26,4 +26,6 @@
     // openMenuBtn.setAttribute('aria-expanded', false);
      document.body.classList.remove("no-scroll");
   });
-})();
+};
+
+export {burgerMenu}
