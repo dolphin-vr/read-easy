@@ -10,11 +10,10 @@ import bookShop from '../img/shop3.png';
 import amazon2x from '../img/shop1x2.png';
 import appleBook2x from '../img/shop2x2.png';
 import bookShop2x from '../img/shop3x2.png';
-import { isSignIn } from './api-firebase';
+import { isSignIn, signInApp } from './api-firebase';
 import icon from '../img/sprite.svg';
 
 const refs = {
-  openModalBtnEl: document.querySelector('.js-modal-book-open'),
   modalEl: document.querySelector('.js-modal-book-backdrop'),
   booksList: document.querySelector('.book-list'),
 };
@@ -48,6 +47,7 @@ async function openModalBook(id) {
         modalText.textContent =
           'You need to log in to add a book to the shopping list!';
         isHiddenToggle(modalText);
+        refs.modalEl.classList.add('no-scroll');
       }
     });
     if (isInSoppinList(id)) {

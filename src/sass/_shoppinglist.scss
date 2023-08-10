@@ -1,21 +1,18 @@
 .shoplist {
-  position: absolute;
-  position: fixed;
-  top: 65px;
-  z-index: 2;
+  margin: 0 auto;
   height: auto;
-  width: 100%;
+  max-width: 375px;
   padding: 40px 20px;
   background-color: var(--bgr-color);
 }
 .funds-wrap {
   display: none;
 }
-.shopping-list {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-}
+// .shopping-list {
+//   position: absolute;
+//   left: 50%;
+//   transform: translateX(-50%);
+// }
 .shopping-title {
   color: var(--text-color);
   font-size: 32px;
@@ -65,10 +62,10 @@
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  fill: $dk-violet;
+  fill: $violet;
   stroke: $white;
-  background-color: var(--category-accent);
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: $violet;
+  border: none;
 }
 
 // ======== style shopping-card==========
@@ -87,14 +84,13 @@
   height: 170px;
   padding: 14px 14px;
   gap: 14px;
-  overflow: hidden;
   border-radius: 16px;
   border: 2px solid rgba(79, 46, 232, 0.4);
   background-color: var(--shoplist-bgr);
 }
 
 .shopping-book-img {
-  width: 100px;
+  width: 96px;
   height: 142px;
   border-radius: 8px;
 }
@@ -106,6 +102,11 @@
   line-height: 1.12;
   letter-spacing: -0.64px;
   text-transform: uppercase;
+  max-width: 165px;
+  max-height: 18px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .shopping-book-category {
@@ -114,6 +115,11 @@
   font-size: 12px;
   line-height: 1.16;
   letter-spacing: 0.36px;
+  max-width: 165px;
+  max-height: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .shopping-book-info {
@@ -136,6 +142,8 @@
   line-height: 1.16;
   letter-spacing: -0.48px;
   max-width: 113px;
+  max-height: 14px;
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -150,17 +158,20 @@
   align-items: center;
   gap: 8px;
 }
-
+.shop-link {
+  width: 16px;
+  height: 16px;
+}
 .shop-icon {
-  width: 100%;
+  display: block;
+  width: 16px;
   height: 16px;
   filter: grayscale(100);
 }
-// .shop-link:first-child {
-//     width: 32px;
-//         height: 11px;
-// }
-
+.shop-icon.Amazon {
+  width: auto;
+  filter: var(--filter-amazon);
+}
 .shop-icon:hover,
 .shop-icon:focus {
   box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.15);
@@ -169,15 +180,12 @@
 /* =====================media-tablet================== */
 @media screen and (min-width: 768px) {
   .shoplist {
-    width: 768px;
-    margin: auto;
-    padding-left: 32px;
-    padding-right: 32px;
+    max-width: 768px;
+    padding: 40px 32px;
   }
 
   .shopping-title {
     font-size: 48px;
-    font-weight: 700;
     line-height: 1.08;
     letter-spacing: -1.92px;
   }
@@ -188,21 +196,28 @@
   }
   .shopping-card {
     height: 213px;
-    padding: 30px 24px;
-    gap: 14px;
+    padding: 24px 24px;
+    gap: 24px;
   }
   .shopping-book-img {
     width: 116px;
     height: 165px;
   }
+  .shopping-book-name {
+    overflow: visible;
+  }
+  .shopping-book-category {
+    overflow: visible;
+  }
 
   .shopping-book-info {
-    margin-top: 8px;
-    width: 508px;
+    margin-top: 14px;
+    width: auto;
     height: 53px;
   }
   .book-author {
     margin-top: 48px;
+    overflow: visible;
   }
   .shopping-list-empty {
     margin-top: 140px;
@@ -223,36 +238,34 @@
   }
 
   .shops-list {
-    right: 14px;
-    top: 170px;
-    width: 144px;
+    right: 24px;
+    bottom: 24px;
+    width: 140px;
+    height: 30px;
     gap: 16px;
   }
 
   .shop-icon {
-    height: 30px;
-    filter: grayscale(100);
+    height: auto;
+    width: auto;
   }
 }
 /* =====================media-desktop================== */
 @media screen and (min-width: 1440px) {
   .shoplist {
     display: flex;
-    width: 1440px;
+    max-width: 1440px;
+    padding: 40px 24px;
     gap: 40px;
   }
-
-  .shopping-titel {
-    font-size: 48px;
-    font-weight: 700;
-    line-height: 1.08;
-    letter-spacing: -1.92px;
-  }
+  
   .book-list-items {
     width: 996px;
     margin-top: 40px;
   }
-
+    .funds-wrap {
+    display: block;
+  }
   .shopping-list-empty {
     margin-top: 140px;
     width: 349px;
@@ -260,14 +273,5 @@
   }
   .empty {
     display: flex;
-  }
-
-  .shopping-book-info {
-    width: 808px;
-  }
-}
-@media screen and (max-width: 1439px) {
-  div.funds {
-    display: none;
   }
 }
