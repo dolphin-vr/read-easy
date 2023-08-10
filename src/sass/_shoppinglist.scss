@@ -70,7 +70,7 @@
 
 // ======== style shopping-card==========
 
-.book-list {
+.book-list-items {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -189,11 +189,10 @@
     line-height: 1.08;
     letter-spacing: -1.92px;
   }
-  .button-trash {
-    top: 24px;
-    right: 24px;
-    width: 34px;
-    height: 34px;
+
+  .book-list-items {
+    width: 704px;
+    margin-top: 40px;
   }
   .shopping-card {
     height: 213px;
@@ -259,7 +258,12 @@
     padding: 40px 24px;
     gap: 40px;
   }
-  .funds-wrap {
+  
+  .book-list-items {
+    width: 996px;
+    margin-top: 40px;
+  }
+    .funds-wrap {
     display: block;
   }
   .shopping-list-empty {

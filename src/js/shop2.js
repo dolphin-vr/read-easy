@@ -14,35 +14,8 @@ const refs = {
   shoplist: document.querySelector('.shopping-list'),
 };
 
-function shoppinglistMarkup() {
-// SL title  
-let shoplistMarkup ='<h2 class="shopping-title">Shopping <span class="shopping-title-list">List</span></h2>';
-const login =true;
-// if not signed in  true false
-if (!login){
-  shoplistMarkup += `<div class="shopping-list-empty">
-  <p class="shopping-book-empty">Please sign-up to manage your Shopping List</p>
-  <img srcset="${empty2x} 2x" src="${empty}" alt="Empty Shopping List" class="shopping-book-empty-img"  />
-  </div>`;
-  return shoplistMarkup
-}
-
-const shoppingList = getStorageShopingList();
-
-// SL absent or empty
-if (!shoppingList || shoppingList.length === 0) {
-shoplistMarkup += `<div class="shopping-list-empty">
-<p class="shopping-book-empty">This page is empty, add some books and proceed to order.</p>
-<img srcset="${empty2x} 2x" src="${empty}" alt="Empty Shopping List" class="shopping-book-empty-img"/>
-</div>`;
-return shoplistMarkup
-}
-
-shoplistMarkup += '<ul class="book-list">';
-shoplistMarkup += shoppingList.map(el => createBookCard(el)).join('');
-shoplistMarkup += '</ul>';
-
-return shoplistMarkup
+function shoppinglistMarkup(shoppingList) {
+  return shoppingList.map(el => createBookCard(el)).join('');
 }
 
 // if (shoppingList && shoppingList.length !== 0) {
@@ -52,11 +25,10 @@ return shoplistMarkup
 function trashBook(evt) {
   const trash = evt.target.closest('.js-trash');
   if (trash) {
-    console.log('trash= ', trash.id)
+    console.log('trash= ', trash.id);
     removeBookFromShoppingList(trash.id);
-    showShoppingList()
+    showShoppingList();
   }
 }
 
-
-export {shoppinglistMarkup, trashBook}
+export { shoppinglistMarkup, trashBook };
