@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Read Easy</title>
     
-    <script type="module" crossorigin src="/read-easy/assets/main-efe805c9.js"></script>
-    <link rel="stylesheet" href="/read-easy/assets/main-cdb8af25.css">
+    <script type="module" crossorigin src="/read-easy/assets/main-a4079b31.js"></script>
+    <link rel="stylesheet" href="/read-easy/assets/main-f4935f75.css">
   </head>
   <body>
     <header class="header">
@@ -23,14 +23,17 @@
   </div>
 <nav>
   <ul class="navigation">
-    <li class="li-navigation"><a href="index.html" class="link current">HOME</a></li>
-    <li class="li-navigation"><a href="shoppinglist.html" class="shoplist-header">SHOPPING LIST <svg class="svg-navigation"
+    <li class="li-navigation"><a href="" class="link current btnHome">HOME</a></li>
+    <button class="btnSL">Shoping List</button>
+    <li class="li-navigation btnSL">SHOPPING LIST <svg class="svg-navigation"
           width="28" height="28">
           <use class="svg-navigation" href="/read-easy/assets/sprite-5f25f0dd.svg#cart"></use>
-        </svg> </a></li>
+        </svg></li>
   </ul>
 </nav>
   
+<!-- <button class="btnHome">Home</button>
+<button class="btnSL">Shoping List</button> -->
   <span class="slider-header slider-bgr">
     <span class="slider-shadow"></span>
     <span class="slider"></span>
@@ -89,12 +92,12 @@
     <section class="home">
   <!---------------------- TOP SECTION CATEGOTY and FOUNDS -->
   <div class="top-sections">
-    <section class="category">
+    <section class="category js-catlist">
   <ul class="js-category-list category-list">
     <li><a href="" class="category-link selected-category">All Categories</a></li>
   </ul> 
 </section>
-    <section class="funds">
+    <section class="funds js-funds">
   <div class="funds-title-wrapper">
     <p class="funds-title">Support Ukraine</p>
     <svg class="funds-title-svg">
@@ -119,7 +122,7 @@
 
   </div>
   <!------------------------------ SECTION BOOK-LIST -->
-  <section class="book-list"></section>
+  <section class="book-list js-main"></section>
 </section>
 
     <div class="modal-book-backdrop js-modal-book-backdrop is-hidden"></div>
