@@ -49,7 +49,12 @@ function bookShopsMurkup(shops) {
   iconPaths.forEach(p => {
     const u = shops.find(b => b.name === p.name);
     if (u) {
-      shopIcons.push({ name: p.name, path: p.path, url: u.url });
+      shopIcons.push({
+        name: p.name,
+        path: p.path,
+        path2x: p.path2x,
+        url: u.url,
+      });
     }
   });
   let markup = '<ul class="shops-list">';
@@ -60,7 +65,7 @@ function bookShopsMurkup(shops) {
     class="shop-link"
     target="_blank"
     rel="noreferrer noopener"
-    ><img srcset="${el.path2x} 2x" src="${el.path}" alt="${el.name}" class="shop-icon"
+    ><img srcset="${el.path2x} 2x" src="${el.path}" alt="${el.name}" class="shop-icon ${el.name}"
   /></a>
 </li>`;
   });
