@@ -2,6 +2,7 @@
 // import { Notify } from '../../node_modules/notiflix/build/notiflix-notify-aio';
 // import { Notify } from 'notiflix/build/notiflix-notify-aio';
 // import { keyPage } from "./vars";
+import {homeMarkup} from "./home"
 const keyPage = 'activpage';
 
 const optNotiflx = {
@@ -27,6 +28,7 @@ function showShoppingList() {
 
 function showHomePage() {
   sessionStorage.setItem(keyPage, JSON.stringify('homepage'));
+  homeMarkup();
 }
 
 export { showActivePage };
