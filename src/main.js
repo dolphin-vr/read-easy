@@ -16,4 +16,3 @@ const modalBook = document.querySelector('.modal-book');
 
 initGoTopButton();
 showActivePage();
-homeMarkup();
