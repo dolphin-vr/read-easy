@@ -1,10 +1,11 @@
-// .container {
-//    // max-width: 375px;
-// }
+.container {
+   min-width: 375px;
+}
 
-.header{
+.header {
    position: relative;
 }
+
 .header .container {
    position: relative;
    margin-left: auto;
@@ -13,14 +14,17 @@
    // padding-left: 16px;
    // padding-right: 16px;
    // height: 50px;
-   border: 1.5px solid #111;;
-   background-color: #FFF;
+   border: 1.5px solid var(--text-color);
+   
+   background-color:var(--bgr-color) ;
    max-width: 375px;
    display: flex;
    align-items: center;
    border-radius: 0px 0px 8px 8px;
+   height: 64px;
 
 }
+
 .logo {
    text-transform: uppercase;
    background-color: transparent;
@@ -28,19 +32,21 @@
    display: inline-block;
 }
 
-.menu{
-   
+.menu {
+
    top: 100%;
    left: 0;
 }
 
-.menu-btn{
+.menu-btn {
    // position: relative;
    width: 24px;
    height: 24px;
    background-color: transparent;
    border: none;
    display: inline-block;
+   margin-bottom: 9px;
+   margin-right: 7px;
 }
 
 .close-btn {
@@ -50,155 +56,182 @@
    width: 24px;
    height: 24px;
    cursor: pointer;
-   fill: #000000;
-   background-color: gray;
+   fill: var(--text-color);
    border-radius: 50%;
+   display: none;
 }
 
-.login-btn{
-width: 70px;
-// margin-top: 20px;
+.login-btn {
+   width: 70px;
+   // margin-top: 20px;
    color: #FFF;
    font-family: DM Sans;
    font-size: 14px;
    font-style: normal;
    font-weight: 500;
    line-height: 18px;
-  
+
    letter-spacing: -0.56px;
 }
 
-.page-nav{
-   display: flex;
-   flex-direction: column;
-   // gap: 30px;
-   // padding: 10px;
-   // background-color: yellow;
-}
 
- /* === Mobile CSS ===  */
- @media screen and (max-width: 767px) {
+
+/* === Mobile CSS ===  */
+@media screen and (max-width: 767px) {
+   .menu {
+      z-index: 1;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      background: radial-gradient(189.32% 190.93% at 59.76% -23.42%, #4f2ee8 18.03%, #fff 100%);
+      width: 100%;
+      transition: opacity .25s cubic-bezier(.4, 0, .2, 1), visibility .25s cubic-bezier(.4, 0, .2, 1);
+      position: fixed;
+      top: 64px;
+      bottom: 0;
+      left: 0;
+   }
+
+   .sign-up {
+      margin-top: 20px;
+      margin-bottom: 138px;
+
+   }
+
+   .home-nav {
+      margin-left: auto;
+      margin-right: auto;
+   }
+
+   .shoplist-nav {
+      display: flex;
+      margin-left: auto;
+      margin-right: auto;
+   }
+
+
+
+   .menu.is-open {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+   }
+
    .header .container {
       //  padding-top: 24px;
       //  padding-bottom: 22px;
-       justify-content: space-between;
-      
+      justify-content: space-between;
+
    }
-   .logo{
-      margin-right: 144px;
-   }  
-   .login-btn{
-         margin-left: 20px;
-         margin-top: 20px;
-   } 
-   .home-nav{
+
+   .logo {
+      margin-right: 140px;
+   }
+
+   .login-btn {
+      margin-left: 20px;
+      margin-top: 20px;
+   }
+
+   .home-nav {
       margin-bottom: 17px;
    }
-   .menu.is-open {
-   
-      background: radial-gradient(189.32% 190.93% at 59.76% -23.42%,
-            #4f2ee8 18.03%,
-            #fff 100%);
-       display: flex;
-       flex-direction: column;
-       gap: calc(100% / 4);
+
+   .img-burger-menu {
       position: absolute;
-       overflow-y: scroll;
-       overflow-x:hidden;
-       top: 50px;
-       left: 0;
-       bottom: 0;
-       z-index: 1;
-       width: 100%;
-      max-width: 375px;
-      //  padding: 80px 40px 40px;
-      height: 748px ;
-      //  justify-content: space-between;
+      bottom: 0;
+      width: 100%;
    }
 
- }
+}
 
- .menu {
-    display: none;
- }
+
 
 /* -===*** Tablet CSS ***===-  */
 @media screen and (min-width: 768px) {
    .header .container {
-       max-width: 768px;
-    }
-    .theme-swithcer{
-      margin-left: auto;
-    }
-   .shoplist-nav {
-          text-align: center;
-          align-items: center;
-          display: flex;
-          padding-left: 16px;
-       }
-      
-    .login-btn{
-      margin-left: 15px;
-      margin-right: 15px;
-    }
-    .menu-btn, .menu .close-btn{
-       display: none;
+      max-width: 768px;
    }
 
-   .page-nav{
+   .theme-swithcer {
+      margin-left: auto;
+   }
+
+   .shoplist-nav {
+      text-align: center;
+      align-items: center;
+      display: flex;
+      padding-left: 16px;
+   }
+
+   .login-btn {
+      margin-left: 15px;
+      margin-right: 15px;
+   }
+
+   .menu-btn,
+   .menu .close-btn {
+      display: none;
+   }
+
+   .page-nav {
       position: absolute;
-      top: 19px;;
+      top: 14px;
+      ;
       left: 181px;
-       display: flex;
-       flex-direction: row;
+      display: flex;
+      flex-direction: row;
       //  gap: 40px;
    }
+
    .menu {
       display: block;
    }
-   .img-burger-menu{
+
+   .img-burger-menu {
       display: none;
    }
-   
-   //  .header .container {
-   //    //  padding-top: 0;
-   //    //  padding-bottom: 0;
-   // }
+
+  
 }
+
 @media screen and (min-width: 1440px) {
    .header .container {
-         max-width: 1440px;
-      }
+      max-width: 1440px;
+   }
 }
+
 // =============
-.icon-burger{
+.icon-burger {
    stroke: var(--text-color);
 }
 
-.theme-swithcer{
-      background-color: transparent;
-         border: none;
-         display: inline-block;
+.theme-swithcer {
+   background-color: transparent;
+   border: none;
+   display: inline-block;
 }
 
-.menu-btn .icon-close{
+.menu-btn .icon-close {
    display: none;
 }
-.menu-btn.is-open .icon-close{
+
+.menu-btn.is-open .icon-close {
    display: block;
 }
 
-.menu-btn.is-open .icon-menu{
+.menu-btn.is-open .icon-menu {
    display: none;
 }
-.login-btn{
-      display: flex;
-      border-radius: 18px;
-      border: 1.5px solid #111;
-      background: #4F2EE8;
-      width: 200px;
-      padding: 14px 14px 14px 14px;
-      
+
+.login-btn {
+   display: flex;
+   border-radius: 18px;
+   border: 1.5px solid var(--text-color);
+   background: #4F2EE8;
+   width: 200px;
+   padding: 14px 14px 14px 14px;
+
 }
 
 .slider-bgr {
@@ -258,30 +291,33 @@ width: 70px;
    top: 1px;
    right: 0;
 }
-.home-nav{
-   background-color: transparent;
-      border: none;
-      display: inline-block;
 
-}
-.shoplist-nav{
+.home-nav {
    background-color: transparent;
    border: none;
-   
+   display: inline-block;
+
 }
 
-.current-link{
-   border-radius: 36px;
-      background: #EAC645;
-      display: flex;
-      padding: 8px 16px;
+.shoplist-nav {
+   background-color: transparent;
+   border: none;
+
 }
+
+.current-link {
+   border-radius: 36px;
+   background: #EAC645;
+   display: flex;
+   padding: 8px 16px;
+}
+
 // 
 .sign-up {
    width: 184px;
    height: 48px;
    position: relative;
-   margin-left: auto;
+   margin-left: 24px;
    margin-right: 4px;
 }
 
@@ -382,4 +418,8 @@ width: 70px;
    opacity: 0;
    visibility: hidden;
    pointer-events: none;
+}
+
+.svg-navigation {
+   margin-left: 4px;
 }
