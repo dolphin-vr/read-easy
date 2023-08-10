@@ -16,14 +16,17 @@ import icon from '../img/sprite.svg';
 const refs = {
   openModalBtnEl: document.querySelector('.js-modal-book-open'),
   modalEl: document.querySelector('.js-modal-book-backdrop'),
-  booksList: document.querySelector('.book-list'),
+  // booksList: document.querySelector('.book-list'), //mainSec
 };
 
-refs.booksList.addEventListener('click', hendlerClick);
+// refs.booksList.addEventListener('click', hendlerClick);
 refs.modalEl.addEventListener('click', closeModalBook);
 
 function hendlerClick(evt) {
+  evt.preventDefault();
   const currentBook = evt.target.closest('.book-link');
+  // console.log(currentBook.id);
+  // console.dir('currentBook', currentBook);
   if (evt.target.closest('.book-link')) {
     const bookId = currentBook.id;
     openModalBook(bookId);
@@ -31,6 +34,7 @@ function hendlerClick(evt) {
 }
 async function openModalBook(id) {
   try {
+    toggleModalBook();
     const bookInfo = await getBookById(id);
     const modalBookMarkup = createModalBookMarkup(bookInfo.data);
     refs.modalEl.innerHTML = modalBookMarkup;
@@ -67,7 +71,7 @@ async function openModalBook(id) {
       isHiddenToggle(removeShoppingListBtnEl);
       isHiddenToggle(modalText);
     });
-    toggleModalBook();
+    // toggleModalBook();
     document.addEventListener('keydown', closeModalBookOnEsc);
   } catch (err) {
     Notify.failure(`${err.messsage}`);
@@ -174,4 +178,4 @@ function createModalBookMarkup(resp) {
   </p>
 </div>`;
 }
-export { openModalBook, closeModalBook, removeBookFromShoppingList };
+export { hendlerClick, openModalBook, closeModalBook, removeBookFromShoppingList };

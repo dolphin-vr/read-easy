@@ -12,8 +12,6 @@ const refs = {
   // closeModalBtn: document.querySelector('[data-menu-close]'),
   modal: document.querySelector('[data-menu]'),
 };
-initTheme();
-setStoredTheme();
 
 // refs.home.addEventListener('click', showHomepage);
 // refs.shoplist.addEventListener('click', showShoppingList);
@@ -32,9 +30,12 @@ function themeSwitch() {
 }
 
 function setStoredTheme() {
+  initTheme();
   if (isThemeDark()) {
     refs.slider.classList.add('slider-dark');
   } else {
     refs.slider.classList.remove('slider-dark');
   }
 }
+
+export {setStoredTheme}

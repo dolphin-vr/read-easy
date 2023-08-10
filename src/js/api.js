@@ -3,6 +3,7 @@
 // import { Notify } from 'notiflix/build/notiflix-notify-aio';
 // import { keyPage } from "./vars";
 import {homeMarkup} from "./home"
+import { hendlerClick } from "./modal";
 import { shoppinglistMarkup, trashBook } from "./shop2";
 const keyPage = 'activpage';
 
@@ -19,20 +20,22 @@ const refs = {
   mainSec: document.querySelector('.js-main'),
   btnHome: document.querySelector('.btnHome'),
   btnSL: document.querySelector('.btnSL'),
+  modalEl: document.querySelector('.js-modal-book-backdrop'),
+  // booksList: document.querySelector('.book-list'), //mainSec
 }
 
 refs.btnHome.addEventListener('click', showHomePage);
 refs.btnSL.addEventListener('click', showShoppingList);
 
 function showActivePage() {
- console.dir('catlist= ', refs.catlisSec)
+//  console.dir('catlist= ', refs.catlisSec)
   let currentPage = JSON.parse(sessionStorage.getItem(keyPage));
   if (currentPage === 'shoppinglist') {
-    console.log('if showShoppingList')
+    // console.log('if showShoppingList')
     showShoppingList();
   } else {
-    console.log('if showHomePage')
-    showHomePage();
+    // console.log('if showHomePage')
+    showHomePage();    
   }
 }
 
@@ -44,7 +47,7 @@ function showShoppingList() {
   refs.mainSec.innerHTML = shoppinglistMarkup();  
   const trashBtns = document.querySelectorAll('.js-trash');
   if (trashBtns.length>0){
-    console.log('trashBtn= ', trashBtns);
+    // console.log('trashBtn= ', trashBtns);
     refs.mainSec.addEventListener('click', trashBook)
 // const trashBtn = document.querySelector('.js-trash');
 // trashBtn.addEventListener('click', trashBook);
@@ -53,10 +56,11 @@ function showShoppingList() {
 }
 
 function showHomePage() {
-  console.log('func showHomePage')
+  // console.log('func showHomePage')
   refs.catlisSec.classList.replace('hidden', 'category');
   sessionStorage.setItem(keyPage, JSON.stringify('homepage'));
   homeMarkup();
+  refs.mainSec.addEventListener('click', hendlerClick);
 }
 
 export { showActivePage, showShoppingList };
