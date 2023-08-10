@@ -1,4 +1,4 @@
-import{e as c,f as g,h as m,j as u,k as d,l as y,m as k,o as f,p as $,r as b}from"./log-out-83fb8245.js";const x=[{name:"Amazon",path:g,path2x:m},{name:"Apple Books",path:u,path2x:d},{name:"Bookshop",path:y,path2x:k}];function v(s){return`<li class="shopping-card">
+import{e as c,f as g,h as m,j as u,k as d,l as y,m as k,o as f,p as $,r as b}from"./log-out-72c50007.js";const x=[{name:"Amazon",path:g,path2x:m},{name:"Apple Books",path:u,path2x:d},{name:"Bookshop",path:y,path2x:k}];function v(s){return`<li class="shopping-card">
 <button class="button-trash js-trash" aria-label="Close window" type="button"  id="${s._id}">
 <svg class="trash-icon">
 <use href="${c}#trash"></use>
