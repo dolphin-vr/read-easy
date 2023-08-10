@@ -1,6 +1,6 @@
-.container {
-   // max-width: 375px;
-}
+// .container {
+//    // max-width: 375px;
+// }
 
 .header{
    position: relative;
@@ -58,13 +58,21 @@
 .login-btn{
 width: 70px;
 // margin-top: 20px;
+   color: #FFF;
+   font-family: DM Sans;
+   font-size: 14px;
+   font-style: normal;
+   font-weight: 500;
+   line-height: 18px;
+  
+   letter-spacing: -0.56px;
 }
 
 .page-nav{
    display: flex;
    flex-direction: column;
-   gap: 30px;
-   padding: 10px;
+   // gap: 30px;
+   // padding: 10px;
    // background-color: yellow;
 }
 
@@ -74,13 +82,18 @@ width: 70px;
       //  padding-top: 24px;
       //  padding-bottom: 22px;
        justify-content: space-between;
+      
    }
    .logo{
       margin-right: 144px;
    }  
    .login-btn{
          margin-left: 20px;
+         margin-top: 20px;
    } 
+   .home-nav{
+      margin-bottom: 17px;
+   }
    .menu.is-open {
    
       background: radial-gradient(189.32% 190.93% at 59.76% -23.42%,
@@ -117,6 +130,12 @@ width: 70px;
     .theme-swithcer{
       margin-left: auto;
     }
+   .shoplist-nav {
+          text-align: center;
+          align-items: center;
+          display: flex;
+          padding-left: 16px;
+       }
       
     .login-btn{
       margin-left: 15px;
@@ -128,17 +147,28 @@ width: 70px;
 
    .page-nav{
       position: absolute;
-      top: 0;
-      left: 90px;
+      top: 19px;;
+      left: 181px;
        display: flex;
        flex-direction: row;
-       gap: 40px;
+      //  gap: 40px;
+   }
+   .menu {
+      display: block;
+   }
+   .img-burger-menu{
+      display: none;
    }
    
-    .header .container {
-      //  padding-top: 0;
-      //  padding-bottom: 0;
-   }
+   //  .header .container {
+   //    //  padding-top: 0;
+   //    //  padding-bottom: 0;
+   // }
+}
+@media screen and (min-width: 1440px) {
+   .header .container {
+         max-width: 1440px;
+      }
 }
 // =============
 .icon-burger{
@@ -162,6 +192,7 @@ width: 70px;
    display: none;
 }
 .login-btn{
+      display: flex;
       border-radius: 18px;
       border: 1.5px solid #111;
       background: #4F2EE8;
@@ -236,7 +267,7 @@ width: 70px;
 .shoplist-nav{
    background-color: transparent;
    border: none;
-   display: inline-block;
+   
 }
 
 .current-link{
@@ -244,4 +275,111 @@ width: 70px;
       background: #EAC645;
       display: flex;
       padding: 8px 16px;
+}
+// 
+.sign-up {
+   width: 184px;
+   height: 48px;
+   position: relative;
+   margin-left: auto;
+   margin-right: 4px;
+}
+
+.sign-up-btn {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+
+   border-radius: 18px;
+   border: 1.5px solid #111;
+   background: #4f2ee8;
+   width: 184px;
+   height: 48px;
+   color: #fff;
+   font-family: DM Sans;
+   font-size: 14px;
+   font-style: normal;
+   font-weight: 500;
+   line-height: 18px;
+   padding: 15px 14px;
+   letter-spacing: -0.56px;
+}
+
+.user-btn {
+   position: relative;
+   font-size: 22px;
+   font-style: normal;
+   font-weight: 700;
+   line-height: normal;
+   letter-spacing: -0.44px;
+   color: #ffffff;
+   display: flex;
+   align-items: center;
+   width: 184px;
+   height: 45px;
+   border-radius: 36px;
+   border: none;
+   background-color: #4f2ee8;
+   padding: 4px 9px;
+}
+
+.user-text-btn {
+   text-overflow: ellipsis;
+   overflow: hidden;
+}
+
+.user-foto {
+   margin-right: 9px;
+}
+
+.user-icon {
+   width: 23px;
+   height: 26px;
+   stroke: var(--bgr-color);
+   margin-left: auto;
+}
+
+.logout-btn {
+   position: absolute;
+   top: 45px;
+   right: 0;
+
+   color: var(--text-authorization-color);
+   font-size: 14px;
+   font-style: normal;
+   font-weight: 500;
+   line-height: 1.28;
+   letter-spacing: -0.56px;
+
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+
+   width: 118px;
+   height: 48px;
+   padding: 14px 24px;
+   background: var(--bgr-color);
+   border-radius: 18px;
+   border: 1.5px solid #111;
+}
+
+.logout-icon {
+   width: 20px;
+   height: 20px;
+   stroke: #eac645;
+}
+
+@media screen and (min-width: 768px) {
+   .logout-btn {
+      width: 184px;
+      height: 48px;
+      padding: 14px;
+   }
+}
+
+.on-hidden {
+   display: none;
+   opacity: 0;
+   visibility: hidden;
+   pointer-events: none;
 }

@@ -20,12 +20,35 @@
      </button>
      <!-- <button data-menu-close class="close-btn" type="button">X</button> -->
      <div class="menu" data-menu>
-        <button type="button" class="login-btn" style="margin-top: 104px;">
+        <!-- <button type="button" class="login-btn">
            Sign up
            <svg width="20" height="20" style="margin-left: 90px;">
               <use class="sign-up-foto" href="./img/sprite.svg#loginout" style="stroke: #EAC645;"></use>
            </svg>
-        </button>
+        </button> -->
+      <div class="sign-up js-sign-up">
+         <button type="button" class="sign-up-btn js-sign-up-btn js-authorization-open">
+            Sign up
+            <svg class="logout-icon">
+               <use href="../img/sprite.svg#loginout"></use>
+            </svg>
+            </use>
+            </svg>
+         </button>
+         <button type="button" class="user-btn js-user-btn on-hidden">
+            <img src="../img/user2-40.png" alt="userFoto" class="user-foto" />
+            <p class="user-text-btn js-user-text-btn">username</p>
+            <svg class="user-icon">
+               <use href="../img/sprite.svg#ddown"></use>
+            </svg>
+         </button>
+         <button class="logout-btn js-logout-btn on-hidden">
+            Log out
+            <svg class="logout-icon">
+               <use href="../img/sprite.svg#loginout"></use>
+            </svg>
+         </button>
+         </div>
 
         <nav class="page-nav">
            <button class="home-nav current-link btnHome">HOME</button>
