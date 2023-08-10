@@ -3,6 +3,7 @@
 // import { Notify } from 'notiflix/build/notiflix-notify-aio';
 // import { keyPage } from "./vars";
 import {homeMarkup} from "./home"
+import { shoppinglistMarkup, trashBook } from "./shop2";
 const keyPage = 'activpage';
 
 const optNotiflx = {
@@ -39,6 +40,16 @@ function showShoppingList() {
   console.log('func showShoppingList')
   refs.catlisSec.classList.replace('category', 'hidden');
   sessionStorage.setItem(keyPage, JSON.stringify('shoppinglist'));
+  
+  refs.mainSec.innerHTML = shoppinglistMarkup();  
+  const trashBtns = document.querySelectorAll('.js-trash');
+  if (trashBtns.length>0){
+    console.log('trashBtn= ', trashBtns);
+    refs.mainSec.addEventListener('click', trashBook)
+// const trashBtn = document.querySelector('.js-trash');
+// trashBtn.addEventListener('click', trashBook);
+  }
+
 }
 
 function showHomePage() {
@@ -48,4 +59,4 @@ function showHomePage() {
   homeMarkup();
 }
 
-export { showActivePage };
+export { showActivePage, showShoppingList };
