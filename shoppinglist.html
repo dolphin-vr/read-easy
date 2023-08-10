@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <link rel="icon" type="image/svg+xml" href="/read-easy/favicon.svg">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Read Easy</title>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/read-easy/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping List</title>
     
-    <script type="module" crossorigin src="/read-easy/assets/log-out-72c50007.js"></script>
-    <script type="module" crossorigin src="/read-easy/assets/funds-78dbb1f8.js"></script>
-    <script type="module" crossorigin src="/read-easy/assets/shoppinglist-94a6a8cb.js"></script>
-    <link rel="stylesheet" href="/read-easy/assets/log-out-54bf5882.css">
+    <script type="module" crossorigin src="/read-easy/assets/shoppinglist-90d2f8fe.js"></script>
+    <link rel="modulepreload" crossorigin href="/read-easy/assets/main-efe805c9.js">
+    <link rel="stylesheet" href="/read-easy/assets/main-cdb8af25.css">
   </head>
   <body>
     <header class="header">
@@ -88,10 +87,48 @@
   </div> 
 </header>
 
-
     <section class="shoplist">
-      <div class="funds">
-        <section class="funds">
+      <div class="funds-wrap"><section class="funds">
+  <div class="funds-title-wrapper">
+    <p class="funds-title">Support Ukraine</p>
+    <svg class="funds-title-svg">
+      <use class="funds-title-tryzub" href="/read-easy/assets/sprite-5f25f0dd.svg#tryzub"></use>
+    </svg>
+  </div>
+  <ul class="funds-list"></ul>
+  <div class="funds-buttons">
+    <button class="funds-btn-bottom" type="button">
+      <svg class="funds-btn-svg">
+        <use class="" href="/read-easy/assets/sprite-5f25f0dd.svg#2bottom"></use>
+      </svg>
+    </button>
+    <button class="funds-btn-top is-hidden" type="button">
+      <svg class="funds-btn-svg">
+        <use class="" href="/read-easy/assets/sprite-5f25f0dd.svg#2top"></use>
+      </svg>
+    </button>
+  </div>
+  
+</section>
+</div>
+      <div class="shopping-list"></div>
+      <section class="footer">
+   <button id="goTopBtn" title="Go to top">
+      <svg class="svg"><use href="/read-easy/assets/sprite-5f25f0dd.svg#gotop"></use></svg>
+   </button>
+</section>
+    </section>
+
+    <div class="is-hidden no-scroll">
+      <section class="home">
+  <!---------------------- TOP SECTION CATEGOTY and FOUNDS -->
+  <div class="top-sections">
+    <section class="category">
+  <ul class="js-category-list category-list">
+    <li><a href="" class="category-link selected-category">All Categories</a></li>
+  </ul> 
+</section>
+    <section class="funds">
   <div class="funds-title-wrapper">
     <p class="funds-title">Support Ukraine</p>
     <svg class="funds-title-svg">
@@ -114,14 +151,14 @@
   
 </section>
 
-      </div>
-     
-      <div class="shooping-list"></div>   
-   </section>
+  </div>
+  <!------------------------------ SECTION BOOK-LIST -->
+  <section class="book-list"></section>
+</section>
 
-    <div class="modal-book-backdrop js-modal-book-backdrop is-hidden"></div>
+      <div class="modal-book-backdrop js-modal-book-backdrop is-hidden"></div>
 
-    <div class="authorization-container js-authorization-modal is-hidden">
+      <div class="authorization-container js-authorization-modal is-hidden">
   <div class="authorization-frame">
     <button
       type="button"
@@ -183,6 +220,7 @@
   <div class="authorization-backdrop js-authorization-backdrop"></div>
 </div>
 
+    </div>
 
     
     
