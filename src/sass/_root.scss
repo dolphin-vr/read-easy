@@ -10,6 +10,9 @@
   --scroll-color: #e0e0e0;
   --filter-amazon: grayscale(100);
   --category-link-color: rgba(17, 17, 17, 0.6);
+  --shopping-list-active-bg: #111111;
+  --shopping-list-active-color: #FFFFFF;
+  --shopping-list-middle-color: #000000;
 }
 
 // for a dark theme
@@ -22,4 +25,7 @@
   --scroll-color: rgba(17, 17, 17, 0.6);
   --filter-amazon: grayscale(100) invert(1);
   --category-link-color: rgba(255, 255, 255, 0.6);
+  --shopping-list-active-bg: #FFFFFF;
+  --shopping-list-active-color: #000000;
+  --shopping-list-middle-color: #FFFFFF;
 }

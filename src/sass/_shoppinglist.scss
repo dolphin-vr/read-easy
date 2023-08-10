@@ -73,7 +73,7 @@
 
 // ======== style shopping-card==========
 
-.book-list {
+.book-list-items {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -182,7 +182,7 @@
     letter-spacing: -1.92px;
   }
 
-  .book-list {
+  .book-list-items {
     width: 704px;
     margin-top: 40px;
   }
@@ -248,7 +248,7 @@
     line-height: 1.08;
     letter-spacing: -1.92px;
   }
-  .book-list {
+  .book-list-items {
     width: 996px;
     margin-top: 40px;
   }
