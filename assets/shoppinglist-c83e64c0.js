@@ -1,4 +1,4 @@
-import{g as a,i as l,c as r,r as c,e as i,a as p}from"./main-f3a654ce.js";const g={shoplist:document.querySelector(".shopping-list")};let t='<h2 class="shopping-title">Shopping <span class="shopping-title-list">List</span></h2>';const o=a();!o&&o.length===0?t+=`<div class="shopping-list-empty">
+import{g as a,i as l,c as r,r as c,e as i,a as p}from"./main-34ad3a94.js";const g={shoplist:document.querySelector(".shopping-list")};let t='<h2 class="shopping-title">Shopping <span class="shopping-title-list">List</span></h2>';const o=a();!o&&o.length===0?t+=`<div class="shopping-list-empty">
   <p class="shopping-book-empty">
     This page is empty, add some books and proceed to order.
   </p>
