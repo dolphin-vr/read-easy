@@ -1,27 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Read Easy</title>
-    <link rel="stylesheet" href="./sass/index.scss">
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping List</title>
+    <link rel="stylesheet" href="./sass/index.scss" />
   </head>
   <body>
     <load src="partials/header.html" />
-
     <section class="shoplist">
-      <div class="funds">
-        <load src="partials/funds.html" />
-      </div>
-     
-      <div class="shooping-list"></div>   
-   </section>
+      <div class="funds-wrap"><load src="partials/funds.html" /></div>
+      <div class="shopping-list"></div>
+      <load src="partials/footer.html" />
+    </section>
 
-    <load src="partials/modal.html" />
-    <load src="partials/authorization.html" />
+    <div class="is-hidden no-scroll">
+      <load src="partials/home.html" />
+      <load src="partials/modal.html" />
+      <load src="partials/authorization.html" />
+    </div>
 
+    <script type="module" src="./main.js"></script>
     <script type="module" src="./js/shoppinglist.js"></script>
-    
   </body>
 </html>
