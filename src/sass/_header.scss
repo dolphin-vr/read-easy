@@ -17,7 +17,7 @@
    border: 1.5px solid var(--text-color);
    
    background-color:var(--bgr-color) ;
-   max-width: 375px;
+   
    display: flex;
    align-items: center;
    border-radius: 0px 0px 8px 8px;
@@ -305,7 +305,7 @@
 
 }
 
-.current-link {
+.active-button {
    border-radius: 36px;
    background: #EAC645;
    display: flex;
