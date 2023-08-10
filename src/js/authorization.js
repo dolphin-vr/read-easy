@@ -32,6 +32,9 @@ form.buttonSignUp.addEventListener('click', e => {
           console.log(`setUserName success `);
           // console.log(setUserNameRes);
           console.log(`Account created`);
+          form.name.value = '';
+          form.mail.value = '';
+          form.password.value = '';
           initUserName();
 
           form.modal.classList.toggle('on-hidden');
@@ -74,9 +77,11 @@ form.buttonSignIn.addEventListener('click', e => {
     .then(signInAppRes => {
       console.log(`signInApp success `);
       console.log(signInAppRes);
-      form.modal.classList.toggle('on-hidden');
-      initUserName();
       //Тут рахуємо що все добре!
+      form.modal.classList.toggle('on-hidden');
+      form.mail.value = '';
+      form.password.value = '';
+      initUserName();
     })
     .catch(signInAppError => {
       Notify.failure(`createAccount wrong "${signInAppError.code}"`);

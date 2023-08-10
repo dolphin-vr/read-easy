@@ -1,9 +1,9 @@
 // import './js/modal';
-// import './js/authorization-modal';
+import './js/authorization-modal';
 // import './js/header';
-// import './js/authorization';
+import './js/authorization';
 // import './js/shoppinglist';
-// import './js/log-out';
+import './js/log-out';
 
 import { homeMarkup } from './js/home';
 import { showActivePage } from './js/api';

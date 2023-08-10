@@ -145,12 +145,9 @@
   cursor: default;
 }
 
-
-
 // screen size ------------------------------------------------------------------------
 
-
-
+@media screen and (min-width: 768px) {
   .authorization-frame {
     max-width: 579px;
     max-height: 516px;
