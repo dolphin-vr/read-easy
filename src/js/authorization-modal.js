@@ -9,7 +9,7 @@ refs.openModalBtn.addEventListener('click', toggleModal);
 refs.closeModalBtn.addEventListener('click', toggleModal);
 
 function toggleModal() {
-  refs.modal.classList.toggle('is-hidden');
+  refs.modal.classList.toggle('on-hidden');
   document.body.classList.toggle('no-scroll');
   document.addEventListener('keydown', onEscKeyPress);
   refs.modal.addEventListener('click', onClickBackdrop);
@@ -17,13 +17,13 @@ function toggleModal() {
 
 function onEscKeyPress(e) {
   if (e.key === 'Escape') {
-    refs.modal.classList.toggle('is-hidden');
+    refs.modal.classList.toggle('on-hidden');
     document.removeEventListener('keydown', onEscKeyPress);
   }
 }
 
 function onClickBackdrop(e) {
   if (e.target === refs.backdrop) {
-    refs.modal.classList.toggle('is-hidden');
+    refs.modal.classList.toggle('on-hidden');
   }
 }

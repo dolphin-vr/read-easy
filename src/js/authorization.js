@@ -30,10 +30,11 @@ form.buttonSignUp.addEventListener('click', e => {
         .then(setUserNameRes => {
           //Тут рахуємо що все добре!
           console.log(`setUserName success `);
-          console.log(setUserNameRes);
-          Notify.success(`Account created`);
+          // console.log(setUserNameRes);
+          console.log(`Account created`);
+          initUserName();
 
-          form.modal.classList.toggle('is-hidden');
+          form.modal.classList.toggle('on-hidden');
         })
         .catch(setUserNameError => {
           console.log(`setUserName wrong "${setUserNameError.code}"`);
@@ -73,7 +74,7 @@ form.buttonSignIn.addEventListener('click', e => {
     .then(signInAppRes => {
       console.log(`signInApp success `);
       console.log(signInAppRes);
-      form.modal.classList.toggle('is-hidden');
+      form.modal.classList.toggle('on-hidden');
       initUserName();
       //Тут рахуємо що все добре!
     })
@@ -101,22 +102,22 @@ form.link[0].addEventListener('click', onLinkClick);
 form.link[1].addEventListener('click', onLinkClick);
 
 form.link[1].classList.add('authorization-link-active');
-form.name.classList.add('is-hidden');
+form.name.classList.add('on-hidden');
 
 function onLinkClick(e) {
   if (this === form.link[0]) {
     // Виконуємо дії для SIGN UP
     form.link[1].classList.remove('authorization-link-active');
     form.link[0].classList.add('authorization-link-active');
-    form.name.classList.remove('is-hidden');
-    form.buttonSignUp.classList.remove('is-hidden');
-    form.buttonSignIn.classList.add('is-hidden');
+    form.name.classList.remove('on-hidden');
+    form.buttonSignUp.classList.remove('on-hidden');
+    form.buttonSignIn.classList.add('on-hidden');
   } else if (this === form.link[1]) {
     // Виконуємо дії для SIGN IN
     form.link[0].classList.remove('authorization-link-active');
     form.link[1].classList.add('authorization-link-active');
-    form.name.classList.add('is-hidden');
-    form.buttonSignUp.classList.add('is-hidden');
-    form.buttonSignIn.classList.remove('is-hidden');
+    form.name.classList.add('on-hidden');
+    form.buttonSignUp.classList.add('on-hidden');
+    form.buttonSignIn.classList.remove('on-hidden');
   }
 }

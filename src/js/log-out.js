@@ -5,11 +5,12 @@ import {
   signOutApp,
   getUserName,
 } from './api-firebase';
-import userFoto from '../img/user2-40.png';
-import iconLogout from '../img/sprite.svg';
 
-const signUpWrap = document.querySelector('.sign-up');
-const signUpBtn = document.querySelector('.sign-up-button');
+const signUpWrap = document.querySelector('.js-sign-up');
+const signUpBtn = document.querySelector('.js-sign-up-btn');
+const userBtn = document.querySelector('.js-user-btn');
+const textBtn = userBtn.querySelector('.js-user-text-btn');
+const logoutBtn = document.querySelector('.js-logout-btn');
 
 // --- getUserName ------------------------------------------
 
@@ -35,61 +36,33 @@ initUserName();
 
 // -------- create user button ----------------------------------------
 function addUserBtn(userName) {
-  let userFotoAdd = `
-          <button type="button" class="user-btn">
-          <img src="${userFoto}" alt="userFoto" class="user-foto"/>
-          ${userName}
-          <svg class="user-icon">
-            <use href="${iconLogout}#ddown"></use>
-          </svg>
-          </button>
-        `;
-  signUpBtn.classList.add('is-hidden');
-  signUpWrap.insertAdjacentHTML('beforeend', userFotoAdd);
+  signUpBtn.classList.add('on-hidden');
 
-  const userBtn = document.querySelector('.user-btn');
+  userBtn.classList.remove('on-hidden');
+  textBtn.textContent = userName;
   userBtn.addEventListener('click', onUserBtnEl);
 }
 
 // -------- create log-out button ----------------------------------------
 
 function onUserBtnEl(e) {
-  console.log('onUserBtnEL');
-  console.log(e.composedPath());
-  const userBtnEl = document.querySelector('.user-btn');
+  logoutBtn.classList.remove('on-hidden');
 
-  const logoutBtn = `
-      <button class="logout-btn">
-        Log out
-        <svg class="logout-icon">
-          <use href="${iconLogout}#loginout"></use>
-        </svg>
-      </button>
-    `;
-  userBtnEl.insertAdjacentHTML('beforeend', logoutBtn);
-
-  userBtnEl.removeEventListener('click', onUserBtnEl);
-  const logoutBtnEl = document.querySelector('.logout-btn');
+  userBtn.removeEventListener('click', onUserBtnEl);
   setTimeout(() => document.addEventListener('click', onLogoutBtn), 200);
 }
 
 //------------ log-out function----------------------------------------
 
 function onLogoutBtn(evt) {
-  console.log('onLogoutBtn');
-  console.log(evt.composedPath());
-  const userBtnEl = document.querySelector('.user-btn');
-  const logoutBtnEl = document.querySelector('.logout-btn');
-  console.log(evt.composedPath().includes(logoutBtnEl));
-  if (evt.composedPath().includes(logoutBtnEl)) {
+  if (evt.composedPath().includes(logoutBtn)) {
     signOutApp();
-    console.log('logout');
-    userBtnEl.removeChild(logoutBtnEl);
-    signUpWrap.removeChild(userBtnEl);
-    signUpBtn.classList.remove('is-hidden');
+    signUpBtn.classList.remove('on-hidden');
+    userBtn.classList.add('on-hidden');
+    logoutBtn.classList.add('on-hidden');
   } else {
-    userBtnEl.removeChild(logoutBtnEl);
-    signUpWrap.removeChild(userBtnEl);
+    logoutBtn.classList.add('on-hidden');
+
     initUserName();
   }
 
