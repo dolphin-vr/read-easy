@@ -22,24 +22,22 @@ getCategoryList()
     const arrayOfCategories = resp.data
     const markupCategoriesList = arrayOfCategories.map(category => `<li><a href="" class="category-link">${category.list_name}</a></li>`).join("")
     categoryList.insertAdjacentHTML("beforeend", markupCategoriesList);
-    const itemLinks = document.querySelectorAll(".category-link");
-    itemLinks.forEach((link) => {
-      link.addEventListener("click", function (event) {
-        event.preventDefault();
-        document.querySelectorAll(".selected-category").forEach((selectedLink) => {
-          selectedLink.classList.remove("selected-category");
-        });
-
-        link.classList.add("selected-category");
-        if (event.target.textContent === "All Categories") {
-          homeMarkup()
-        } else { 
-          categoryMarkupByName(event.target.textContent)
-        }
-      });
-    });
+    const ulList = document.querySelector(".js-category-list")
+    ulList.addEventListener("click", function (event) {
+      if (event.target === event.currentTarget) {
+        return
+      }
+      event.preventDefault()
+      const selectedCategory = document.querySelector(".selected-category")
+            selectedCategory.classList.remove("selected-category")
+            event.target.classList.add("selected-category");
+            if (event.target.textContent === "All Categories") {
+                      homeMarkup()
+                    } else { 
+                      categoryMarkupByName(event.target.textContent)
+                    }
+    })
   })
-  .catch(err => console.log(err))
   function categoryMarkupByName (nameCategory) {
     getCategory(nameCategory)
       .then(resp => {
