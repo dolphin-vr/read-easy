@@ -6,31 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Read Easy</title>
     
-    <script type="module" crossorigin src="/read-easy/assets/main-06c14ec9.js"></script>
+    <script type="module" crossorigin src="/read-easy/assets/main-969322b5.js"></script>
     <link rel="stylesheet" href="/read-easy/assets/main-f4ca10cc.css">
   </head>
   <body>
     <header class="header">
    <div class="container">
 
-      <button type="button" class="logo"><svg class="logo-svg" width="24" height="24">
-            <use href="/read-easy/assets/sprite-b4640b42.svg#logo"></use>
-         </svg>
-         <svg class="logo-text" width="77" height="28">
-            <use class="bookshelf" href="/read-easy/assets/sprite-b4640b42.svg#bookshelf"></use>
-         </svg>
-      </button>
-      <button class="theme-swithcer">
-         <span class="slider-header slider-bgr">
-            <span class="slider-shadow"></span>
-            <span class="slider"></span>
-      </button>
-      <button type="button" class="menu-btn" data-menu-open>
-         <svg class="icon-burger" width="28" height="28">
-            <use class="icon-menu " href="/read-easy/assets/sprite-b4640b42.svg#icon-align-left" />
-            <use class="icon-close " href="/read-easy/assets/sprite-b4640b42.svg#close"></use>
-         </svg>
-      </button>
+      <div class="mob-header">
+         <button type="button" class="logo">
+            <svg class="logo-svg" width="24" height="24"><use href="/read-easy/assets/sprite-280f4a22.svg#logo"></use></svg>
+            <svg class="logo-text" width="77" height="28"><use class="bookshelf" href="/read-easy/assets/sprite-280f4a22.svg#bookshelf"></use></svg>
+         </button>
+         <button class="theme-switcher">
+            <span class="slider-header slider-bgr"><span class="slider-shadow"></span><span class="slider"></span>
+         </button>
+         <button type="button" class="menu-btn" data-menu-open>
+            <svg class="icon-burger" width="28" height="28">
+               <use class="icon-menu " href="/read-easy/assets/sprite-280f4a22.svg#menu" />
+               <use class="icon-close " href="/read-easy/assets/sprite-280f4a22.svg#close"></use>
+            </svg>
+         </button>
+      </div>
 
       <!-- <button data-menu-close class="close-btn" type="button">X</button> -->
       <div class="menu" data-menu>
@@ -38,35 +35,22 @@
          <div class="sign-up js-sign-up">
             <button type="button" class="sign-up-btn js-sign-up-btn js-authorization-open">
                Sign up
-               <svg class="logout-icon">
-                  <use href="/read-easy/assets/sprite-b4640b42.svg#loginout"></use>
-               </svg>
-               </use>
-               </svg>
-            </button>
+               <svg class="logout-icon"><use href="/read-easy/assets/sprite-280f4a22.svg#loginout"></use></svg></button>
             <button type="button" class="user-btn js-user-btn on-hidden">
                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAABhGlDQ1BJQ0MgcHJvZmlsZQAAKJF9kT1Iw0AYht+mSkupCLWDiEOG6mQXFXEsVSyChdJWaNXB5NI/aGJIUlwcBdeCgz+LVQcXZ10dXAVB8AfE1cVJ0UVK/C4ptIjxjuMe3vvel7vvAKFVZ6rZlwBUzTKyqaRYKK6IgVcEaYYQQURipp7OLeThOb7u4eP7XZxnedf9OQaUkskAn0icYLphEa8Tz2xaOud94iirSgrxOfGEQRckfuS67PIb54rDAs+MGvnsHHGUWKz0sNzDrGqoxNPEMUXVKF8ouKxw3uKs1husc0/+wnBJW85xndYoUlhEGhmIkNFADXVYiNOukWIiS+dJD/+I48+QSyZXDYwc89iACsnxg//B796a5alJNymcBPpfbPtjDAjsAu2mbX8f23b7BPA/A1da17/RAmY/SW92tdgRMLgNXFx3NXkPuNwBhp90yZAcyU9LKJeB9zP6piIwdAuEVt2+dc5x+gDkqVdLN8DBITBeoew1j3cHe/v2b02nfz9WN3KbuA7doAAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAADGFJREFUWMOtmWtwXNV9wH/n3Ofevbt7tdKudvWwJVlGCLCN7RBonGQqUpKGMiSknRDclg+Eth/Mh37rFz5kOp12ptNO20xopqlhMqQ4tNA0iSkYSGxjHqHGJsbGJrKxhWXLkvXalfa993H6QZIryy9B+c/cubtn7znnd//Pc84KPqEUivPbgLuBrQrV26hVBgzTtvxmAzvmNISQw0KIEeAwsDeVdN/8JPOIjwnVDTwGPAzkoihidOQUL/3kGU6/9zoqivBDhZfpILtmgM6uNXzpvm+QSHpoUpsQQjwNfC+ZiJ/7VAELxfkM8FfAI4CulKJaKfPqz3/Mq88/yfnJEmfGC1iWyZqOLLVKjUhFtLUkkaaFl27lD7+9g02bP4Nh2oFpxZ4SQjyeTMSn/t+AheL8duAJwAMIgoDJiTGe2/l37H11D8fOzKAbGgIwDJMtt/QTBQGCkEYQ0JJ0MTRBzrMZHLyZLV9+kL7b7kJKrQjsSCbiu643v34dMHMR7NGltmazwbuH3uaVXf/ES/sOcrFYJ5N2CSNFqbYAU63VcWyTXEuCuu/TaDQZ7F9DX3eOyHLxqyWqlRKJZIsHPFMqV4eAHQnXaa4acLYw5yilXhBCDC21KaU4cfwoP/iH7zB6dozRyQqtKYdarYluGAilIIq4MD5Fe6tHvVqhWm8Q+D6lUp0gVJTmi+Ty3dR7BnETHkIIFhWwrlSu3pdwneoNAWcLcybwAjC0vD2KIl7bv5eDh0/QbARsWZumN5PCi9tIKSiUa5RqTSIh8TyHTKtHPpvDBI4eP8EvDhykp7uDc2Pn6ZcaoJZ72BDwQqlc/d2VmryaBp9YCQdw/vwoz/5oJ/WGz7239/DlLTeT8Rxc2yLltWLFHISmEcQ8LC8LmkQzXYRhMjQzxXe/+4+8f/os/Sc/YG5mgpZMJ+LyCBhanPtPrgk4M1vcrpR6VIgrY2fkzGkq5QqtcYO7Bnvo7mrHjcVIxl1cL43lJhCGCYaDrzRC3USYDkpqpDu6+cLQPQyP7CSRSCKlztXmAB4tlav7Eq5zKXDk0ofpmUJm8Q1Y7ndLMjdXJGr65Lwk/et6Sba0kUjnsBNpLNdDT7QgTXthSCEQUgNNIrUFHQys72egtxuhIlQUXS9wnyiVq5krABfznHetXsW5AoYu6My3kWxtQzdjaKaNFksgTIsoDFAqJAx9wihARRECiRACTdPJ5PJ0ZNJ0999Cft0t1wP0Fln+D3B6ptANPLJcY8u1qJRCNy1SCYeE62JZCTTdWPBxTUdJC4VOpExCaRDW6ygliKIIpQRCMzGdBKmETTKTxzTNG6XfR0rlavclQKXUY9fLiQCt6VZQIIWGMGII3UVJF6HHEGYc6XgoYYDSUMIkQieSNug2SuhoRgzHiWO4KcSN64O+WFIvQT18ox7t2XYiBLZlMl/1eeutNynMlYk7DkPbtnHrZz6LMAQCSb0xz5E3fkXFV0SE9PT2sP7WDQSRRGr2asvww8Bf6FPTs9uA3EqzLo8yIQTRXAE/CPHSbVycnuXO3/o82bY26tUylqbj12sYdgzddojpNl35VqanZujsvZlYup0wUmimRbsILo15A8mVytVtUil192peJ37uI35ny2Zy7TnW33QT1alJdh/4Nc+9/Bavv7yHqZNHCOfGiLW0YDs2Yx98wL//9L855zuEhSkcL01nzwC5ZOvHWUDdrQNbl2ttpfaWxHQdvrhxELstjWrOk0pYfK4tz9yZKuMnR5k4fphcSxqaTUQU0t/dzY6H1tDaHieV7UOqgJvWD6InkyBWt8oTQmzVgd5rQS0Xw2vDmi/h9vaihU1y+XYMqVPzs3TFmiS8LGG5iKrVsGMO7bdtoF6pYDoWmoogCEnGEoTFItrql6G9OjBwLd+7DDDpEVkWiAhDM9D9JtIvYqoadtdaRKAQmiAqz0BsLWaqFVBIAUKpBaVpIDPdH8fEAxKwVlaNld+VUiQ615Dv6KIwXUDTbIQCqenoZozmXBndTmF63QivA6XAr5QRUkdqOkopatUKZksGUmkUalV0SilLXis5r4SMtbeTaOukPj1FpJvIWGKhvDlxIsPhYrFKORQ0azXK588SNesE8zMgJUpKSvMFpGETGTar5LuUEBtKKWvJtCuDZekuEOTu/X26snnGRg7Tn+8kVCFjkxMce/9DXn/3N3z1K/fQlG+hy4iNWzfjujEsAZFQ1JoNVDqHFGI1KWYpSBo6MAxsvJ4PLrVLTcdr7+Tw6z9FhT5BZZ6nnn+RXDLNnYO30uGmqFTraOlWXv/FHrxshru/3snszAyBZny8HdqCDOvAyBLgcrMuaW9lUs3k8pw4e4Hz4xNcnJzCNW02eu30WTniEz5r+9cjO7LEnSR7Xn2em7feQanh07Z+y6X0spqssfjciFRKHV7qFAlFJEChrho0Sils22Ht5i8yMjHN+Ow8G/s76b/rFlKb1iAH2qm1Weg9Wbo23EQml6dYmqNaq9PW3rWaGrxSDuuRYC+ov1SCxQEWluISdYUzCyFAKX77nt/jpZ88y8WpeYjOkc22Ml8ocmJkjDtuG+R2vcp8pUSmM8/whyP0D27CNGPA6v1vUfbKjmzmzQg1saShpSu6usoXzJxt595tn6VYrnGhWObYyDj1hs/mm3pxE0k+OnuWyWKFckNRacCG2+8A1MeFm0i4zptLy62nl5sxQhEpRcjl0EuXYZjctq6b+4c+x8VCiX1HhjlfLDNRqnB6bJzXDh1j/ztH+c1YgW9+azuWqRNePElQKRKtGOs68vSljfu5ixe7gTNCCP0ycy7edcQl/1GRz9SZ95l8dz8z1Tr7D73HC/sO0pWKYZsGmqYxVmxw/9e/yh8/9CBprwXDNBDlGfz5cWqRychsgJlewy0bN6Bp+tVqcwD0JVzn3KVfRicm/kUI8acrARGgKcHwsWOMHP0VmcYI1GaIpdbSECbFSpmJ6WnmmpBwXXJdfaxZt451fX0QhUghsCwL0awS1edQjRqRbvLck89RK8XZ9kd/wM133oFuGMsBf5BwnT+7bFenlHoc+ObyfUkQ+IwMn+TAnj08/6872X7/JroGu8CKoZSPFBqWJvFsg45sinRrlo51A8TTGZTvoyIfhEak6WhSIi0HZcRolku8d3SYqGRQ+psJ3unpYOs37mPd1s3EvVQRePyKbefafH7q7Pj4DuCZ0twc7x08yAu7nmX40CEq9RrNMGLvoZNs6O/GMS2CoIlhWDiWRWjZhJUKUayOYVhomo4UEj8IkFIhogikAKkTNqvs/dl/cfr0BJvyfRTKc8wen+PC6Y/ItbWz6cH7dww99MDUVffFa/P5Xc/88IdD//a3f//o3GyBYqVEPWiilEQBx09N8cob7/GVL9yOYSgkYAmJsGM06nV0FRHUysikh6ZrBEohpFwICCGJGj5H973If+zajS09CpV5YjEHXdMplIvUGrWdf/7QA5cdJmlXnCC8+fbLpXL58/VGvVehkEoSRhGmpoGC0YkZOrNJctl2NGmgmyZSSsIwwIonsJwEtusihSQMfQzDAkNHSI2pU0d5+vv/zImzDTpdj2KjQnuylcnyLFKpfbmUt33/2VPhch65EvDg1ESzGfj3RYJ9upBoUmJpGlKAoxuUayEvvnGEckMhLIswDNGdOG6qBV03UH6dsNEgaNbQNX0hSpWiOj/Dkdd+yTvDMyQtl3oYUGrUQUEz8PeV6tX7vnPgxStOuLSrJaDJRt3PWvaPLWnkBWzR5cIaOFSgFBTnm3gpm77+9Qt1R4DbmsW0bUARqQCiANtNIDWNysw459/5JT/bvYfZWZuYYWGbFgGKjpb2naOFi9t/PnqqfjUW7VpZcrJRDy/Uq7szpnVKCvElKaStaxIpBI0w5Pz5abJpBy/lomsa6c4e7FQrQaVMZeoCmlTEEmkac5PMHjvA7j17OXBojrhp4doOXjxZDIi+/eTxt//6dKkQXotDu1G9mWzWj+Wt2FMRKqVgky6k1ISgVG8w/MEoKmjQ050n2zOA5XqUpseZn7yALSWSiA+PHuH7u3bz1jtTpG0XXdeDTNLbWfGbD/znmff/51M9RL81keqWiMc0tIf9KMyV/DpJw6YlmeBr3/oaff3dzJ49xdjZM6hQ8OG5SX79/iiOHqPFdiYU6mkh5fdeGT/96R6iX002uultZb9xt60bWxOW09sM/YEgDC0lFZVGrWFq5rAmtRFD6odb7Pje/ZMffaK/If4Xdhx8bDvZS4YAAAAASUVORK5CYII=" alt="userFoto" class="user-foto" />
                <p class="user-text-btn js-user-text-btn">username</p>
-               <svg class="user-icon">
-                  <use href="/read-easy/assets/sprite-b4640b42.svg#ddown"></use>
-               </svg>
+               <svg class="user-icon"><use href="/read-easy/assets/sprite-280f4a22.svg#ddown"></use></svg>
             </button>
             <button class="logout-btn js-logout-btn on-hidden">
                Log out
-               <svg class="logout-icon">
-                  <use href="/read-easy/assets/sprite-b4640b42.svg#loginout"></use>
-               </svg>
-            </button>
+               <svg class="logout-icon"><use href="/read-easy/assets/sprite-280f4a22.svg#loginout"></use></svg></button>
          </div>
 
          <nav class="page-nav">
             <button class="home-nav active-button btnHome">HOME</button>
             <button class="shoplist-nav btnSL">
                SHOPPING LIST
-               <svg class="svg-navigation" width="28" height="28">
-                  <use class="svg-navigation" href="/read-easy/assets/sprite-b4640b42.svg#cart"></use>
-               </svg>
-            </button>
+               <svg class="svg-navigation" width="28" height="28"><use class="svg-navigation" href="/read-easy/assets/sprite-280f4a22.svg#cart"></use></svg></button>
          </nav>
          <img class="img-burger-menu" src="/read-easy/assets/menu-bg-2b739152.png" alt="burger">
       </div>
@@ -85,19 +69,19 @@
   <div class="funds-title-wrapper">
     <p class="funds-title">Support Ukraine</p>
     <svg class="funds-title-svg">
-      <use class="funds-title-tryzub" href="/read-easy/assets/sprite-b4640b42.svg#tryzub"></use>
+      <use class="funds-title-tryzub" href="/read-easy/assets/sprite-280f4a22.svg#tryzub"></use>
     </svg>
   </div>
   <ul class="funds-list"></ul>
   <div class="funds-buttons">
     <button class="funds-btn-bottom" type="button">
       <svg class="funds-btn-svg">
-        <use class="" href="/read-easy/assets/sprite-b4640b42.svg#2bottom"></use>
+        <use class="" href="/read-easy/assets/sprite-280f4a22.svg#2bottom"></use>
       </svg>
     </button>
     <button class="funds-btn-top is-hidden" type="button">
       <svg class="funds-btn-svg">
-        <use class="" href="/read-easy/assets/sprite-b4640b42.svg#2top"></use>
+        <use class="" href="/read-easy/assets/sprite-280f4a22.svg#2top"></use>
       </svg>
     </button>
   </div>
@@ -118,7 +102,7 @@
       class="authorization-close-btn js-authorization-close"
     >
       <svg class="authorization-icon-btn">
-        <use href="/read-easy/assets/sprite-b4640b42.svg#close"></use>
+        <use href="/read-easy/assets/sprite-280f4a22.svg#close"></use>
       </svg>
     </button>
     <form class="authorization-form">
@@ -138,7 +122,7 @@
           required
         />
         <svg class="authorization-input-icon">
-          <use href="/read-easy/assets/sprite-b4640b42.svg#mail"></use>
+          <use href="/read-easy/assets/sprite-280f4a22.svg#mail"></use>
         </svg>
       </div>
       <div class="authorization-input-wrap">
@@ -152,7 +136,7 @@
           maxlength="20"
         />
         <svg class="authorization-input-icon">
-          <use href="/read-easy/assets/sprite-b4640b42.svg#lock"></use>
+          <use href="/read-easy/assets/sprite-280f4a22.svg#lock"></use>
         </svg>
       </div>
       <button
@@ -175,7 +159,7 @@
 
     <section class="footer">
    <button id="goTopBtn" title="Go to top">
-      <svg class="svg"><use href="/read-easy/assets/sprite-b4640b42.svg#gotop"></use></svg>
+      <svg class="svg"><use href="/read-easy/assets/sprite-280f4a22.svg#gotop"></use></svg>
    </button>
 </section>
 
