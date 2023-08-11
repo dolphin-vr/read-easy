@@ -5,16 +5,19 @@
 .header {
    position: relative;
 }
+.mob-header {
+  
+   background-color: var(--bgr-color);
+}
 
 .header .container {
    position: relative;
    margin-left: auto;
    margin-right: auto;
-   padding: 10px 16px;
+   
+   // border: 1.5px solid var(--text-color);
 
-   border: 1.5px solid var(--text-color);
-
-   background-color: var(--bgr-color);
+   // background-color: var(--bgr-color);
 
    display: flex;
    align-items: center;
@@ -22,12 +25,19 @@
    height: 64px;
 
 }
-
+.theme-switcher{
+      background-color: transparent;
+      border: none;
+      display: inline-block;
+}
 .logo {
    text-transform: uppercase;
    background-color: transparent;
    border: none;
    display: inline-block;
+}
+.bookshelf{
+   fill: var(--text-color);
 }
 
 .menu {
@@ -89,6 +99,37 @@
       bottom: 0;
       left: 0;
    }
+   .mob-header{
+      z-index: 2;
+      border-radius: 0px 0px 8px 8px;
+      border: 1.5px solid var(--text-color);
+      background: var(--bgr-color);
+      width: 375px;
+      // margin-left: auto;
+      // margin-right: auto;
+      height: 64px;
+      padding: 15px 10px 15px 10px;
+      
+      }
+  
+     
+   .page-nav{
+      text-align: center;
+      color: #FFF;
+         font-family: DM Sans;
+         font-size: 14px;
+         font-style: normal;
+         font-weight: 500;
+         line-height: 18px;
+         /* 128.571% */
+         letter-spacing: -0.56px;
+         text-transform: uppercase;
+         position: absolute;
+         top: 330px;
+         left: 104px;
+   }
+
+   
 
    .sign-up {
       margin-top: 20px;
@@ -107,7 +148,12 @@
       margin-right: auto;
    }
 
-
+   .shoplist-nav{
+      display: flex;
+      padding: 8px 16px;
+      align-items: center;
+      justify-content: center;
+   }
 
    .menu.is-open {
       opacity: 1;
@@ -123,7 +169,7 @@
    }
 
    .logo {
-      margin-right: 140px;
+      margin-right: 130px;
    }
 
    .login-btn {
@@ -149,11 +195,32 @@
 @media screen and (min-width: 768px) {
    .header .container {
       max-width: 768px;
+      position: relative;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 10px 16px;
+      border: 1.5px solid var(--text-color);
+      background-color: var(--bgr-color);
+      display: flex;
+       align-items: center;
+      border-radius: 0px 0px 8px 8px;
+      height: 64px;
    }
 
-   .theme-swithcer {
-      margin-left: auto;
+   .theme-switcher {
+         margin-left: 347px;
    }
+   .shoplist-nav{
+      
+      border-radius: 36px;
+      justify-content: center;
+       align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      display: flex;
+            
+   } 
+      
 
    .shoplist-nav {
       text-align: center;
@@ -174,12 +241,27 @@
 
    .page-nav {
       position: absolute;
-      top: 14px;
-      ;
+      pointer-events: all;  
       left: 181px;
       display: flex;
       flex-direction: row;
-      //  gap: 40px;
+      color: var(--text-color);
+      font-family: DM Sans;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 18px;
+      top: 1px;
+      letter-spacing: -0.56px;
+      text-transform: uppercase;
+      color: var(--text-color);
+      border-radius: 36px;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      
+      
    }
 
    .menu {
@@ -197,6 +279,9 @@
    .header .container {
       max-width: 1440px;
    }
+       .theme-switcher {
+          margin-left: 1010px;
+       }
 }
 
 // =============
@@ -306,8 +391,9 @@
 .active-button {
    border-radius: 36px;
    background: #EAC645;
-   display: flex;
+  
    padding: 8px 16px;
+    color: black;
 }
 
 // 
@@ -420,4 +506,25 @@
 
 .svg-navigation {
    margin-left: 4px;
+}
+
+.menu.is-open {
+   // @include centered();
+   display: flex;
+   flex-direction: column;
+   background: radial-gradient(189.32% 190.93% at 59.76% -23.42%, #4f2ee8 18.03%, #fff 100%);
+   // background-color: var(--light);
+   position: fixed;
+   overflow-y: scroll;
+   overflow-x: hidden;
+   top: 0;
+   ;
+   bottom: 0;
+   z-index: 1;
+   width: 375px;
+   // width: 100%;
+   padding-top: 84px;
+   margin-left: auto;
+   margin-bottom: auto;
+   justify-content: space-between;
 }

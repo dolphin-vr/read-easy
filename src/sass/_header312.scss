@@ -12,11 +12,11 @@
    // margin-left: auto;
    // margin-right: auto;
    // padding: 10px 16px;
-   border: 1.5px solid var(--text-color);
+   
    background-color: var(--bgr-color);
    display: flex;
    align-items: center;
-   border-radius: 0px 0px 8px 8px;
+   
 }
 
 .logo {
@@ -54,7 +54,10 @@
    width: 100%;
    height: 64px;
    z-index: 2;
+   border-radius: 0px 0px 8px 8px;
+   border: 1.5px solid var(--text-color);
    background-color: var(--bgr-color);
+  
 }
 
 .menu {
@@ -219,6 +222,7 @@
    
 .mob-header{
    z-index: 0;
+   max-width: 768px;
 }
 
    .shoplist-nav {
@@ -240,6 +244,7 @@
 
    .page-nav {
       position: absolute;
+      pointer-events: all;
       top: 0px;
       left: 181px;
       height: 64px;
@@ -268,6 +273,9 @@
    .header .container {
       max-width: 1440px;
    }
+   .mob-header {
+      max-width: 1440px;
+}
 }
 
 // =============
@@ -477,6 +485,7 @@
       height: 48px;
       padding: 14px;
    }
+
 }
 
 .on-hidden {
