@@ -1,5 +1,6 @@
 import { getCategoryList, getTopBooks, getCategory, getBookById } from "./api-books"
 import { homeMarkup } from './home';
+import { Notify } from "notiflix";
 const categoryList = document.querySelector(".js-category-list")
 const booksList = document.querySelector(".book-list")
 const modalBook = document.querySelector(".modal-book")
@@ -42,6 +43,10 @@ getCategoryList()
     getCategory(nameCategory)
       .then(resp => {
         const booksOfCategory = resp.data
+        console.log(booksOfCategory.length)
+        if (booksOfCategory.length === 0) {
+          throw new Error()
+        }
         const arrayOfWordsOfCategory = nameCategory.split(" ")
 
         const lastWordFromCategory = arrayOfWordsOfCategory.length - 1
@@ -56,7 +61,8 @@ getCategoryList()
         const booksWithId = document.querySelectorAll(".book-link")
         booksWithId.forEach(bookFromList => { bookFromList.addEventListener("click", function (event) { event.preventDefault() })})
       })
-      .catch(err => console.log(err))
+      .catch(err => 
+        Notify.failure("Книжок в цій категорії не знайдено"))
   }
 
 export { onBtnClickCategory }
