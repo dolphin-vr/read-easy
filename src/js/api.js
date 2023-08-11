@@ -45,14 +45,14 @@ import empty2x from '../img/empty2x.png';
 const PAGINATION_COUNT_ITEMS = 3;
 
 function showShoppingList() {
-  // console.log('func showShoppingList');
+  console.log('func showShoppingList');
   refs.catlisSec.classList.replace('category', 'hidden');
   sessionStorage.setItem(keyPage, JSON.stringify('shoppinglist'));
 
   // SL title
   let shoplistMarkup = '<h2 class="shopping-title">Shopping <span class="shopping-title-list">List</span></h2>';
   const shoppingList = getStorageShopingList();
-  // console.log(shoppingList);
+  console.log(shoppingList);
   let countShopingList = shoppingList.length;
   // SL absent or empty
   if (!shoppingList || shoppingList.length === 0) {
@@ -136,7 +136,7 @@ function showShoppingList() {
 }
 
 function showHomePage() {
-  // console.log('func showHomePage')
+  console.log('func showHomePage')
   refs.catlisSec.classList.replace('hidden', 'category');
   sessionStorage.setItem(keyPage, JSON.stringify('homepage'));
   homeMarkup();

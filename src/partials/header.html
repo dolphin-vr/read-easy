@@ -1,24 +1,21 @@
 <header class="header">
    <div class="container">
 
-      <button type="button" class="logo"><svg class="logo-svg" width="24" height="24">
-            <use href="./img/sprite.svg#logo"></use>
-         </svg>
-         <svg class="logo-text" width="77" height="28">
-            <use class="bookshelf" href="./img/sprite.svg#bookshelf"></use>
-         </svg>
-      </button>
-      <button class="theme-swithcer">
-         <span class="slider-header slider-bgr">
-            <span class="slider-shadow"></span>
-            <span class="slider"></span>
-      </button>
-      <button type="button" class="menu-btn" data-menu-open>
-         <svg class="icon-burger" width="28" height="28">
-            <use class="icon-menu " href="./img/sprite.svg#menu" />
-            <use class="icon-close " href="./img/sprite.svg#close"></use>
-         </svg>
-      </button>
+      <div class="mob-header">
+         <button type="button" class="logo">
+            <svg class="logo-svg" width="24" height="24"><use href="./img/sprite.svg#logo"></use></svg>
+            <svg class="logo-text" width="77" height="28"><use class="bookshelf" href="./img/sprite.svg#bookshelf"></use></svg>
+         </button>
+         <button class="theme-switcher">
+            <span class="slider-header slider-bgr"><span class="slider-shadow"></span><span class="slider"></span>
+         </button>
+         <button type="button" class="menu-btn" data-menu-open>
+            <svg class="icon-burger" width="28" height="28">
+               <use class="icon-menu " href="./img/sprite.svg#menu" />
+               <use class="icon-close " href="./img/sprite.svg#close"></use>
+            </svg>
+         </button>
+      </div>
 
       <!-- <button data-menu-close class="close-btn" type="button">X</button> -->
       <div class="menu" data-menu>
@@ -26,35 +23,22 @@
          <div class="sign-up js-sign-up">
             <button type="button" class="sign-up-btn js-sign-up-btn js-authorization-open">
                Sign up
-               <svg class="logout-icon">
-                  <use href="./img/sprite.svg#loginout"></use>
-               </svg>
-               </use>
-               </svg>
-            </button>
+               <svg class="logout-icon"><use href="./img/sprite.svg#loginout"></use></svg></button>
             <button type="button" class="user-btn js-user-btn on-hidden">
                <img src="./img/user2-40.png" alt="userFoto" class="user-foto" />
                <p class="user-text-btn js-user-text-btn">username</p>
-               <svg class="user-icon">
-                  <use href="./img/sprite.svg#ddown"></use>
-               </svg>
+               <svg class="user-icon"><use href="./img/sprite.svg#ddown"></use></svg>
             </button>
             <button class="logout-btn js-logout-btn on-hidden">
                Log out
-               <svg class="logout-icon">
-                  <use href="./img/sprite.svg#loginout"></use>
-               </svg>
-            </button>
+               <svg class="logout-icon"><use href="./img/sprite.svg#loginout"></use></svg></button>
          </div>
 
          <nav class="page-nav">
             <button class="home-nav active-button btnHome">HOME</button>
             <button class="shoplist-nav btnSL">
                SHOPPING LIST
-               <svg class="svg-navigation" width="28" height="28">
-                  <use class="svg-navigation" href="./img/sprite.svg#cart"></use>
-               </svg>
-            </button>
+               <svg class="svg-navigation" width="28" height="28"><use class="svg-navigation" href="./img/sprite.svg#cart"></use></svg></button>
          </nav>
          <img class="img-burger-menu" src="./img/menu-bg.png" alt="burger">
       </div>

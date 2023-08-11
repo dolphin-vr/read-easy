@@ -4,11 +4,13 @@ function burgerMenu() {
   // const closeMenuBtn = document.querySelector('[data-menu-close]');
 
   const toggleMenu = () => {
-    // const isMenuOpen =
+    const isMenuOpen =
     // openMenuBtn.getAttribute('aria-expanded') === 'true' || false;
     // openMenuBtn.setAttribute('aria-expanded', !isMenuOpen);
+    console.log('mobileMenu= ', mobileMenu.classList);
     mobileMenu.classList.toggle('is-open');
     document.body.classList.toggle("no-scroll");
+    console.log('mobileMenu= ', mobileMenu.classList);
 
     // const scrollLockMethod = !isMenuOpen
     //   ? 'disableBodyScroll'
