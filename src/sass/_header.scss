@@ -1,26 +1,22 @@
-.container {
-   min-width: 375px;
-}
-
 .header {
-   position: relative;
+   // position: relative;
+}
+.container {
+   // min-width: 375px;
 }
 
 .header .container {
+   width: 375px;
+   @include centered();
    position: relative;
-   margin-left: auto;
-   margin-right: auto;
-   padding: 10px 16px;
-
+   // margin-left: auto;
+   // margin-right: auto;
+   // padding: 10px 16px;
    border: 1.5px solid var(--text-color);
-
    background-color: var(--bgr-color);
-
    display: flex;
    align-items: center;
    border-radius: 0px 0px 8px 8px;
-   height: 64px;
-
 }
 
 .logo {
@@ -30,34 +26,57 @@
    display: inline-block;
 }
 
-.menu {
-
-   top: 100%;
-   left: 0;
+.mob-header{
+   display: flex;
+   align-items: center;
+   width: 100%;
+   height: 64px;
+   z-index: 2;
+   background-color: var(--bgr-color);
+   border-bottom-left-radius: 15px;
 }
 
+.menu {
+   display: none;
+}
+.menu.is-open {
+      // @include centered();
+   display: flex;
+   flex-direction: column;
+      background: radial-gradient(189.32% 190.93% at 59.76% -23.42%, #4f2ee8 18.03%, #fff 100%);
+// background-color: var(--light);
+   position: fixed;
+   overflow-y: scroll;
+   overflow-x:hidden;
+   top: 0;
+   // left: 0;
+   bottom: 0;
+   z-index: 1;
+      width: 375px;
+   // width: 100%;
+   padding-top: 84px;
+   // padding: 84px 40px 40px;
+   justify-content: space-between;
+}
+
+.theme-switcher {
+   margin-left: auto;
+   margin-right: 14px;
+   background-color: transparent;
+   border: none;
+   // display: inline-block;
+}
 .menu-btn {
    // position: relative;
-   width: 24px;
-   height: 24px;
+   width: 28px;
+   height: 28px;
    background-color: transparent;
    border: none;
    display: inline-block;
-   margin-bottom: 9px;
-   margin-right: 7px;
+   // margin-bottom: 9px;
+   margin-right: 20px;
 }
 
-.close-btn {
-   position: absolute;
-   top: 24px;
-   right: 24px;
-   width: 24px;
-   height: 24px;
-   cursor: pointer;
-   fill: var(--text-color);
-   border-radius: 50%;
-   display: none;
-}
 
 .login-btn {
    width: 70px;
@@ -68,43 +87,67 @@
    font-style: normal;
    font-weight: 500;
    line-height: 18px;
-
    letter-spacing: -0.56px;
 }
 
+// 
+.sign-up {
+   width: 184px;
+   height: 48px;
+   position: relative;
+   margin-left: 24px;
+   // margin-right: 4px;
+}
 
+.page-nav{
+   margin-left: 128px;
+}
 
-/* === Mobile CSS ===  */
-@media screen and (max-width: 767px) {
+/* === Tablet CSS ===  */
+@media screen and (min-width: 768px) {
+
+   
+.header .container {
+   width: 768px;
+   @include centered();
+}
+
    .menu {
+      // display: block;
+      display: flex;
+      align-items: center;
       z-index: 1;
-      opacity: 0;
-      visibility: hidden;
-      pointer-events: none;
-      background: radial-gradient(189.32% 190.93% at 59.76% -23.42%, #4f2ee8 18.03%, #fff 100%);
-      width: 100%;
+      // opacity: 0;
+      // visibility: hidden;
+      // pointer-events: none;
+      // background: radial-gradient(189.32% 190.93% at 59.76% -23.42%, #4f2ee8 18.03%, #fff 100%);
+      // width: 100%;
       transition: opacity .25s cubic-bezier(.4, 0, .2, 1), visibility .25s cubic-bezier(.4, 0, .2, 1);
-      position: fixed;
-      top: 64px;
-      bottom: 0;
-      left: 0;
+      // position: fixed;
+      // top: 0;
+      height: 64px;
+      // bottom: 0;
+      // left: 0;
    }
 
    .sign-up {
-      margin-top: 20px;
-      margin-bottom: 138px;
+      margin-right: 32px;
+      // margin-top: 20px;
+      // margin-bottom: 138px;
 
    }
 
    .home-nav {
       margin-left: auto;
       margin-right: auto;
+      cursor: pointer;
    }
 
    .shoplist-nav {
       display: flex;
       margin-left: auto;
       margin-right: auto;
+      cursor: pointer;
    }
 
 
@@ -133,6 +176,7 @@
 
    .home-nav {
       margin-bottom: 17px;
+      cursor: pointer;
    }
 
    .img-burger-menu {
@@ -150,10 +194,10 @@
    .header .container {
       max-width: 768px;
    }
-
-   .theme-swithcer {
-      margin-left: auto;
-   }
+   
+.mob-header{
+   z-index: 0;
+}
 
    .shoplist-nav {
       text-align: center;
@@ -163,7 +207,7 @@
    }
 
    .login-btn {
-      margin-left: 15px;
+      // margin-left: 15px;
       margin-right: 15px;
    }
 
@@ -174,17 +218,24 @@
 
    .page-nav {
       position: absolute;
-      top: 14px;
-      ;
+      pointer-events: all;
+      top: 0px;
       left: 181px;
+      margin-left: 0;
+      height: 64px;
       display: flex;
       flex-direction: row;
-      //  gap: 40px;
+      align-items: center;
+      z-index: 4;
+      gap: 24px;
+      // color: #000;
+      // background-color: #EAC645;
    }
 
-   .menu {
-      display: block;
-   }
+   // .menu {
+   //    display: block;
+   //    top: 0;
+   // }
 
    .img-burger-menu {
       display: none;
@@ -204,11 +255,8 @@
    stroke: var(--text-color);
 }
 
-.theme-swithcer {
-   background-color: transparent;
-   border: none;
-   display: inline-block;
-}
+// .theme-switcher {
+// }
 
 .menu-btn .icon-close {
    display: none;
@@ -294,7 +342,7 @@
    background-color: transparent;
    border: none;
    display: inline-block;
-
+   cursor: pointer;
 }
 
 .shoplist-nav {
@@ -308,15 +356,6 @@
    background: #EAC645;
    display: flex;
    padding: 8px 16px;
-}
-
-// 
-.sign-up {
-   width: 184px;
-   height: 48px;
-   position: relative;
-   margin-left: 24px;
-   margin-right: 4px;
 }
 
 .sign-up-btn {
