@@ -41,8 +41,10 @@ function showShoppingList() {
   refs.btnHome.classList.remove('active-button');
   refs.fundsSec.classList.add('funds-wrap');
   refs.catlisSec.classList.replace('category', 'hidden');
-  // refs.mobMenu.classList.remove('is-open');
-  toggleMenu();
+  if (refs.mobMenu.classList.contains('is-open')){
+    toggleMenu();
+  };
+  // 
   sessionStorage.setItem(keyPage, JSON.stringify('shoppinglist'));
 
   // SL title

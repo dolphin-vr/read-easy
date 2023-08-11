@@ -58,7 +58,10 @@ function showHomePage() {
    refs.fundsSec.classList.remove('funds-wrap');
    refs.catlisSec.classList.replace('hidden', 'category');
    // refs.mobMenu.classList.remove('is-open');
-   toggleMenu();
+  //  toggleMenu();
+  if (refs.mobMenu.classList.contains('is-open')){
+    toggleMenu();
+  };
    sessionStorage.setItem(keyPage, JSON.stringify('homepage'));
    homeMarkup();
    refs.mainSec.addEventListener('click', hendlerClick);
