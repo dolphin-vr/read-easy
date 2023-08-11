@@ -1,3 +1,5 @@
+import { removeBookFromShoppingList } from './modal';
+
 import shop1png from '../img/shop1.png';
 import shop2png from '../img/shop2.png';
 import shop3png from '../img/shop3.png';
@@ -24,24 +26,18 @@ const iconPaths = [
   },
 ];
 
+function shoppedBooksMarkup(shoppingList) {
+  return shoppingList.map(el => createBookCard(el)).join('');
+}
+
 function createBookCard(book) {
   return `<li class="shopping-card">
-<button class="button-trash js-trash" aria-label="Close window" type="button"  id="${
-    book._id
-  }">
-<svg class="trash-icon">
-<use href="${sprite}#trash"></use>
-</svg>
-</button>
+<button class="button-trash js-trash" aria-label="Close window" type="button"  id="${book._id}">
+<svg class="trash-icon"><use href="${sprite}#trash"></use></svg></button>
 <img src="${book.book_image}" alt="${book.title}" class="shopping-book-img" />
-<div>
-<p class="shopping-book-name">${book.title}</p>
-<p class="shopping-book-category">${book.list_name}</p>
-<p class="shopping-book-info">${book.description}</p>
-<p class="book-author">${book.author}</p>
-</div>
-${bookShopsMurkup(book.buy_links)}
-</li>`;
+<div><p class="shopping-book-name">${book.title}</p><p class="shopping-book-category">${book.list_name}</p>
+<p class="shopping-book-info">${book.description}</p><p class="book-author">${book.author}</p></div>
+${bookShopsMurkup(book.buy_links)}</li>`;
 }
 
 function bookShopsMurkup(shops) {
@@ -49,29 +45,25 @@ function bookShopsMurkup(shops) {
   iconPaths.forEach(p => {
     const u = shops.find(b => b.name === p.name);
     if (u) {
-      shopIcons.push({
-        name: p.name,
-        path: p.path,
-        path2x: p.path2x,
-        url: u.url,
-      });
+      shopIcons.push({name: p.name, path: p.path, path2x: p.path2x, url: u.url,});
     }
   });
   let markup = '<ul class="shops-list">';
   shopIcons.forEach(el => {
-    markup += `<li class="shop">
-  <a
-    href="${el.url}"
-    class="shop-link"
-    target="_blank"
-    rel="noreferrer noopener"
-    ><img srcset="${el.path2x} 2x" src="${el.path}" alt="${el.name}" class="shop-icon ${el.name}"
-  /></a>
-</li>`;
+    markup += `<li class="shop"><a href="${el.url}" class="shop-link" target="_blank" rel="noreferrer noopener"><img srcset="${el.path2x} 2x" src="${el.path}" alt="${el.name}" class="shop-icon ${el.name}"/></a></li>`;
   });
   markup += '</ul>';
 
   return markup;
 }
 
-export { createBookCard, bookShopsMurkup };
+function trashBook(evt) {
+  const trash = evt.target.closest('.js-trash');
+  if (trash) {
+    // console.log('trash= ', trash.id);
+    removeBookFromShoppingList(trash.id);
+    showShoppingList();
+  }
+}
+
+export { shoppedBooksMarkup, createBookCard, bookShopsMurkup, trashBook };

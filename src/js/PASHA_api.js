@@ -3,8 +3,7 @@
 // import { Notify } from 'notiflix/build/notiflix-notify-aio';
 // import { keyPage } from "./vars";
 import { homeMarkup } from './home';
-import { hendlerClick } from './modal';
-import { shoppedBooksMarkup, trashBook } from './shopslist';
+import { shoppinglistMarkup, trashBook } from './shop2';
 const keyPage = 'activpage';
 
 const optNotiflx = {
@@ -20,11 +19,22 @@ const refs = {
   mainSec: document.querySelector('.js-main'),
   btnHome: document.querySelector('.btnHome'),
   btnSL: document.querySelector('.btnSL'),
-  modalEl: document.querySelector('.js-modal-book-backdrop'),
 };
 
 refs.btnHome.addEventListener('click', showHomePage);
 refs.btnSL.addEventListener('click', showShoppingList);
+
+function showActivePage() {
+  console.dir('catlist= ', refs.catlisSec);
+  let currentPage = JSON.parse(sessionStorage.getItem(keyPage));
+  if (currentPage === 'shoppinglist') {
+    console.log('if showShoppingList');
+    showShoppingList();
+  } else {
+    console.log('if showHomePage');
+    showHomePage();
+  }
+}
 
 import { getStorageShopingList } from './api-shiping-localstorage';
 import empty from '../img/empty.png';
@@ -33,7 +43,7 @@ import empty2x from '../img/empty2x.png';
 const PAGINATION_COUNT_ITEMS = 3;
 
 function showShoppingList() {
-  // console.log('func showShoppingList');
+  console.log('func showShoppingList');
   refs.catlisSec.classList.replace('category', 'hidden');
   sessionStorage.setItem(keyPage, JSON.stringify('shoppinglist'));
 
@@ -41,7 +51,7 @@ function showShoppingList() {
   let shoplistMarkup = '<h2 class="shopping-title">Shopping <span class="shopping-title-list">List</span></h2>';
 
   const shoppingList = getStorageShopingList();
-  // console.log(shoppingList);
+  console.log(shoppingList);
   let countShopingList = shoppingList.length;
   // SL absent or empty
   if (!shoppingList || shoppingList.length === 0) {
@@ -102,14 +112,14 @@ function showShoppingList() {
   // console.log('bookList');
   // console.log(bookList);
 
-  shoplistMarkup = shoppedBooksMarkup(shoppingList.slice(0, PAGINATION_COUNT_ITEMS));
+  shoplistMarkup = shoppinglistMarkup(shoppingList.slice(0, PAGINATION_COUNT_ITEMS));
   bookList.innerHTML = shoplistMarkup;
 
-  // shoppedBooksMarkupRes += addButtonshoplistMarkup;
+  // shoppinglistMarkupRes += addButtonshoplistMarkup;
 
   const trashBtns = document.querySelectorAll('.js-trash');
   if (trashBtns.length > 0) {
-    // console.log('trashBtn= ', trashBtns);
+    console.log('trashBtn= ', trashBtns);
     refs.mainSec.addEventListener('click', trashBook);
     // const trashBtn = document.querySelector('.js-trash');
     // trashBtn.addEventListener('click', trashBook);
@@ -120,8 +130,8 @@ function showShoppingList() {
   const shoppingListEnd = document.querySelector('.shopping-list-end');
   if (shoppingListEnd != null) {
     shoppingListEnd.addEventListener('click', () => {
-      // console.log('shoppingListEnd');
-      let addButtonshoplistMarkup = shoppedBooksMarkup(
+      console.log('shoppingListEnd');
+      let addButtonshoplistMarkup = shoppinglistMarkup(
         shoppingList.slice(
           (countPagesShopingList - 1) * PAGINATION_COUNT_ITEMS,
           Math.min(countPagesShopingList * PAGINATION_COUNT_ITEMS, countShopingList + 1)
@@ -136,8 +146,8 @@ function showShoppingList() {
   const shoppingListStart = document.querySelector('.shopping-list-start');
   if (shoppingListStart != null) {
     shoppingListStart.addEventListener('click', () => {
-      // console.log('shoppingListForward');
-      let addButtonshoplistMarkup = shoppedBooksMarkup(shoppingList.slice(0, PAGINATION_COUNT_ITEMS));
+      console.log('shoppingListForward');
+      let addButtonshoplistMarkup = shoppinglistMarkup(shoppingList.slice(0, PAGINATION_COUNT_ITEMS));
       bookList.innerHTML = addButtonshoplistMarkup;
       counterPagesShopingList = 1;
       updateButtons(middleButtons, counterPagesShopingList, countPagesShopingList);
@@ -150,9 +160,9 @@ function showShoppingList() {
     shoppingListMiddle1.addEventListener('click', () => {
       if (!isNaN(shoppingListMiddle1.textContent)) {
         const num = Number(shoppingListMiddle1.textContent);
-        // console.log('1 num ', num);
+        console.log('1 num ', num);
         counterPagesShopingList = num;
-        let addButtonshoplistMarkup = shoppedBooksMarkup(
+        let addButtonshoplistMarkup = shoppinglistMarkup(
           shoppingList.slice(
             (num - 1) * PAGINATION_COUNT_ITEMS,
             Math.min(num * PAGINATION_COUNT_ITEMS, countShopingList + 1)
@@ -170,9 +180,9 @@ function showShoppingList() {
     shoppingListMiddle2.addEventListener('click', () => {
       if (!isNaN(shoppingListMiddle2.textContent)) {
         const num = Number(shoppingListMiddle2.textContent);
-        // console.log('2 num ', num);
+        console.log('2 num ', num);
         counterPagesShopingList = num;
-        let addButtonshoplistMarkup = shoppedBooksMarkup(
+        let addButtonshoplistMarkup = shoppinglistMarkup(
           shoppingList.slice(
             (num - 1) * PAGINATION_COUNT_ITEMS,
             Math.min(num * PAGINATION_COUNT_ITEMS, countShopingList + 1)
@@ -190,9 +200,9 @@ function showShoppingList() {
     shoppingListMiddle3.addEventListener('click', () => {
       if (!isNaN(shoppingListMiddle3.textContent)) {
         const num = Number(shoppingListMiddle3.textContent);
-        // console.log('3 num ', num);
+        console.log('3 num ', num);
         counterPagesShopingList = num;
-        let addButtonshoplistMarkup = shoppedBooksMarkup(
+        let addButtonshoplistMarkup = shoppinglistMarkup(
           shoppingList.slice(
             (num - 1) * PAGINATION_COUNT_ITEMS,
             Math.min(num * PAGINATION_COUNT_ITEMS, countShopingList + 1)
@@ -205,7 +215,7 @@ function showShoppingList() {
   }
 
   const updateButtons = (middleButtons, currentPage, countPage) => {
-    // console.log('currentPage = ', currentPage, ' countPage = ', countPage);
+    console.log('currentPage = ', currentPage, ' countPage = ', countPage);
     const buttons = middleButtons.length;
     if (buttons <= 0) {
       return;
@@ -234,7 +244,7 @@ function showShoppingList() {
 
   updateButtons(middleButtons, counterPagesShopingList, countPagesShopingList);
 
-  // console.log(middleButtons.length);
+  console.log(middleButtons.length);
 
   const shoppingListForward = document.querySelector('.shopping-list-forward');
   if (shoppingListForward != null) {
@@ -242,7 +252,7 @@ function showShoppingList() {
       if (counterPagesShopingList != countPagesShopingList) {
         counterPagesShopingList++;
       }
-      let addButtonshoplistMarkup = shoppedBooksMarkup(
+      let addButtonshoplistMarkup = shoppinglistMarkup(
         shoppingList.slice(
           (counterPagesShopingList - 1) * PAGINATION_COUNT_ITEMS,
           Math.min(counterPagesShopingList * PAGINATION_COUNT_ITEMS, countShopingList + 1)
@@ -259,7 +269,7 @@ function showShoppingList() {
       if (counterPagesShopingList > 1) {
         counterPagesShopingList--;
       }
-      let addButtonshoplistMarkup = shoppedBooksMarkup(
+      let addButtonshoplistMarkup = shoppinglistMarkup(
         shoppingList.slice(
           (counterPagesShopingList - 1) * PAGINATION_COUNT_ITEMS,
           Math.min(counterPagesShopingList * PAGINATION_COUNT_ITEMS, countShopingList + 1)
@@ -272,11 +282,10 @@ function showShoppingList() {
 }
 
 function showHomePage() {
-  // console.log('func showHomePage');
+  console.log('func showHomePage');
   refs.catlisSec.classList.replace('hidden', 'category');
   sessionStorage.setItem(keyPage, JSON.stringify('homepage'));
   homeMarkup();
-  refs.mainSec.addEventListener('click', hendlerClick);
 }
 
-export { showShoppingList };
+export { showActivePage, showShoppingList };

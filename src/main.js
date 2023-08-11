@@ -5,9 +5,8 @@
 // import './js/shoppinglist';
 // import './js/log-out';
 
-import { homeMarkup } from './js/home';
-import { showActivePage } from './js/api';
-import { initGoTopButton } from './js/interface';
+// import { showActivePage } from './js/api';
+import { initGoTopButton, showActivePage } from './js/interface';
 import { burgerMenu } from './js/menu';
 import { setStoredTheme } from './js/header';
 // import { getCategoryList, getTopBooks, getCategory, getBookById,} from './js/api-books';
