@@ -10,7 +10,6 @@ refs.closeModalBtn.addEventListener('click', toggleModalAuth);
 
 function toggleModalAuth() {
   refs.modalAuth.classList.toggle('on-hidden');
-  document.body.classList.toggle('no-scroll');
   document.addEventListener('keydown', onEscKeyPress);
   refs.modalAuth.addEventListener('click', onClickBackdrop);
 }
