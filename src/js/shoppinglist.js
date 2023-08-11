@@ -2,6 +2,7 @@ import { isSignIn, signInApp } from './api-firebase';
 import { bookShopsMurkup, createBookCard } from './shopslist';
 import { getStorageShopingList } from './api-shiping-localstorage';
 import { removeBookFromShoppingList } from './modal';
+import { showShoppingList } from './api';
 
 import empty from '../img/empty.png';
 import empty2x from '../img/empty2x.png';
@@ -25,10 +26,10 @@ function shoppingListMarkup(elemRef){
 }
 
 function noauthShoppingListMarkup(){
-  return `<div class="shopping-list-empty"><p class="shopping-book-empty">Please sign-up to manage your Shopping List</p><img srcset="${empty2x} 2x" src="${empty}" alt="Empty Shopping List" class="shopping-book-empty-img"/></div>`;
+  return `<div class="shopping-list-empty"><p class="shopping-book-empty">Please sign-up to manage your Shopping List</p><img srcset="${empty2x} 2x" src="${empty}" alt="Empty Shopping List" class="shopping-book-empty-img"loading="lazy"/></div>`;
 }
 function emptiShoppingListMarkup(){
-  return `<div class="shopping-list-empty"><p class="shopping-book-empty">This page is empty, add some books and proceed to order.</p><img srcset="${empty2x} 2x"src="${empty}"alt="Empty Shopping List"class="shopping-book-empty-img"/></div>`;
+  return `<div class="shopping-list-empty"><p class="shopping-book-empty">This page is empty, add some books and proceed to order.</p><img srcset="${empty2x} 2x"src="${empty}"alt="Empty Shopping List"class="shopping-book-empty-img"loading="lazy"/></div>`;
 }
 
 function pagingShoppingListMarkup(shoppingList){

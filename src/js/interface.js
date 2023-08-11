@@ -2,6 +2,7 @@ import { homeMarkup } from './home';
 import { hendlerClick } from './modal';
 import { showShoppingList } from './api';
 import { shoppedBooksMarkup, trashBook } from './shopslist';
+import { toggleMenu } from './menu';
 const keyPage = 'activpage';
 
 const refs = {
@@ -56,7 +57,8 @@ function showHomePage() {
    refs.btnSL.classList.remove('active-button');
    refs.fundsSec.classList.remove('funds-wrap');
    refs.catlisSec.classList.replace('hidden', 'category');
-   refs.mobMenu.classList.remove('is-open');
+   // refs.mobMenu.classList.remove('is-open');
+   toggleMenu();
    sessionStorage.setItem(keyPage, JSON.stringify('homepage'));
    homeMarkup();
    refs.mainSec.addEventListener('click', hendlerClick);

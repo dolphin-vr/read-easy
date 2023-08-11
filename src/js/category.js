@@ -49,7 +49,7 @@ getCategoryList()
 
         let markupCategoriesBooks = `<h1 class="book-list-title">${categoryNameWithoutLastWord} <span class="spn-books">${arrayOfWordsOfCategory[lastWordFromCategory]}</span></h1><ul class="category-ul">`
         booksOfCategory.forEach(book => {
-          markupCategoriesBooks += `<li class="book-thumb-category"><a href="" class="book-link" id="${book._id}"><img class="img-book-category" src="${book.book_image}" alt="book-test">
+          markupCategoriesBooks += `<li class="book-thumb-category"><a href="" class="book-link" id="${book._id}"><img class="img-book-category" src="${book.book_image}" alt="book-test"loading="lazy">
             <p class="book-name">${book.title}</p><p class="author">${book.author}</p></a></li>`})
         markupCategoriesBooks += "</ul>"
         booksList.innerHTML = markupCategoriesBooks
