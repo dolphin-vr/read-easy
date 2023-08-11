@@ -66,8 +66,3 @@ getCategoryList()
   }
 
 export { onBtnClickCategory }
-
-
-
-
-

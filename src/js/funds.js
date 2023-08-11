@@ -107,7 +107,3 @@ const createMarkupFunds = array => array.map(({ title, url, img, img2x }, idx) =
 
 fundsList.insertAdjacentHTML('beforeend', createMarkupFunds(fundsData));
 
-    // <picture>
-    //     <source srcset="${img}, ${img2x}"/>
-    //     <img class="funds-img" src="${img}" alt="${title}" />    
-    // </picture>
