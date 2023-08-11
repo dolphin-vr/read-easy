@@ -14,21 +14,17 @@ const refs = {
   shoplist: document.querySelector('.shopping-list'),
 };
 
-function shoppinglistMarkup(shoppingList) {
+function shoppedBooksMarkup(shoppingList) {
   return shoppingList.map(el => createBookCard(el)).join('');
 }
 
-// if (shoppingList && shoppingList.length !== 0) {
-// const trashBtn = document.querySelector('.js-trash');
-// trashBtn.addEventListener('click', trashBook);
-// }
 function trashBook(evt) {
   const trash = evt.target.closest('.js-trash');
   if (trash) {
-    console.log('trash= ', trash.id);
+    // console.log('trash= ', trash.id);
     removeBookFromShoppingList(trash.id);
     showShoppingList();
   }
 }
 
-export { shoppinglistMarkup, trashBook };
+export { shoppedBooksMarkup, trashBook };
