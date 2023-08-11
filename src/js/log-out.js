@@ -22,12 +22,12 @@ export const initUserName = async () => {
         const userName = getUserNameRes.data().name;
         addUserBtn(userName);
 
-        console.log(getUserNameRes.data().name);
+        // console.log(getUserNameRes.data().name);
         //Тут рахуємо що все добре і данні є!
       })
       .catch(getUserNameError => {
-        console.log('getUserName wrong');
-        console.log(getUserNameError.code);
+        // console.log('getUserName wrong');
+        // console.log(getUserNameError.code);
       });
   }
 };

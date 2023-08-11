@@ -24,14 +24,14 @@ form.buttonSignUp.addEventListener('click', e => {
   e.preventDefault();
   createAccount(form.mail.value, form.password.value)
     .then(createAccountRes => {
-      console.log(`createAccount success`);
-      console.log(createAccountRes);
+      // console.log(`createAccount success`);
+      // console.log(createAccountRes);
       setUserName(form.name.value)
         .then(setUserNameRes => {
           //Тут рахуємо що все добре!
-          console.log(`setUserName success `);
+          // console.log(`setUserName success `);
           // console.log(setUserNameRes);
-          console.log(`Account created`);
+          // console.log(`Account created`);
           form.name.value = '';
           form.mail.value = '';
           form.password.value = '';
@@ -40,15 +40,15 @@ form.buttonSignUp.addEventListener('click', e => {
           form.modal.classList.toggle('on-hidden');
         })
         .catch(setUserNameError => {
-          console.log(`setUserName wrong "${setUserNameError.code}"`);
+          // console.log(`setUserName wrong "${setUserNameError.code}"`);
           removeAccount()
             .then(removeAccountRes => {
-              console.log('removeAccount success');
-              console.log(removeAccountRes);
+              // console.log('removeAccount success');
+              // console.log(removeAccountRes);
             })
             .catch(removeAccountError => {
-              console.log('removeAccount wrong');
-              console.log(removeAccountError.code);
+              // console.log('removeAccount wrong');
+              // console.log(removeAccountError.code);
             });
         });
     })
@@ -75,8 +75,8 @@ form.buttonSignIn.addEventListener('click', e => {
   e.preventDefault();
   signInApp(form.mail.value, form.password.value)
     .then(signInAppRes => {
-      console.log(`signInApp success `);
-      console.log(signInAppRes);
+      // console.log(`signInApp success `);
+      // console.log(signInAppRes);
       //Тут рахуємо що все добре!
       form.modal.classList.toggle('on-hidden');
       form.mail.value = '';
