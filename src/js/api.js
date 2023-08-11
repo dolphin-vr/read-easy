@@ -45,14 +45,14 @@ import empty2x from '../img/empty2x.png';
 const PAGINATION_COUNT_ITEMS = 3;
 
 function showShoppingList() {
-  console.log('func showShoppingList');
+  // console.log('func showShoppingList');
   refs.catlisSec.classList.replace('category', 'hidden');
   sessionStorage.setItem(keyPage, JSON.stringify('shoppinglist'));
 
   // SL title
   let shoplistMarkup = '<h2 class="shopping-title">Shopping <span class="shopping-title-list">List</span></h2>';
   const shoppingList = getStorageShopingList();
-  console.log(shoppingList);
+  // console.log(shoppingList);
   let countShopingList = shoppingList.length;
   // SL absent or empty
   if (!shoppingList || shoppingList.length === 0) {
@@ -111,7 +111,7 @@ function showShoppingList() {
   bookList.innerHTML = shoplistMarkup;
   const trashBtns = document.querySelectorAll('.js-trash');
   if (trashBtns.length>0){
-    console.log('trashBtn= ', trashBtns);
+    // console.log('trashBtn= ', trashBtns);
     refs.mainSec.addEventListener('click', trashBook)
 // const trashBtn = document.querySelector('.js-trash');
 // trashBtn.addEventListener('click', trashBook);
