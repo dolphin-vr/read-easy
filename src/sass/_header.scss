@@ -12,8 +12,7 @@
    // margin-left: auto;
    // margin-right: auto;
    // padding: 10px 16px;
-   border: 1.5px solid var(--text-color);
-   background-color: var(--bgr-color);
+   
    display: flex;
    align-items: center;
    border-radius: 0px 0px 8px 8px;
@@ -101,8 +100,15 @@
 
 .page-nav{
    margin-left: 128px;
+   
 }
-
+@media screen and (max-width: 767px){
+   .mob-header{
+         border-radius: 0px 0px 8px 8px;
+         border: 1.5px solid var(--text-color);
+         background: var(--bgr-color);
+   }
+}
 /* === Tablet CSS ===  */
 @media screen and (min-width: 768px) {
 
@@ -110,6 +116,8 @@
 .header .container {
    width: 768px;
    @include centered();
+   border: 1.5px solid var(--text-color);
+   background-color: var(--bgr-color);
 }
 
    .menu {
@@ -192,7 +200,7 @@
 /* -===*** Tablet CSS ***===-  */
 @media screen and (min-width: 768px) {
    .header .container {
-      max-width: 768px;
+      width: 768px;
    }
    
 .mob-header{
@@ -227,7 +235,7 @@
       flex-direction: row;
       align-items: center;
       z-index: 4;
-      gap: 24px;
+      
       // color: #000;
       // background-color: #EAC645;
    }
@@ -246,7 +254,7 @@
 
 @media screen and (min-width: 1440px) {
    .header .container {
-      max-width: 1440px;
+      width: 1440px;
    }
 }
 
@@ -258,17 +266,7 @@
 // .theme-switcher {
 // }
 
-.menu-btn .icon-close {
-   display: none;
-}
 
-.menu-btn.is-open .icon-close {
-   display: block;
-}
-
-.menu-btn.is-open .icon-menu {
-   display: none;
-}
 
 .login-btn {
    display: flex;
@@ -459,4 +457,40 @@
 
 .svg-navigation {
    margin-left: 4px;
+}
+
+.home-nav{
+   color: var(--text-color);
+      font-family: DM Sans;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 18px;
+      /* 128.571% */
+      letter-spacing: -0.56px;
+      text-transform: uppercase;
+}
+
+.shoplist-nav{
+   color: var(--text-color);
+      font-family: DM Sans;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 18px;
+      /* 128.571% */
+      letter-spacing: -0.56px;
+      text-transform: uppercase;
+}
+.icon-close{
+   display: none;
+}
+
+
+.menu-btn[aria-expanded="true"]>.icon-burger>.icon-menu {
+   display: none;
+}
+
+.menu-btn[aria-expanded="true"]>.icon-burger>.icon-close {
+   display: block;
 }
