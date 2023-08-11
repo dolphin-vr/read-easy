@@ -1,10 +1,3 @@
-.header {
-   // position: relative;
-}
-.container {
-   // min-width: 375px;
-}
-
 .header .container {
    width: 375px;
    @include centered();
@@ -102,11 +95,28 @@
    margin-left: 128px;
    
 }
+.btn-burger {
+   color: var(--text-color);
+   font-family: DM Sans;
+   font-size: 14px;
+   font-style: normal;
+   font-weight: 500;
+   line-height: 18px;
+   letter-spacing: -0.56px;
+   text-transform: uppercase;
+}
 @media screen and (max-width: 767px){
    .mob-header{
          border-radius: 0px 0px 8px 8px;
          border: 1.5px solid var(--text-color);
          background: var(--bgr-color);
+   }
+   .shoplist-nav{
+         text-align: center;
+         align-items: center;
+         display: flex;
+         margin-top: 24px;
+         
    }
 }
 /* === Tablet CSS ===  */
@@ -349,12 +359,6 @@
 
 }
 
-.active-button {
-   border-radius: 36px;
-   background: #EAC645;
-   display: flex;
-   padding: 8px 16px;
-}
 
 .sign-up-btn {
    display: flex;
@@ -493,4 +497,31 @@
 
 .menu-btn[aria-expanded="true"]>.icon-burger>.icon-close {
    display: block;
+}
+
+
+.btn-burger{
+   fill: var(--text-color);;
+}
+
+.active-button {
+   fill: black;
+   border-radius: 36px;
+   background: #EAC645;
+   display: flex;
+   padding: 8px 16px;
+   color: black
+   
+}
+
+.logo-text{
+   fill: var(--text-color);
+}
+
+.logo{
+   margin-left: 20px;
+}
+
+.home-nav{
+   margin: 0
 }
