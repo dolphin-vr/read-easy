@@ -60,7 +60,6 @@ function bookShopsMurkup(shops) {
 function trashBook(evt) {
   const trash = evt.target.closest('.js-trash');
   if (trash) {
-    // console.log('trash= ', trash.id);
     removeBookFromShoppingList(trash.id);
     showShoppingList();
   }

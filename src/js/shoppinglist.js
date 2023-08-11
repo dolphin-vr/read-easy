@@ -1,8 +1,6 @@
 import { isSignIn, signInApp } from './api-firebase';
-import { bookShopsMurkup, createBookCard } from './shopslist';
 import { getStorageShopingList } from './api-shiping-localstorage';
 import { removeBookFromShoppingList } from './modal';
-import { showShoppingList } from './api';
 
 import empty from '../img/empty.png';
 import empty2x from '../img/empty2x.png';
@@ -22,7 +20,6 @@ function shoppingListMarkup(elemRef){
     elemRef.innerHTML = markup + emptiShoppingListMarkup();
     return
   }
-
 }
 
 function noauthShoppingListMarkup(){
@@ -61,24 +58,8 @@ function pagingShoppingListMarkup(shoppingList){
   }
 }
 
-// if (!shoppingList && shoppingList.length === 0) {
-//   shoplistMurkup += `<div class="shopping-list-empty">  <p class="shopping-book-empty">    This page is empty, add some books and proceed to order.  </p>  <img    srcset="${empty2x} 2x"    src="${empty}"    alt="Empty Shopping List"    class="shopping-book-empty-img"  /></div>`;
-// } else {
-//   isSignIn().then(isSign => {
-//     if (!isSign) {
-//       shoplistMurkup += `<div class="shopping-list-empty">  <p class="shopping-book-empty">    Please sign-up to manage your Shopping List  </p>  <img    srcset="${empty2x} 2x"    src="${empty}"    alt="Empty Shopping List"    class="shopping-book-empty-img"  /></div>`;
-//     }
-//   });
-// }
-// shoplistMurkup += '<ul class="book-list">';
-// shoplistMurkup += shoppingList.map(el => createBookCard(el)).join('');
-// shoplistMurkup += '</ul>';
-// refs.shoplist.innerHTML = shoplistMurkup;
-
-// if (shoppingList && shoppingList.length !== 0) {
 const trashBtn = document.querySelector('.js-trash');
 trashBtn.addEventListener('click', trashBook);
-// }
 
 function trashBook(evt) {
   const trash = evt.target.closest('.js-trash');
