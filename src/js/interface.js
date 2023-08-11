@@ -5,6 +5,7 @@ import { shoppedBooksMarkup, trashBook } from './shopslist';
 const keyPage = 'activpage';
 
 const refs = {
+   mobMenu: document.querySelector('[data-menu]'),
    catlisSec: document.querySelector('.js-catlist'),
    fundsSec: document.querySelector('.js-funds'),
    mainSec: document.querySelector('.js-main'),
@@ -51,12 +52,15 @@ function showActivePage() {
 }
 
 function showHomePage() {
-//   console.log('func showHomePage');
-  refs.catlisSec.classList.replace('hidden', 'category');
-  sessionStorage.setItem(keyPage, JSON.stringify('homepage'));
-  homeMarkup();
-  refs.mainSec.addEventListener('click', hendlerClick);
+   refs.btnHome.classList.add('active-button');
+   refs.btnSL.classList.remove('active-button');
+   refs.fundsSec.classList.remove('funds-wrap');
+   refs.catlisSec.classList.replace('hidden', 'category');
+   refs.mobMenu.classList.remove('is-open');
+   sessionStorage.setItem(keyPage, JSON.stringify('homepage'));
+   homeMarkup();
+   refs.mainSec.addEventListener('click', hendlerClick);
 }
 
 
-export { initGoTopButton, showActivePage };
+export { initGoTopButton, showActivePage, showHomePage };

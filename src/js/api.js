@@ -2,6 +2,11 @@
 // import { Notify } from '../../node_modules/notiflix/build/notiflix-notify-aio';
 // import { Notify } from 'notiflix/build/notiflix-notify-aio';
 // import { keyPage } from "./vars";
+
+import { getStorageShopingList } from './api-shiping-localstorage';
+import empty from '../img/empty.png';
+import empty2x from '../img/empty2x.png';
+import { showHomePage } from './interface';
 import { homeMarkup } from './home';
 import { hendlerClick } from './modal';
 import { shoppedBooksMarkup, trashBook } from './shopslist';
@@ -15,6 +20,7 @@ const optNotiflx = {
 };
 
 const refs = {
+  mobMenu: document.querySelector('[data-menu]'),
   catlisSec: document.querySelector('.js-catlist'),
   fundsSec: document.querySelector('.js-funds'),
   mainSec: document.querySelector('.js-main'),
@@ -26,19 +32,20 @@ const refs = {
 refs.btnHome.addEventListener('click', showHomePage);
 refs.btnSL.addEventListener('click', showShoppingList);
 
-import { getStorageShopingList } from './api-shiping-localstorage';
-import empty from '../img/empty.png';
-import empty2x from '../img/empty2x.png';
-
 const PAGINATION_COUNT_ITEMS = 3;
 
 function showShoppingList() {
   // console.log('func showShoppingList');
+  refs.btnSL.classList.add('active-button');
+  refs.btnHome.classList.remove('active-button');
+  refs.fundsSec.classList.add('funds-wrap');
   refs.catlisSec.classList.replace('category', 'hidden');
+  refs.mobMenu.classList.remove('is-open');
   sessionStorage.setItem(keyPage, JSON.stringify('shoppinglist'));
 
   // SL title
-  let shoplistMarkup = '<h2 class="shopping-title">Shopping <span class="shopping-title-list">List</span></h2>';
+  let shoplistMarkup =
+    '<h2 class="shopping-title">Shopping <span class="shopping-title-list">List</span></h2>';
 
   const shoppingList = getStorageShopingList();
   // console.log(shoppingList);
@@ -54,7 +61,9 @@ function showShoppingList() {
   }
   shoplistMarkup += '<ul class="book-list-items"></ul>'; //book-list
 
-  let countPagesShopingList = Math.ceil(countShopingList / PAGINATION_COUNT_ITEMS);
+  let countPagesShopingList = Math.ceil(
+    countShopingList / PAGINATION_COUNT_ITEMS
+  );
   let counterPagesShopingList = 1;
 
   if (countPagesShopingList > 1) {
@@ -102,7 +111,9 @@ function showShoppingList() {
   // console.log('bookList');
   // console.log(bookList);
 
-  shoplistMarkup = shoppedBooksMarkup(shoppingList.slice(0, PAGINATION_COUNT_ITEMS));
+  shoplistMarkup = shoppedBooksMarkup(
+    shoppingList.slice(0, PAGINATION_COUNT_ITEMS)
+  );
   bookList.innerHTML = shoplistMarkup;
 
   // shoppedBooksMarkupRes += addButtonshoplistMarkup;
@@ -124,12 +135,19 @@ function showShoppingList() {
       let addButtonshoplistMarkup = shoppedBooksMarkup(
         shoppingList.slice(
           (countPagesShopingList - 1) * PAGINATION_COUNT_ITEMS,
-          Math.min(countPagesShopingList * PAGINATION_COUNT_ITEMS, countShopingList + 1)
+          Math.min(
+            countPagesShopingList * PAGINATION_COUNT_ITEMS,
+            countShopingList + 1
+          )
         )
       );
       bookList.innerHTML = addButtonshoplistMarkup;
       counterPagesShopingList = countPagesShopingList;
-      updateButtons(middleButtons, counterPagesShopingList, countPagesShopingList);
+      updateButtons(
+        middleButtons,
+        counterPagesShopingList,
+        countPagesShopingList
+      );
     });
   }
 
@@ -137,10 +155,16 @@ function showShoppingList() {
   if (shoppingListStart != null) {
     shoppingListStart.addEventListener('click', () => {
       // console.log('shoppingListForward');
-      let addButtonshoplistMarkup = shoppedBooksMarkup(shoppingList.slice(0, PAGINATION_COUNT_ITEMS));
+      let addButtonshoplistMarkup = shoppedBooksMarkup(
+        shoppingList.slice(0, PAGINATION_COUNT_ITEMS)
+      );
       bookList.innerHTML = addButtonshoplistMarkup;
       counterPagesShopingList = 1;
-      updateButtons(middleButtons, counterPagesShopingList, countPagesShopingList);
+      updateButtons(
+        middleButtons,
+        counterPagesShopingList,
+        countPagesShopingList
+      );
     });
   }
 
@@ -159,7 +183,11 @@ function showShoppingList() {
           )
         );
         bookList.innerHTML = addButtonshoplistMarkup;
-        updateButtons(middleButtons, counterPagesShopingList, countPagesShopingList);
+        updateButtons(
+          middleButtons,
+          counterPagesShopingList,
+          countPagesShopingList
+        );
       }
     });
   }
@@ -179,7 +207,11 @@ function showShoppingList() {
           )
         );
         bookList.innerHTML = addButtonshoplistMarkup;
-        updateButtons(middleButtons, counterPagesShopingList, countPagesShopingList);
+        updateButtons(
+          middleButtons,
+          counterPagesShopingList,
+          countPagesShopingList
+        );
       }
     });
   }
@@ -199,7 +231,11 @@ function showShoppingList() {
           )
         );
         bookList.innerHTML = addButtonshoplistMarkup;
-        updateButtons(middleButtons, counterPagesShopingList, countPagesShopingList);
+        updateButtons(
+          middleButtons,
+          counterPagesShopingList,
+          countPagesShopingList
+        );
       }
     });
   }
@@ -223,7 +259,9 @@ function showShoppingList() {
       for (let i = 0; i < buttons; i++) {
         middleButtons[buttons - i - 1].textContent = countPage - i;
       }
-      middleButtons[middleButtons.length - 1].classList.add('shopping-list-active');
+      middleButtons[middleButtons.length - 1].classList.add(
+        'shopping-list-active'
+      );
     } else {
       for (let i = 0; i < buttons; i++) {
         middleButtons[i].textContent = currentPage - 1 + i;
@@ -245,11 +283,18 @@ function showShoppingList() {
       let addButtonshoplistMarkup = shoppedBooksMarkup(
         shoppingList.slice(
           (counterPagesShopingList - 1) * PAGINATION_COUNT_ITEMS,
-          Math.min(counterPagesShopingList * PAGINATION_COUNT_ITEMS, countShopingList + 1)
+          Math.min(
+            counterPagesShopingList * PAGINATION_COUNT_ITEMS,
+            countShopingList + 1
+          )
         )
       );
       bookList.innerHTML = addButtonshoplistMarkup;
-      updateButtons(middleButtons, counterPagesShopingList, countPagesShopingList);
+      updateButtons(
+        middleButtons,
+        counterPagesShopingList,
+        countPagesShopingList
+      );
     });
   }
 
@@ -262,21 +307,28 @@ function showShoppingList() {
       let addButtonshoplistMarkup = shoppedBooksMarkup(
         shoppingList.slice(
           (counterPagesShopingList - 1) * PAGINATION_COUNT_ITEMS,
-          Math.min(counterPagesShopingList * PAGINATION_COUNT_ITEMS, countShopingList + 1)
+          Math.min(
+            counterPagesShopingList * PAGINATION_COUNT_ITEMS,
+            countShopingList + 1
+          )
         )
       );
       bookList.innerHTML = addButtonshoplistMarkup;
-      updateButtons(middleButtons, counterPagesShopingList, countPagesShopingList);
+      updateButtons(
+        middleButtons,
+        counterPagesShopingList,
+        countPagesShopingList
+      );
     });
   }
 }
 
-function showHomePage() {
-  // console.log('func showHomePage');
-  refs.catlisSec.classList.replace('hidden', 'category');
-  sessionStorage.setItem(keyPage, JSON.stringify('homepage'));
-  homeMarkup();
-  refs.mainSec.addEventListener('click', hendlerClick);
-}
+// function showHomePage() {
+//   // console.log('func showHomePage');
+//   refs.catlisSec.classList.replace('hidden', 'category');
+//   sessionStorage.setItem(keyPage, JSON.stringify('homepage'));
+//   homeMarkup();
+//   refs.mainSec.addEventListener('click', hendlerClick);
+// }
 
 export { showShoppingList };
