@@ -43,7 +43,7 @@ getCategoryList()
     getCategory(nameCategory)
       .then(resp => {
         const booksOfCategory = resp.data
-        console.log(booksOfCategory.length)
+        // console.log(booksOfCategory.length)
         if (booksOfCategory.length === 0) {
           throw new Error()
         }
