@@ -10,16 +10,14 @@ const refs = {
   signup: document.querySelector('.signup'),
   openModalBtn: document.querySelector('[data-menu-open]'),
   // closeModalBtn: document.querySelector('[data-menu-close]'),
-  modal: document.querySelector('[data-menu]'),
+  // modal: document.querySelector('[data-menu]'),
 };
-initTheme();
-setStoredTheme();
 
 // refs.home.addEventListener('click', showHomepage);
 // refs.shoplist.addEventListener('click', showShoppingList);
 // refs.signup.addEventListener('click', showSignUp);
 refs.slider.addEventListener('click', themeSwitch);
-refs.openModalBtn.addEventListener('click', showBurger);
+// refs.openModalBtn.addEventListener('click', showBurger);
 // refs.closeModalBtn.addEventListener('click', showBurger);
 
 function showBurger() {
@@ -32,9 +30,12 @@ function themeSwitch() {
 }
 
 function setStoredTheme() {
+  initTheme();
   if (isThemeDark()) {
     refs.slider.classList.add('slider-dark');
   } else {
     refs.slider.classList.remove('slider-dark');
   }
 }
+
+export {setStoredTheme}

@@ -1,14 +1,16 @@
 function burgerMenu() {
   const mobileMenu = document.querySelector('[data-menu]');
   const openMenuBtn = document.querySelector('[data-menu-open]');
-  const closeMenuBtn = document.querySelector('[data-menu-close]');
+  // const closeMenuBtn = document.querySelector('[data-menu-close]');
 
   const toggleMenu = () => {
     const isMenuOpen =
     // openMenuBtn.getAttribute('aria-expanded') === 'true' || false;
     // openMenuBtn.setAttribute('aria-expanded', !isMenuOpen);
+    console.log('mobileMenu= ', mobileMenu.classList);
     mobileMenu.classList.toggle('is-open');
     document.body.classList.toggle("no-scroll");
+    console.log('mobileMenu= ', mobileMenu.classList);
 
     // const scrollLockMethod = !isMenuOpen
     //   ? 'disableBodyScroll'

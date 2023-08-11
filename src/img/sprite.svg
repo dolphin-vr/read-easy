@@ -29,7 +29,7 @@ g:target{display:inline}
 </symbol>
 
 <!-- burger menu.color /  stroke, hover -  stroke-opacity: 0.5;   -->
-<symbol id="menu" viewBox="0 0 44 44">
+<symbol id="menu" viewBox="0 0 28 28">
 <path d="M19.8333 11.6667H3.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M24.5 7H3.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M24.5 16.3333H3.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
