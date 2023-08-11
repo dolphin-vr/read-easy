@@ -1,9 +1,9 @@
 // import './js/modal';
-// import './js/authorization-modal';
+import './js/authorization-modal';
 // import './js/header';
-// import './js/authorization';
+import './js/authorization';
 // import './js/shoppinglist';
-// import './js/log-out';
+import './js/log-out';
 
 // import { showActivePage } from './js/api';
 import { initGoTopButton, showActivePage } from './js/interface';
@@ -14,7 +14,6 @@ import { setStoredTheme } from './js/header';
 const categoryList = document.querySelector('.js-category-list');
 const booksList = document.querySelector('.book-list');
 const modalBook = document.querySelector('.modal-book');
-
 
 setStoredTheme();
 burgerMenu();
