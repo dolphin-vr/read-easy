@@ -49,18 +49,23 @@
 }
 
 .funds-item {
-  // height: 32px;
-  width: 170px;
+  height: 32px;
+  width: 149px;
+}
+
+.funds-item:not(:last-child) {
+  margin-bottom: 20px;
 }
 
 .funds-href {
   display: flex;
   align-items: center;
   gap: 16px;
+  height: 100%;
 }
 
-.funds-item:not(:last-child) {
-  margin-bottom: 20px;
+.funds-href:hover .funds-img {
+  filter: none;
 }
 
 .funds-number {
