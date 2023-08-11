@@ -5,24 +5,29 @@ const refs = {
   backdrop: document.querySelector('.js-authorization-backdrop'),
 };
 
-refs.openModalBtn.addEventListener('click', toggleModalAuth);
-refs.closeModalBtn.addEventListener('click', toggleModalAuth);
+refs.openModalBtn.addEventListener('click', openModalAuth);
+refs.closeModalBtn.addEventListener('click', closeModalAuth);
 
-function toggleModalAuth() {
-  refs.modalAuth.classList.toggle('on-hidden');
+function openModalAuth() {
+  refs.modalAuth.classList.remove('on-hidden');
   document.addEventListener('keydown', onEscKeyPress);
   refs.modalAuth.addEventListener('click', onClickBackdrop);
 }
 
+function closeModalAuth() {
+  refs.modalAuth.classList.add('on-hidden');
+  document.removeEventListener('keydown', onEscKeyPress);
+  refs.modalAuth.removeEventListener('click', onClickBackdrop);
+}
+
 function onEscKeyPress(e) {
   if (e.key === 'Escape') {
-    refs.modalAuth.classList.toggle('on-hidden');
-    document.removeEventListener('keydown', onEscKeyPress);
+    closeModalAuth();
   }
 }
 
 function onClickBackdrop(e) {
   if (e.target === refs.backdrop) {
-    refs.modalAuth.classList.toggle('on-hidden');
+    closeModalAuth();
   }
 }
