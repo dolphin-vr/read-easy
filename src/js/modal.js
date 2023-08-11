@@ -131,7 +131,7 @@ function createModalBookMarkup(resp) {
     </svg>
   </button>
   <div class="modal-book-wrap">
-    <img src="${book_image}" alt="${title}" class="modal-book-img" />
+    <img src="${book_image}" alt="${title}" class="modal-book-img" loading="lazy" />
     <div class="modal-book-info-wrap">
       <h2 class="modal-book-name">${title}</h2>
       <p class="modal-book-autor">${author}</p>
@@ -142,7 +142,7 @@ function createModalBookMarkup(resp) {
             srcset="${amazon2x} 2x"
             src="${amazon}"
             alt="${buy_links[0].name}"
-            class="modal-book-linc-icon amazon"
+            class="modal-book-linc-icon amazon"loading="lazy"
           />
         </a>
         <a href="${buy_links[1].url}" class="modal-book-linc" target="_blank" rel="noreferrer noopener">
@@ -150,7 +150,7 @@ function createModalBookMarkup(resp) {
             srcset="${appleBook2x} 2x"
             src="${appleBook}"
             alt="${buy_links[1].name}"
-            class="modal-book-linc-icon"
+            class="modal-book-linc-icon"loading="lazy"
           />
         </a>
         <a href="https://bookshop.org/" class="modal-book-linc" target="_blank" rel="noreferrer noopener">
@@ -158,7 +158,7 @@ function createModalBookMarkup(resp) {
             srcset="${bookShop2x} 2x"
             src="${bookShop}"
             alt="${buy_links[4].name}"
-            class="modal-book-linc-icon"
+            class="modal-book-linc-icon"loading="lazy"
           />
         </a>
       </div>

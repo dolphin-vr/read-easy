@@ -2,7 +2,6 @@ import { isSignIn, signInApp } from './api-firebase';
 import { bookShopsMurkup, createBookCard } from './shopslist';
 import { getStorageShopingList } from './api-shiping-localstorage';
 import { removeBookFromShoppingList } from './modal';
-
 import empty from '../img/empty.png';
 import empty2x from '../img/empty2x.png';
 

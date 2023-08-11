@@ -17,8 +17,9 @@ function createMarkup(book) {
 
     const bookImage = document.createElement('img');
     bookImage.classList.add('img-book', 'js-img-book', 'lazy-load');
-    bookImage.dataset.src = book.book_image; // Зберегаю URL img у датасет
+    bookImage.dataset.src = book.book_image; // Зберегаю URL img у датасет  loading="lazy"
     bookImage.alt = book.title;
+    bookImage.loading = "lazy";
     bookLink.appendChild(bookImage);
 
     const bookName = document.createElement('p');

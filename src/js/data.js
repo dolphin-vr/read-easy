@@ -54,7 +54,7 @@ iconPaths.forEach(p => {
   }
 })
 
-console.log(shopIcons)
+// console.log(shopIcons)
 
 
 //  const topBooks = await serviceGetTopBooks();

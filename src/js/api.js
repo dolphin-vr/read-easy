@@ -10,6 +10,7 @@ import { showHomePage } from './interface';
 import { homeMarkup } from './home';
 import { hendlerClick } from './modal';
 import { shoppedBooksMarkup, trashBook } from './shopslist';
+import { toggleMenu } from './menu';
 const keyPage = 'activpage';
 
 const optNotiflx = {
@@ -40,7 +41,8 @@ function showShoppingList() {
   refs.btnHome.classList.remove('active-button');
   refs.fundsSec.classList.add('funds-wrap');
   refs.catlisSec.classList.replace('category', 'hidden');
-  refs.mobMenu.classList.remove('is-open');
+  // refs.mobMenu.classList.remove('is-open');
+  toggleMenu();
   sessionStorage.setItem(keyPage, JSON.stringify('shoppinglist'));
 
   // SL title
@@ -49,17 +51,17 @@ function showShoppingList() {
 
   const shoppingList = getStorageShopingList();
   // console.log(shoppingList);
-  let countShopingList = shoppingList.length;
   // SL absent or empty
   if (!shoppingList || shoppingList.length === 0) {
     shoplistMarkup += ` <div class="shopping-list-empty">
                           <p class="shopping-book-empty">This page is empty, add some books and proceed to order.</p>
-                          <img srcset="${empty2x} 2x" src="${empty}" alt="Empty Shopping List" class="shopping-book-empty-img"/>
+                          <img srcset="${empty2x} 2x" src="${empty}" alt="Empty Shopping List" class="shopping-book-empty-img" loading="lazy"/>
                         </div>`;
     refs.mainSec.innerHTML = shoplistMarkup;
     return;
   }
   shoplistMarkup += '<ul class="book-list-items"></ul>'; //book-list
+  let countShopingList = shoppingList.length;
 
   let countPagesShopingList = Math.ceil(
     countShopingList / PAGINATION_COUNT_ITEMS
