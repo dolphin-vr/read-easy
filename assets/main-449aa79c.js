@@ -3,7 +3,7 @@
       <span class="funds-number">${(s+1).toString().padStart(2,0)}</span>
       <img class="funds-img" srcset="${i}, ${r}" src="${i}" alt="${t}" />
     </a>
-  </li>`).join("");Fr.insertAdjacentHTML("beforeend",Om(Pm));const rn={openModalBtn:document.querySelector(".js-authorization-open"),closeModalBtn:document.querySelector(".js-authorization-close"),modalAuth:document.querySelector(".js-authorization-modal"),backdrop:document.querySelector(".js-authorization-backdrop")};rn.openModalBtn.addEventListener("click",su);rn.closeModalBtn.addEventListener("click",su);function su(){rn.modalAuth.classList.toggle("on-hidden"),document.body.classList.toggle("no-scroll"),document.addEventListener("keydown",ou),rn.modalAuth.addEventListener("click",Vm)}function ou(e){e.key==="Escape"&&(rn.modalAuth.classList.toggle("on-hidden"),document.removeEventListener("keydown",ou))}function Vm(e){e.target===rn.backdrop&&rn.modalAuth.classList.toggle("on-hidden")}/**
+  </li>`).join("");Fr.insertAdjacentHTML("beforeend",Om(Pm));const rn={openModalBtn:document.querySelector(".js-authorization-open"),closeModalBtn:document.querySelector(".js-authorization-close"),modalAuth:document.querySelector(".js-authorization-modal"),backdrop:document.querySelector(".js-authorization-backdrop")};rn.openModalBtn.addEventListener("click",su);rn.closeModalBtn.addEventListener("click",su);function su(){rn.modalAuth.classList.toggle("on-hidden"),document.addEventListener("keydown",ou),rn.modalAuth.addEventListener("click",Vm)}function ou(e){e.key==="Escape"&&(rn.modalAuth.classList.toggle("on-hidden"),document.removeEventListener("keydown",ou))}function Vm(e){e.target===rn.backdrop&&rn.modalAuth.classList.toggle("on-hidden")}/**
  * @license
  * Copyright 2017 Google LLC
  *
